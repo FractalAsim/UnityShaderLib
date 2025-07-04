@@ -19,13 +19,12 @@
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 using UnityEngine.SceneManagement;
 
-public class HierachyHotKeys
+public class HierachyHotkeys
 {
     // Arrow keys shortcut does not work in heirachy
-    [MenuItem("EditorTools/Hotkeys/Hierachy/Move Up %&w")]
+    [MenuItem(nameof(EditorTools) + "/Hierachy/Move Up %&w")]
     static void MoveUp()
     {
         if (Selection.gameObjects.Length == 0) return;
@@ -100,7 +99,7 @@ public class HierachyHotKeys
     }
 
     // Arrow keys shortcut does not work in heirachy
-    [MenuItem("EditorTools/Hotkeys/Hierachy/Move down %&s")]
+    [MenuItem(nameof(EditorTools) + "/Hierachy/Move down %&s")]
     static void MoveDown()
     {
         if (Selection.gameObjects.Length == 0) return;
@@ -181,7 +180,7 @@ public class HierachyHotKeys
 
     private static double renameTime;
 
-    [MenuItem("EditorTools/Hotkeys/Hierachy/Group %g")]
+    [MenuItem(nameof(EditorTools) + "/Hierachy/Group %g")]
     static void Group()
     {
         if (Selection.transforms.Length > 0)
