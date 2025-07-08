@@ -80,6 +80,12 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInUnlitSubTarget",
+    "m_ObjectId": "1e337ff8cac747409c33a2b9217eccff"
+}
+
+{
     "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "4f9a2b87c4e049d48a9825c17372734b",
@@ -215,7 +221,7 @@
     "m_ObjectId": "d7a97fe897534e4d8a58fe680c092c69",
     "m_Datas": [],
     "m_ActiveSubTarget": {
-        "m_Id": "db3c2eec574b40c680dc64bd9187399b"
+        "m_Id": "1e337ff8cac747409c33a2b9217eccff"
     },
     "m_AllowMaterialOverride": false,
     "m_SurfaceType": 0,
@@ -225,14 +231,6 @@
     "m_RenderFace": 2,
     "m_AlphaClip": false,
     "m_CustomEditorGUI": ""
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInLitSubTarget",
-    "m_ObjectId": "db3c2eec574b40c680dc64bd9187399b",
-    "m_WorkflowMode": 1,
-    "m_NormalDropOffSpace": 0
 }
 
 {
