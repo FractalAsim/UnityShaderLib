@@ -1,8 +1,15 @@
-Shader "Common/PlainColor"
+Shader "Unlit/NewUnlitShader"
 {
     Properties
     {
-       _Color ("Main Color", Color) = (1,1,1,1)
+        _Color ("Main Color", Color) = (1,1,1,1)
+
+        _XCutoff("X Cutoff", Range(0,1)) = 1 //Interpolate 0 = full cutoff 1 = no cutoff
+        _YCutoff("Y Cutoff", Range(0,1)) = 1 //Interpolate
+        _ZCutoff("Z Cutoff", Range(0,1)) = 1 //Interpolate
+        _MinCutoff("Min Cutoff", Float) = 0 //The X/Y/Z position in worldspace to represent 0% cutoff
+        _MaxCutoff("Max Cutoff", Float) = 10 //The X/Y/Z position in worldspace to represent 100% cutoff
+        [Toggle] _Reverse("Reverse",Float) = 0
     }
     SubShader
     {
@@ -31,6 +38,7 @@ Shader "Common/PlainColor"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
