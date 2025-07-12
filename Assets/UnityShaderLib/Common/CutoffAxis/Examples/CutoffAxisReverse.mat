@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CutoffReverse
+  m_Name: CutoffAxisReverse
   m_Shader: {fileID: 4800000, guid: 868fe92752496404e8b7f32241df4e02, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -76,7 +76,7 @@ Material:
     - _BumpScale: 1
     - _CutDirection: 0
     - _CutOffAxis: 1
-    - _Cutoff: 0.0022901595
+    - _Cutoff: 0.92348665
     - _CutoffRangeMax: 10
     - _CutoffRangeMin: 0
     - _DetailNormalMapScale: 1

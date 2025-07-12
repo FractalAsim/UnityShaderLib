@@ -59,14 +59,6 @@ Shader "Common/CutoffAxis"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // _Reverse = step(_Reverse,1);
-                // _Reverse = 0;
-                
-                // float xreverse = _Reverse * ((_MinCutoff - _MaxCutoff) * (1 - _XCutoff) - (_MinCutoff - i.worldPos.x));
-                // float zreverse = _Reverse * ((_MinCutoff - _MaxCutoff) * (1 - _ZCutoff) - (_MinCutoff - i.worldPos.z));
-
-                //clip((1 - floor(_XCutoff)) * (xnormal + xreverse));
-
                 float clipValue = 0;
                 fixed pos;
 

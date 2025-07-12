@@ -13,9 +13,15 @@ public class CutoffAxisExampel : MonoBehaviour
     [SerializeField] Renderer ShaderCutoffCube;
     [SerializeField] Renderer ShaderCutoffCubeReverse;
 
+    [SerializeField] Renderer ShaderCutoffSGCube;
+    [SerializeField] Renderer ShaderCutoffSGCubeReverse;
 
     void Update()
     {
+        print(Mathf.Sin(0));
+        print(Mathf.Sin(0));
+
+
         if (CutoffMin == null) return;
         if (CutoffMax == null) return;
 
@@ -44,5 +50,29 @@ public class CutoffAxisExampel : MonoBehaviour
             sharedMaterial.SetFloat(cutoffPropertyID, cutoff);
         }
 
+        if (ShaderCutoffSGCube != null)
+        {
+            var sharedMaterial = ShaderCutoffSGCube.GetComponent<Renderer>().sharedMaterial;
+
+            var min = CutoffMin.transform.position.y;
+            var max = CutoffMax.transform.position.y;
+            sharedMaterial.SetFloat(minCutoffPropertyID, min);
+            sharedMaterial.SetFloat(maxCutoffPropertyID, max);
+
+            var cutoff = 0.5f * Mathf.Sin(Time.time) + 0.5f;
+            sharedMaterial.SetFloat(cutoffPropertyID, cutoff);
+        }
+        if (ShaderCutoffSGCubeReverse != null)
+        {
+            var sharedMaterial = ShaderCutoffSGCubeReverse.GetComponent<Renderer>().sharedMaterial;
+
+            var min = CutoffMin.transform.position.y;
+            var max = CutoffMax.transform.position.y;
+            sharedMaterial.SetFloat(minCutoffPropertyID, min);
+            sharedMaterial.SetFloat(maxCutoffPropertyID, max);
+
+            var cutoff = 0.5f * Mathf.Sin(Time.time) + 0.5f;
+            sharedMaterial.SetFloat(cutoffPropertyID, cutoff);
+        }
     }
 }
