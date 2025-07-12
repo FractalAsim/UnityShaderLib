@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class CutoffExample : MonoBehaviour
+public class CutoffAxisExampel : MonoBehaviour
 {
     readonly int cutoffPropertyID = Shader.PropertyToID("_Cutoff");
     readonly int minCutoffPropertyID = Shader.PropertyToID("_RangeMin");
