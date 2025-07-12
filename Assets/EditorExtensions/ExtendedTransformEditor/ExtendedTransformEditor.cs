@@ -303,13 +303,39 @@ public class ExtendedTransformEditor : Editor
 
         EditorGUI.BeginChangeCheck();
         Vector3 newLocalPosition = EditorGUILayout.Vector3Field(content, localPosition);
+        
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObjects(targets, "Position Changed");
-            for (int i = 0; i < targets.Length; i++)
+
+            if (localPosition.x != newLocalPosition.x)
             {
-                ((Transform)targets[i]).localPosition = newLocalPosition;
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var pos = ((Transform)targets[i]).localPosition;
+                    pos.x = newLocalPosition.x;
+                    ((Transform)targets[i]).localPosition = pos;
+                }
             }
+            else if (localPosition.y != newLocalPosition.y)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var pos = ((Transform)targets[i]).localPosition;
+                    pos.y = newLocalPosition.y;
+                    ((Transform)targets[i]).localPosition = pos;
+                }
+            }
+            else if (localPosition.z != newLocalPosition.z)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var pos = ((Transform)targets[i]).localPosition;
+                    pos.z = newLocalPosition.z;
+                    ((Transform)targets[i]).localPosition = pos;
+                }
+            }
+
             positionProperty.serializedObject.SetIsDifferentCacheDirty();
         }
         EditorGUI.showMixedValue = false;
@@ -331,14 +357,37 @@ public class ExtendedTransformEditor : Editor
         }
 
         EditorGUI.BeginChangeCheck();
-        Vector3 eulerAngles = EditorGUILayout.Vector3Field(content, localRotation);
+        Vector3 neweulerAngles = EditorGUILayout.Vector3Field(content, localRotation);
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObjects(targets, "Rotation Changed");
-            for (int i = 0; i < targets.Length; i++)
+
+            if (localRotation.x != neweulerAngles.x)
             {
-                //((Transform)targets[i]).localEulerAngles = eulerAngles;
-                TransformUtils.SetInspectorRotation(((Transform)targets[i]), eulerAngles);
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var rot = ((Transform)targets[i]).localEulerAngles;
+                    rot.x = neweulerAngles.x;
+                    ((Transform)targets[i]).localEulerAngles = rot;
+                }
+            }
+            else if (localRotation.y != neweulerAngles.y)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var rot = ((Transform)targets[i]).localEulerAngles;
+                    rot.y = neweulerAngles.y;
+                    ((Transform)targets[i]).localEulerAngles = rot;
+                }
+            }
+            else if (localRotation.z != neweulerAngles.z)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var rot = ((Transform)targets[i]).localEulerAngles;
+                    rot.z = neweulerAngles.z;
+                    ((Transform)targets[i]).localEulerAngles = rot;
+                }
             }
             rotationProperty.serializedObject.SetIsDifferentCacheDirty();
         }
@@ -366,6 +415,33 @@ public class ExtendedTransformEditor : Editor
             for (int i = 0; i < targets.Length; i++)
             {
                 ((Transform)targets[i]).localScale = newLocalScale;
+            }
+            if (localScale.x != newLocalScale.x)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var scale = ((Transform)targets[i]).localScale;
+                    scale.x = newLocalScale.x;
+                    ((Transform)targets[i]).localScale = scale;
+                }
+            }
+            else if (localScale.y != newLocalScale.y)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var scale = ((Transform)targets[i]).localScale;
+                    scale.y = newLocalScale.y;
+                    ((Transform)targets[i]).localScale = scale;
+                }
+            }
+            else if (localScale.z != newLocalScale.z)
+            {
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    var scale = ((Transform)targets[i]).localScale;
+                    scale.z = newLocalScale.z;
+                    ((Transform)targets[i]).localScale = scale;
+                }
             }
             scaleProperty.serializedObject.SetIsDifferentCacheDirty();
         }
