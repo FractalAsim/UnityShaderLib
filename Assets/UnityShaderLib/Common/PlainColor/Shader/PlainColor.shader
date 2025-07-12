@@ -12,14 +12,17 @@ Shader "Common/PlainColor"
         Pass
         {
             CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
 
+            #pragma vertex vert // Use "vert" function for Vertex Shader
+            #pragma fragment frag // Use "frag" function for Fragment Shader
+
+            // Input to Vertex Shader
             struct appdata
             {
                 float4 vertex : POSITION;
             };
 
+            // Input to Fragment Shader
             struct v2f
             {
                 float4 vertex : SV_POSITION;
@@ -38,6 +41,7 @@ Shader "Common/PlainColor"
             {
                 return _Color;
             }
+
             ENDCG
         }
     }
