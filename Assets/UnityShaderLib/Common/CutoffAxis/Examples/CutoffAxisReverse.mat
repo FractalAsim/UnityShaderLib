@@ -76,7 +76,7 @@ Material:
     - _BumpScale: 1
     - _CutDirection: 0
     - _CutOffAxis: 1
-    - _Cutoff: 0.92348665
+    - _Cutoff: 0.886131
     - _CutoffRangeMax: 10
     - _CutoffRangeMin: 0
     - _DetailNormalMapScale: 1
