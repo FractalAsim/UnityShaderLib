@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 550943691}
   - component: {fileID: 550943690}
   m_Layer: 0
-  m_Name: Quad (1)
+  m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 1008522892}
   - component: {fileID: 1008522891}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 1666000207}
   - component: {fileID: 1666000206}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
