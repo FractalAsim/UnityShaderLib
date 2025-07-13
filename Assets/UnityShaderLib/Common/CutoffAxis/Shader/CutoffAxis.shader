@@ -44,7 +44,7 @@ Shader "Common/CutoffAxis"
 
             float4 _Color;
 
-            // For CutoffXYZ
+            // For Cutoff
             fixed _Cutoff;
             fixed _RangeMin;
             fixed _RangeMax;

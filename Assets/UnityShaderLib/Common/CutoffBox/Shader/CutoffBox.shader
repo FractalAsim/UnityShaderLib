@@ -6,7 +6,7 @@ Shader "Common/CutoffBox"
     {
         _Color ("Color", Color) = (1,1,1,1)
 
-        _Enable("Enable", float) = 0
+        [Toggle] _Enable("Enable", float) = 0
         _MinX("Min X", float) = 0
         _MaxX("Max X", float) = 1
         _MinY("Min Y", float) = 0

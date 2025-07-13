@@ -12,10 +12,10 @@ public class CutoffBoxExample : MonoBehaviour
 
     public bool EnableCutoff = true;
 
-    [SerializeField] Transform Box;
+    [SerializeField] Transform Cube;
     [SerializeField] Transform CutoffBox;
 
-    [SerializeField] Transform BoxSG;
+    [SerializeField] Transform CubeSG;
     [SerializeField] Transform CutoffBoxSG;
 
     Vector3 CutoffBox_startPos = new();
@@ -34,13 +34,13 @@ public class CutoffBoxExample : MonoBehaviour
 
     void Update()
     {
-        if (Box == null || CutoffBox == null) return;
+        if (Cube == null || CutoffBox == null) return;
 
-        UpdateBox(Box, CutoffBox, CutoffBox_startPos);
+        UpdateBox(Cube, CutoffBox, CutoffBox_startPos);
 
-        if (BoxSG == null || CutoffBoxSG == null) return;
+        if (CubeSG == null || CutoffBoxSG == null) return;
 
-        UpdateBox(BoxSG, CutoffBoxSG, CutoffBoxSG_startPos);
+        UpdateBox(CubeSG, CutoffBoxSG, CutoffBoxSG_startPos);
 
     }
     void UpdateBox(Transform Box, Transform CutoffBox, Vector3 startPos)
