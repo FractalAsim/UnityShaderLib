@@ -1,10 +1,12 @@
 // Common Shader that cuts off the fragment when it's position in a selected axis is above a certain value Interpolated though a range.
 // Addition Reverse var to go from max->min instead
 
-Shader "Info/PropertyDrawers"
+Shader "Common/CutoffAxis"
 {
     Properties
     {
+        _Color ("Color", Color) = (1,1,1,1)
+
         [KeywordEnum(X, Y, Z)] _Axis("Cutoff Axis", Float) = 0 // 3 Enum Selection (shader variants)
         [Toggle] _Reverse("Reverse",Integer) = 0 // Boolean selection (shader variant)
 

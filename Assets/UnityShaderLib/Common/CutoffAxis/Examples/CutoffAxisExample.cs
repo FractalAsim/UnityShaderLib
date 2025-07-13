@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class CutoffAxisExampel : MonoBehaviour
+public class CutoffAxisExample : MonoBehaviour
 {
     readonly int cutoffPropertyID = Shader.PropertyToID("_Cutoff");
     readonly int minCutoffPropertyID = Shader.PropertyToID("_RangeMin");
@@ -10,24 +10,20 @@ public class CutoffAxisExampel : MonoBehaviour
     [SerializeField] Transform CutoffMin;
     [SerializeField] Transform CutoffMax;
 
-    [SerializeField] Renderer ShaderCutoffCube;
-    [SerializeField] Renderer ShaderCutoffCubeReverse;
+    [SerializeField] Renderer CutoffObject;
+    [SerializeField] Renderer CutoffObjectReverse;
 
-    [SerializeField] Renderer ShaderCutoffSGCube;
-    [SerializeField] Renderer ShaderCutoffSGCubeReverse;
+    [SerializeField] Renderer CutoffObjectSG;
+    [SerializeField] Renderer CutoffObjectSGReverse;
 
     void Update()
     {
-        print(Mathf.Sin(0));
-        print(Mathf.Sin(0));
-
-
         if (CutoffMin == null) return;
         if (CutoffMax == null) return;
 
-        if (ShaderCutoffCube != null)
+        if (CutoffObject != null)
         {
-            var sharedMaterial = ShaderCutoffCube.GetComponent<Renderer>().sharedMaterial;
+            var sharedMaterial = CutoffObject.GetComponent<Renderer>().sharedMaterial;
 
             var min = CutoffMin.transform.position.y;
             var max = CutoffMax.transform.position.y;
@@ -37,9 +33,9 @@ public class CutoffAxisExampel : MonoBehaviour
             var cutoff = 0.5f * Mathf.Sin(Time.time) + 0.5f;
             sharedMaterial.SetFloat(cutoffPropertyID, cutoff);
         }
-        if (ShaderCutoffCubeReverse != null)
+        if (CutoffObjectReverse != null)
         {
-            var sharedMaterial = ShaderCutoffCubeReverse.GetComponent<Renderer>().sharedMaterial;
+            var sharedMaterial = CutoffObjectReverse.GetComponent<Renderer>().sharedMaterial;
 
             var min = CutoffMin.transform.position.y;
             var max = CutoffMax.transform.position.y;
@@ -50,9 +46,9 @@ public class CutoffAxisExampel : MonoBehaviour
             sharedMaterial.SetFloat(cutoffPropertyID, cutoff);
         }
 
-        if (ShaderCutoffSGCube != null)
+        if (CutoffObjectSG != null)
         {
-            var sharedMaterial = ShaderCutoffSGCube.GetComponent<Renderer>().sharedMaterial;
+            var sharedMaterial = CutoffObjectSG.GetComponent<Renderer>().sharedMaterial;
 
             var min = CutoffMin.transform.position.y;
             var max = CutoffMax.transform.position.y;
@@ -62,9 +58,9 @@ public class CutoffAxisExampel : MonoBehaviour
             var cutoff = 0.5f * Mathf.Sin(Time.time) + 0.5f;
             sharedMaterial.SetFloat(cutoffPropertyID, cutoff);
         }
-        if (ShaderCutoffSGCubeReverse != null)
+        if (CutoffObjectSGReverse != null)
         {
-            var sharedMaterial = ShaderCutoffSGCubeReverse.GetComponent<Renderer>().sharedMaterial;
+            var sharedMaterial = CutoffObjectSGReverse.GetComponent<Renderer>().sharedMaterial;
 
             var min = CutoffMin.transform.position.y;
             var max = CutoffMax.transform.position.y;
