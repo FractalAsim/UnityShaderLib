@@ -7,12 +7,8 @@ Shader "Common/CutoffBox"
         _Color ("Color", Color) = (1,1,1,1)
 
         [Toggle] _Enable("Enable", float) = 0
-        _MinX("Min X", float) = 0
-        _MaxX("Max X", float) = 1
-        _MinY("Min Y", float) = 0
-        _MaxY("Max Y", float) = 1
-        _MinZ("Min Z", float) = 0
-        _MaxZ("Max Z", float) = 1
+        _Min("Min", Vector) = (0,0,0,0)
+        _Max("Min", Vector) = (0,0,0,0)
     }
     SubShader
     {
@@ -45,12 +41,8 @@ Shader "Common/CutoffBox"
 
             // For Cutoff
             fixed _Enable;
-            fixed _MinX;
-            fixed _MaxX;
-            fixed _MinY;
-            fixed _MaxY;
-            fixed _MinZ;
-            fixed _MaxZ;
+            float3 _Min;
+            float3 _Max;
 
             v2f vert (appdata v)
             {
@@ -62,12 +54,13 @@ Shader "Common/CutoffBox"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float x = (i.worldPos.x - _MinX) * (_MaxX - i.worldPos.x);
-                float y = (i.worldPos.y - _MinY) * (_MaxY - i.worldPos.y);
-                float z = (i.worldPos.z - _MinZ) * (_MaxZ - i.worldPos.z);
-                float xyz = min(min(x, y), z);
+                // If the global position for the axis (x,y,z) is less than min, or more than max, the result wil be negative
+                float3 subPos = (i.worldPos - _Min) * (_Max - i.worldPos);
 
-                clip(xyz * _Enable);
+                // If any axis is negative, return negative, otherwise positive
+                float clipValue = min(min(subPos.x, subPos.y), subPos.z);
+
+                clip(clipValue * _Enable);
 
                 return _Color;
             }

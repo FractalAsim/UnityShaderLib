@@ -3,12 +3,8 @@ using UnityEngine;
 public class CutoffBoxExample : MonoBehaviour
 {
     readonly int enablePropertyID = Shader.PropertyToID("_Enable");
-    readonly int minXPropertyID = Shader.PropertyToID("_MinX");
-    readonly int maxXPropertyID = Shader.PropertyToID("_MaxX");
-    readonly int minYPropertyID = Shader.PropertyToID("_MinY");
-    readonly int maxYPropertyID = Shader.PropertyToID("_MaxY");
-    readonly int minZPropertyID = Shader.PropertyToID("_MinZ");
-    readonly int maxZPropertyID = Shader.PropertyToID("_MaxZ");
+    readonly int minPropertyID = Shader.PropertyToID("_Min");
+    readonly int maxPropertyID = Shader.PropertyToID("_Max");
 
     public bool EnableCutoff = true;
 
@@ -52,20 +48,10 @@ public class CutoffBoxExample : MonoBehaviour
 
         var min = pos - scale / 2;
         var max = pos + scale / 2;
-        var minX = min.x;
-        var maxX = max.x;
-        var minY = min.y;
-        var maxY = max.y;
-        var minZ = min.z;
-        var maxZ = max.z;
 
         var sharedMaterial = Box.GetComponent<Renderer>().sharedMaterial;
         sharedMaterial.SetFloat(enablePropertyID, EnableCutoff ? 1 : 0);
-        sharedMaterial.SetFloat(minXPropertyID, minX);
-        sharedMaterial.SetFloat(maxXPropertyID, maxX);
-        sharedMaterial.SetFloat(minYPropertyID, minY);
-        sharedMaterial.SetFloat(maxYPropertyID, maxY);
-        sharedMaterial.SetFloat(minZPropertyID, minZ);
-        sharedMaterial.SetFloat(maxZPropertyID, maxZ);
+        sharedMaterial.SetVector(minPropertyID, min);
+        sharedMaterial.SetVector(maxPropertyID, max);
     }
 }
