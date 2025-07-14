@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4316944783706308128
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 0
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,14 +7,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CutoffBox
-  m_Shader: {fileID: 4800000, guid: f6977e32a037c8a4ab6134506a84a7bf, type: 3}
+  m_Name: CutoffAxis
+  m_Shader: {fileID: 4800000, guid: 868fe92752496404e8b7f32241df4e02, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _AXIS_Y
   m_InvalidKeywords:
-  - _AXIS_B
-  - _AXIS_X
+  - _AXIS_YCUTOFF
+  - _CUTDIRECTION_X
+  - _CUTOFFAXIS_X
+  - _CUTOFFAXIS_YCUTOFF
+  - _HI_ON
+  - _RED_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -75,40 +67,41 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints:
+    - _HI: 1
+    - _RED: 0
     - _Reverse: 0
     m_Floats:
-    - _AXIS: 1
-    - _Axis: 0
-    - _BUILTIN_QueueControl: 0
-    - _BUILTIN_QueueOffset: 0
+    - _Axis: 1
     - _BumpScale: 1
-    - _Cutoff: 0.886131
+    - _CutDirection: 0
+    - _CutOffAxis: 1
+    - _Cutoff: 0.9921057
+    - _CutoffRangeMax: 10
+    - _CutoffRangeMin: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Enable: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxX: -4.1653757
-    - _MaxY: 1
-    - _MaxZ: 1
+    - _MaxCutoff: 1
     - _Metallic: 0
-    - _MinX: -6.1653757
-    - _MinY: -1
-    - _MinZ: -1
+    - _MinCutoff: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _REVERSE: 0
     - _RangeMax: 5
     - _RangeMin: 0
+    - _Reverse: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _XCutoff: 1
+    - _YCutoff: 1
+    - _ZCutoff: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

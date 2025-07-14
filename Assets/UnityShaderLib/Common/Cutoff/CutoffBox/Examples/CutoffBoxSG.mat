@@ -88,12 +88,12 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _MaxCutoff: 1
-    - _MaxX: 1.7748439
+    - _MaxX: 3.7407882
     - _MaxY: 1
     - _MaxZ: 1
     - _Metallic: 0
     - _MinCutoff: 0
-    - _MinX: -0.22515607
+    - _MinX: 1.7407882
     - _MinY: -1
     - _MinZ: -1
     - _Mode: 0
@@ -114,6 +114,8 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Max: {r: 3.1699784, g: 1, b: 1, a: 0}
+    - _Min: {r: 1.1699784, g: -1, b: -1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2168878254397363546
