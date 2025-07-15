@@ -111,7 +111,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Max: {r: -2.7702415, g: 1, b: 1, a: 0}
-    - _Min: {r: -4.7702417, g: -1, b: -1, a: 0}
+    - _Max: {r: -3.8780193, g: 1, b: 1, a: 0}
+    - _Min: {r: -5.8780193, g: -1, b: -1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
