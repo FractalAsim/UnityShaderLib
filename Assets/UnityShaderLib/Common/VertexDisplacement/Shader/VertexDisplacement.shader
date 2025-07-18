@@ -30,12 +30,16 @@ Shader "Common/Displacement"
 
             float4 _Displacement;
 
+            float TimeLoop01()
+            {
+                return _SinTime.w * 0.5 + 0.5;
+            }
+
             v2f vert (appdata v)
             {
                 v2f o;
 
-                float TimeLoop01 = _SinTime.w * 0.5 + 0.5;
-                v.pos = TimeLoop01 * _Displacement + v.pos;
+                v.pos = TimeLoop01() * _Displacement + v.pos;
 
                 o.pos = UnityObjectToClipPos(v.pos);
                 return o;
