@@ -18,6 +18,10 @@ Shader "Info/PropertyDrawers"
 
         // Gives a Int Slider
         [IntRange] _Power ("IntRange", Range (0, 10)) = 00
+
+        // Gives a Normal float Slider
+       _Blend ("Blend", Range(0, 1)) = 0
+
     }
     SubShader
     {
