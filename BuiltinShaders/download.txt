@@ -1,0 +1,7 @@
+https://download.unity3d.com/download_unity/0e25a174756c/builtin_shaders-2023.2.20f1.zip
+
+
+The URI pattern is always the same and built from the changeset number and the unity versionnumber
+eg according to the release notes the changeset for the current Unity 6000.0.5f1 version is 17028576122a ( see the end of the release notes ), so the URI string can be derived as follows:
+
+https://download.unity3d.com/download_unity/17028576122a/builtin_shaders-6000.0.5f1.zip
