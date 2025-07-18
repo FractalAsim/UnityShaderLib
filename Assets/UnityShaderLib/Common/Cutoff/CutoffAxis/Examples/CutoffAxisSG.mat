@@ -80,7 +80,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
-    - _Cutoff: 0.9921057
+    - _Cutoff: 0.21098387
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1

@@ -1,4 +1,4 @@
-Shader "Common/PlainColor"
+Shader "Basic/PlainColor"
 {
     Properties
     {
@@ -19,13 +19,13 @@ Shader "Common/PlainColor"
             // Input to Vertex Shader
             struct appdata
             {
-                float4 vertex : POSITION;
+                float4 pos : POSITION;
             };
 
             // Input to Fragment Shader
             struct v2f
             {
-                float4 vertex : SV_POSITION;
+                float4 pos : SV_POSITION;
             };
 
             float4 _Color;
@@ -33,7 +33,7 @@ Shader "Common/PlainColor"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos = UnityObjectToClipPos(v.pos);
                 return o;
             }
 
