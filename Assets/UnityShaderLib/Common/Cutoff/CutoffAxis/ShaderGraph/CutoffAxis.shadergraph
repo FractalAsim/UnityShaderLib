@@ -103,7 +103,11 @@
             "m_Id": "10d186c941314622bf6cd6d0359ab90c"
         }
     ],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "8e31daa33c1b4bf88be1a7a423a3229d"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -600,7 +604,7 @@
     "m_ObjectId": "10d186c941314622bf6cd6d0359ab90c",
     "m_Title": "World Pos Selection",
     "m_Position": {
-        "x": -2132.0,
+        "x": -2132.000244140625,
         "y": 285.5999755859375
     }
 }
@@ -1428,6 +1432,26 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "8e31daa33c1b4bf88be1a7a423a3229d",
+    "m_Title": "CutoffAxis",
+    "m_Content": "Shader that cuts off the fragment when it's position in a selected axis is above a certain value Interpolated though a range.",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -1899.199951171875,
+        "y": -136.0,
+        "width": 463.199951171875,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": ""
     }
 }
 

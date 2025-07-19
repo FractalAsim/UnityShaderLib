@@ -68,7 +68,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "f38f9492b8c14106b21a8d24f89b4d31"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -1374,6 +1378,26 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "f38f9492b8c14106b21a8d24f89b4d31",
+    "m_Title": "CutoffPlane",
+    "m_Content": "Shader that cuts off the fragment on one side of a plane",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -1585.5999755859375,
+        "y": -576.7999877929688,
+        "width": 436.0,
+        "height": 99.99996948242188
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
