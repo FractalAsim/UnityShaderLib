@@ -5,7 +5,7 @@ Shader "Common/UVScrolling"
     Properties
     {
        _MainTex ("Texture", 2D) = "white" {}
-       _UVScrollSpeed ("UVScrollSpeed", Vector) = (1,0,0,0)
+       [Vector2Drawer] _UVScrollSpeed ("UVScrollSpeed", Vector) = (1,0,0,0)
     }
     SubShader
     {
