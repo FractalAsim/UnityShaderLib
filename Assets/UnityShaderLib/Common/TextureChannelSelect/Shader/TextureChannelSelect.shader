@@ -1,9 +1,9 @@
-Shader "Common/UVScrolling"
+Shader "Common/TextureChannelSelect"
 {
     Properties
     {
        _MainTex ("Texture", 2D) = "white" {}
-       _UVScrollSpeed ("UVScrollSpeed", Vector) = (1,0,0,0)
+       _ChannelSelect ("ChannelSelect", Vector) = (1,0,0,0)
     }
     SubShader
     {
@@ -36,20 +36,20 @@ Shader "Common/UVScrolling"
             sampler2D _MainTex;
             float4 _MainTex_ST; // required for TRANSFORM_TEX
 
-            float4 _UVScrollSpeed;
+            float4 _ChannelSelect;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.pos);
-                o.uv = _Time.y * _UVScrollSpeed.xy + TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = dot(_ChannelSelect,tex2D(_MainTex, i.uv));
 
                 return col;
             }
