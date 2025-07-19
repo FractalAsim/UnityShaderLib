@@ -1,3 +1,5 @@
+// Technique Texture Channel Select Technique : Allow user to Select Channel of a texture using Dot Product
+
 Shader "Common/TextureChannelSelect"
 {
     Properties

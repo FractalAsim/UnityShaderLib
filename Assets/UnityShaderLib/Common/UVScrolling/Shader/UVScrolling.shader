@@ -1,3 +1,5 @@
+// Technique to animate the appearance (color) of a object by updating uvs of sampled texture
+
 Shader "Common/UVScrolling"
 {
     Properties

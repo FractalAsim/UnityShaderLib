@@ -59,7 +59,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "4d855d469cec4348866c94f2f4c5ca57"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -461,6 +465,26 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "4d855d469cec4348866c94f2f4c5ca57",
+    "m_Title": "VertexDisplacement",
+    "m_Content": "Technique to animate the appearance (shape) of a object by updating vertex position",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -526.4000244140625,
+        "y": -204.0,
+        "width": 472.0000305175781,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
     }
 }
 

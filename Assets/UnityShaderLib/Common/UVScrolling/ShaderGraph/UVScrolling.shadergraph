@@ -68,7 +68,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "4af1871eabd14c08ad9233af53acd405"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -777,6 +781,26 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "4af1871eabd14c08ad9233af53acd405",
+    "m_Title": "UVScrolling",
+    "m_Content": "Technique to animate the appearance (color) of a object by updating uvs of sampled texture",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -907.2000122070313,
+        "y": 7.200000762939453,
+        "width": 615.2000122070313,
+        "height": 99.99999237060547
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {

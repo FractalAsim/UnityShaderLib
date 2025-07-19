@@ -1,3 +1,5 @@
+// Technique to animate the appearance (shape) of a object by updating vertex position
+
 Shader "Common/Displacement"
 {
     Properties
