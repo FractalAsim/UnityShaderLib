@@ -5,7 +5,7 @@ Shader "Common/TextureChannelSelect"
     Properties
     {
        _MainTex ("Texture", 2D) = "white" {}
-       _ChannelSelect ("ChannelSelect", Vector) = (1,0,0,0)
+       [ChannelSelect] _ChannelSelect ("ChannelSelect", Vector) = (1,0,0,0)
     }
     SubShader
     {

@@ -40,7 +40,10 @@ Shader "Info/PropertyDrawers"
         // For Unity Internally use - Do not allow this texture property to be edited in the Inspector.
         //[NonModifiableTextureData]
 
-        [Vector4ChannelDrawer]  _UniqueVector2("_UniqueVector", Vector) = (1,1,1,1)
+        //[Vector4ChannelDrawer] _UniqueVector2("_UniqueVector", float) = 1
+
+        [ChannelSelect] _ChannelSelect("_ChannelSelect", Vector) = (1,1,1,1)
+
         
     }
     SubShader
