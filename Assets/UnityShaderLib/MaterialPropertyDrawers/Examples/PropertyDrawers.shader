@@ -8,7 +8,7 @@ Shader "Info/PropertyDrawers"
         [HideInInspector] _HiddenFloat("HiddenFloat",Float) = 0
 
         // Gives a Dropdown Selection
-        [Enum(RED, GREEN, BLUE)] _ColorSelect("Axis", Float) = 0
+        [Enum(RED,0, GREEN,1, BLUE,2)] _ColorSelect("Axis", Float) = 0
 
         // Gives a Dropdown Selection which is used to select the "shader keyword";Shader variant to be used for branching
         [KeywordEnum(X, Y, Z)] _AxisSelect("Axis", Float) = 0
