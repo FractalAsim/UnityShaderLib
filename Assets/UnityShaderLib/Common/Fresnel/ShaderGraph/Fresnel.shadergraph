@@ -95,9 +95,6 @@
     ],
     "m_StickyNoteDatas": [
         {
-            "m_Id": "46c6f53590ba437495ddf3bf7b26445e"
-        },
-        {
             "m_Id": "630bfccdaa4449c098648ced058b0edf"
         }
     ],
@@ -355,8 +352,8 @@
     "m_ObjectId": "061f6814d1a04cea97d723d04955a81f",
     "m_Title": "Empricial Approximation",
     "m_Position": {
-        "x": -2141.600341796875,
-        "y": -339.1999816894531
+        "x": -2141.0,
+        "y": -338.0
     }
 }
 
@@ -785,26 +782,6 @@
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
-    "m_ObjectId": "46c6f53590ba437495ddf3bf7b26445e",
-    "m_Title": "Schlick Approximation",
-    "m_Content": "R(θ) = R0 + (1 - R0)(1 - cosθ)5",
-    "m_TextSize": 0,
-    "m_Theme": 0,
-    "m_Position": {
-        "serializedVersion": "2",
-        "x": 1363.199951171875,
-        "y": -364.8000183105469,
-        "width": 389.60009765625,
-        "height": 160.0
-    },
-    "m_Group": {
-        "m_Id": ""
     }
 }
 

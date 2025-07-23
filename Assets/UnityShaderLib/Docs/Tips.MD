@@ -21,7 +21,10 @@ vec4 result3 = (value * -0.5) + 1.0;
 
 ```
 
+# 3. Use Saturate is more better than Clamp01
+The GPU perform Saturated better,
 
+# 4
 
 
 Math Tricks
