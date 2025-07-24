@@ -22,14 +22,32 @@ vec4 result3 = (value * -0.5) + 1.0;
 ```
 
 # 3. Use Saturate is more better than Clamp01
-The GPU perform Saturated better,
+The GPU may perform Saturated better due to have an intrinsic Instruction for it.
 
-# 4
+```
+Avoid Doing
+clamp(color,0,1)
+saturated(color)
+
+Instead Do
+pos.xy = in_pos.xy;
+
+```
 
 
-Math Tricks
+# 4. Use Frac on Time to wrap number to 0-1 to prevent large floating number inaccuracy
+```
+Avoid Doing
+speed = Time.y
 
-If you want to Sum Each Element of a Vec, Use Dot()
+Instead Do
+speed = frac(time.y)
+
+```
+
+
+Optimizations
+# 1. If you want to Sum Each Element of a Vec, Use Dot()
 
 ```
 Avoid Doing
@@ -41,9 +59,22 @@ vec4 fvalue = dot(fvalue2, AllOnes);
 ```
 
 
+# 2. Avoid Branching on dynamic values.
+Branching is expensive. Instead Use shader keywards and shader variants or masking via multiplication
+Try to see if you can convert the logic by using math functions (dot,step,sign,saturate) to return 0 or 1 and multiply to enable or disable.
 
+```
 
-1. Multiply scalar values before vector values
-2. Avoid Branching based on dynamic values
-3. beware of function overhead, discard() floor() etc.. check performance on renderer model (openGL, etc)
-4. Use Frame Debuggers to debug shaders
+Avoid Doing
+if(on)
+{
+    color = float4(1,0,0,0);
+}
+else
+{
+    color = float4(0,1,0,0);
+}
+
+Instead Do
+color = float4(on,1-on,0,0);
+```
