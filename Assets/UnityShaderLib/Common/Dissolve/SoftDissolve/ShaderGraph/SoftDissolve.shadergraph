@@ -74,7 +74,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "8cece15aecee45c59d97785d8b14b5c8"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -1226,6 +1230,26 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Position"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "8cece15aecee45c59d97785d8b14b5c8",
+    "m_Title": "SoftDissolve",
+    "m_Content": "Dissolve for transparent object with an additional edge width for alpha fading at texture edges",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -80.80000305175781,
+        "y": -51.20000076293945,
+        "width": 434.4000244140625,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
