@@ -978,7 +978,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "5fed9e8d51994276ba4559d802acf9ec",
     "m_Id": 0,
-    "m_DisplayName": "Feather",
+    "m_DisplayName": "EdgeWidth",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1062,10 +1062,10 @@
     "m_Guid": {
         "m_GuidSerialized": "8c7b6576-5a0c-4d57-abc1-50a5cc092cd2"
     },
-    "m_Name": "Feather",
+    "m_Name": "EdgeWidth",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Feather",
-    "m_DefaultReferenceName": "_Feather",
+    "m_RefNameGeneratedByDisplayName": "EdgeWidth",
+    "m_DefaultReferenceName": "_EdgeWidth",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
