@@ -95,10 +95,12 @@ Shader "Custom/Dissolve/Distance/Opaque" {
 
 			float l = length(_Center.xyz - IN.worldPos.xyz);
 			
-			clip(saturate(_Distance - l + (tex2D(_DissTexture, IN.uv_DissTexture) * _Interpolation * saturate(_Distance))) - 0.5);
+			clip(
+				saturate(_Distance - l + (tex2D(_DissTexture, IN.uv_DissTexture) * _Interpolation * saturate(_Distance))) - 0.5
+				);
 
 
-			fixed4 c = tex2D(_MetallicGlossMap, IN.uv_MainTex);
+			fixed4 c = tex2D(_MetallicGl ossMap, IN.uv_MainTex);
 			o.Metallic = c.r * _Metallic ;
 			o.Smoothness = _Glossiness * c.a;
 
