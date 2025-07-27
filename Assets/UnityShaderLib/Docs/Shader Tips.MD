@@ -78,3 +78,15 @@ else
 Instead Do
 color = float4(on,1-on,0,0);
 ```
+
+# 3. In a standard PBR shader, instead of the normal 3 texture channel packing. consider using 2 texture channel packing to save memeory/performance
+This can be done by the following
+1. Base/Albedo Texture alpha channel can be instead use to store roughness/smoothness values for opaque objects
+2. Normal Map z & w channel can be use to store some other value. You can use Normal.XY to recalculate Normal.Z. However this methodcauses lost of precision when using non-normal texture compression
+    1. Convert the map range from [0,1] to [-1,1]
+    2. Find out which RGBA channels is storing the x,y values of normals. (Note that different normal map encoding might stores in different RGBA)
+    3. Calculate z value = z = sqrt(x*x+y*y)l (pythagoras theorem)
+    4. Combine the values into a vector
+    5. Unity Shader Graph have a node "Normal Reconstruct Z" for this
+
+# 3. Consider using 
