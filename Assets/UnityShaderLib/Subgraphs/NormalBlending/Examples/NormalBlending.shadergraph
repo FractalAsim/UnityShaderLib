@@ -151,6 +151,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "b678708ad2434a5a86f22f24f340f48f"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "b86d6eba995c4cb3a37cea1f500ac5d5"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "bb4b487782e544fd98d72a4850056141"
                 },
                 "m_SlotId": 0
@@ -362,7 +376,7 @@
     "m_Title": "",
     "m_Position": {
         "x": -622.4000244140625,
-        "y": -82.4000244140625
+        "y": -82.39999389648438
     }
 }
 
@@ -482,7 +496,7 @@
         "m_Guid": ""
     },
     "isMainTexture": false,
-    "useTilingAndOffset": false,
+    "useTilingAndOffset": true,
     "useTexelSize": true,
     "m_Modifiable": true,
     "m_DefaultType": 0
@@ -1789,7 +1803,7 @@
         "m_Guid": ""
     },
     "isMainTexture": false,
-    "useTilingAndOffset": false,
+    "useTilingAndOffset": true,
     "useTexelSize": true,
     "m_Modifiable": true,
     "m_DefaultType": 0
@@ -2143,8 +2157,8 @@
     "m_ObjectId": "e3f7fca2ba944539af96b869be843749",
     "m_Title": "",
     "m_Position": {
-        "x": -622.4000854492188,
-        "y": 728.0000610351563
+        "x": -622.4000244140625,
+        "y": 728.0
     }
 }
 

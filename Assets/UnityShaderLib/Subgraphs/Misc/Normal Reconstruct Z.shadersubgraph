@@ -41,7 +41,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "f1f3f24d8e52431187ad618977afdc03"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -1033,6 +1037,26 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "f1f3f24d8e52431187ad618977afdc03",
+    "m_Title": "Normal Reconstruct Z",
+    "m_Content": "Calculates Normal.z from Normal.xy",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -468.0,
+        "y": -385.6000061035156,
+        "width": 267.20001220703127,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
     }
 }
 
