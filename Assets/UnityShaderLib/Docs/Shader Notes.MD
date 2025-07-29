@@ -6,3 +6,6 @@ Do benchmarkto find out.
 For more advanced users, you need to use frame debuggeres to debug.
 
 ## beware of function overhead, discard() floor() etc.. check performance on renderer model (openGL, etc)
+
+
+## Use DDX & DDY on UVs to Sampling Texture to avoid the issue of sampling hard seams because of a large discontinuity in the mip values of the texture coordinates.
