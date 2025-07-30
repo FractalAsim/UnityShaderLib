@@ -13,6 +13,8 @@ pos.xy = in_pos.xy;
 # 2. Use MAD to possible save instruction count due to SIMD. 
 You can save instruction counts when doing math by having a Multiply+Add on a single line. The GPU might execute this in one operation instead of doing each math operation.
 
+# 3. If you are performing operations of each RGB channel, and doing a multiple add. Consider using Dot product
+
 
 ```
 Avoid using divide and use Multiply, As Some Compiler automatically optimizes this and converts to multiply, but some dont
