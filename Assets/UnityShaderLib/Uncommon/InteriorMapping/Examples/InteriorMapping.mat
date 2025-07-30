@@ -37,15 +37,31 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Cubemap:
-        m_Texture: {fileID: 8900000, guid: 30a935b668ebb8340b436e9aecfa793e, type: 3}
+        m_Texture: {fileID: 8900000, guid: bfa21e80e1c1ccb4093926638b074ee4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Exterior:
+        m_Texture: {fileID: 2800000, guid: c74db6b13ac993b419d84879f8a597ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Interior:
+        m_Texture: {fileID: 8900000, guid: ebed79ba836b6b74bbe58f7c9af4c312, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
         m_Texture: {fileID: 2800000, guid: af1f03ee59b456c48b1075d376b47dcb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_20d57a2900a940d3a70e9db89db0e4bd_Cube_1_Cubemap:
+        m_Texture: {fileID: 8900000, guid: b8b3d5011b9664b4faafbea0af0509df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleCubemap_88d800db74254c7283b85fd8dc9d0112_Cube_1_Cubemap:
         m_Texture: {fileID: 8900000, guid: bfa21e80e1c1ccb4093926638b074ee4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_57d395e6c7784a39995bc5f27cd6beb1_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: e1a713287777fb744afed1b1e31006ce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_c5821698ef904462997f98a502479df4_Texture_1_Texture2D:
@@ -57,7 +73,9 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BandCount: 5
+    - _Rooms: 4
     m_Colors:
+    - _Rooms: {r: 4, g: 4, b: 4, a: 0}
     - _Vector2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
