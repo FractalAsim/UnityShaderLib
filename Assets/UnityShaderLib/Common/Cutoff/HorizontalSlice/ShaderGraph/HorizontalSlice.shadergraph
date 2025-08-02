@@ -59,9 +59,6 @@
         },
         {
             "m_Id": "cc6bdd73a9264e1a9fa4e2882ce17875"
-        },
-        {
-            "m_Id": "f17f6a4f131540959de8d8cf1a2c58a0"
         }
     ],
     "m_GroupDatas": [
@@ -76,9 +73,6 @@
         }
     ],
     "m_StickyNoteDatas": [
-        {
-            "m_Id": "8e31daa33c1b4bf88be1a7a423a3229d"
-        },
         {
             "m_Id": "47fc563a06694b74bfc738fa8d5fd536"
         }
@@ -213,8 +207,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 93.59996032714844,
-            "y": -156.80001831054688
+            "x": -218.00006103515626,
+            "y": -157.00001525878907
         },
         "m_Blocks": [
             {
@@ -230,8 +224,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 93.59996032714844,
-            "y": 106.39999389648438
+            "x": -218.00006103515626,
+            "y": 106.00000762939453
         },
         "m_Blocks": [
             {
@@ -347,8 +341,8 @@
     "m_ObjectId": "0e263c8cdb3e47ad81cba695335833f1",
     "m_Title": "Add SliceAmt",
     "m_Position": {
-        "x": -1299.199951171875,
-        "y": 75.20000457763672
+        "x": -1298.9998779296875,
+        "y": 76.0
     }
 }
 
@@ -476,30 +470,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Tangent"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
-    "m_ObjectId": "43dd71991d0243bdbe6de48646971f32",
-    "m_Id": 1,
-    "m_DisplayName": "B",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "B",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": -1.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    }
 }
 
 {
@@ -855,8 +825,8 @@
     "m_ObjectId": "845faf6159674f42b0667fc53fa03f01",
     "m_Title": "Shift Starting Point (0)",
     "m_Position": {
-        "x": -1585.5999755859375,
-        "y": -79.19999694824219
+        "x": -1585.0,
+        "y": -78.00001525878906
     }
 }
 
@@ -929,26 +899,6 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
-    "m_ObjectId": "8e31daa33c1b4bf88be1a7a423a3229d",
-    "m_Title": "CutoffAxis",
-    "m_Content": "Shader that cuts off the fragment when it's position in a selected axis is above a certain value Interpolated though a range.",
-    "m_TextSize": 0,
-    "m_Theme": 0,
-    "m_Position": {
-        "serializedVersion": "2",
-        "x": -2456.0,
-        "y": -345.0,
-        "width": 463.0,
-        "height": 160.0
-    },
-    "m_Group": {
-        "m_Id": ""
     }
 }
 
@@ -1059,30 +1009,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
-    "m_ObjectId": "ae7f2293164348cf88da3439e34cabed",
-    "m_Id": 0,
-    "m_DisplayName": "A",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "A",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "b0fde84680b14d6598506debb998f5d3",
     "m_Id": 4,
@@ -1165,32 +1091,8 @@
     "m_ObjectId": "b7f0b3bcfb2a4690a400e10b8d611542",
     "m_Title": "Perform Cut",
     "m_Position": {
-        "x": -884.7999877929688,
-        "y": 75.20001220703125
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
-    "m_ObjectId": "b9366eb80d0a45c28aa63a5d4d3bb9be",
-    "m_Id": 2,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
+        "x": -884.0,
+        "y": 76.0
     }
 }
 
@@ -1631,45 +1533,6 @@
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.MaximumNode",
-    "m_ObjectId": "f17f6a4f131540959de8d8cf1a2c58a0",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Maximum",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 67.1999282836914,
-            "y": 564.800048828125,
-            "width": 208.00003051757813,
-            "height": 301.5999755859375
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "ae7f2293164348cf88da3439e34cabed"
-        },
-        {
-            "m_Id": "43dd71991d0243bdbe6de48646971f32"
-        },
-        {
-            "m_Id": "b9366eb80d0a45c28aa63a5d4d3bb9be"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
     }
 }
 
