@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ColorBandingSG
-  m_Shader: {fileID: -6465566751694194690, guid: 9f5bf3b4a2eeeee439f3761f8168b844, type: 3}
+  m_Name: ColorBanding
+  m_Shader: {fileID: 4800000, guid: 7ecda3376adc6474299211e6cd7d75c6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
