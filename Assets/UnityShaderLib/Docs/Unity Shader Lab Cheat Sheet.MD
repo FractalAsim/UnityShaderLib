@@ -76,6 +76,11 @@
 - float4 unity_CameraWorldClipPlanes[6] : Camera frustum (left,right,bot,top,near,far)
 - float4 _WorldSpaceLightPos0 : first light inscene info (worldpos,1) or (dir,0)
 
+# Unity Shader Constants In UnityCG.cginc
+- UNITY_PI, UNITY_TWO_PI, UNITY_FOUR_PI, UNITY_HALF_PI
+- UNITY_HALF_MIN
+
+
 # Unity Shader Functions In UnityCG.cginc
 - TRANSFORM_TEX(uv,texturename)
     - Function to update UVs to have two additional "Tilling" and "Offset" configuration to the texture input.
@@ -89,3 +94,38 @@
     - decode hdr
 - LinearEyeDepth(depthtexture.uv) / Linear01Depth(depthtexture.uv)
     - converts z buffer to linear depth
+
+
+# Unity Shader Structs in UnityCG.cginc
+
+```
+struct appdata_base {
+    float4 vertex : POSITION;
+    float3 normal : NORMAL;
+    float4 texcoord : TEXCOORD0;
+    UNITY_VERTEX_INPUT_INSTANCE_ID
+};
+```
+
+```
+struct appdata_tan {
+    float4 vertex : POSITION;
+    float4 tangent : TANGENT;
+    float3 normal : NORMAL;
+    float4 texcoord : TEXCOORD0;
+    UNITY_VERTEX_INPUT_INSTANCE_ID
+};
+```
+
+```
+struct appdata_full {
+    float4 vertex : POSITION;
+    float4 tangent : TANGENT;
+    float3 normal : NORMAL;
+    float4 texcoord : TEXCOORD0;
+    float4 texcoord1 : TEXCOORD1;
+    float4 texcoord2 : TEXCOORD2;
+    float4 texcoord3 : TEXCOORD3;
+    float4 color : COLOR;
+};
+```
