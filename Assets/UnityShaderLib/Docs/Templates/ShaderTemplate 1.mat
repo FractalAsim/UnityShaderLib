@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShaderLabTemplate
-  m_Shader: {fileID: 4800000, guid: 42973962e8b051f45ad089f935e7b6ef, type: 3}
+  m_Name: ShaderTemplate 1
+  m_Shader: {fileID: 4800000, guid: 7fb031bd4af8b7944bf296a0eb302f3a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

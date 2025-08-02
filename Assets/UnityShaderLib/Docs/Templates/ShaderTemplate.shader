@@ -1,4 +1,4 @@
-Shader "ShaderLabTemplate"
+Shader "ShaderTemplate"
 {
     Properties
     {
