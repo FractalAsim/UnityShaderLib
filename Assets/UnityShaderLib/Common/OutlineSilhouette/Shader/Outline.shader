@@ -6,7 +6,6 @@ Shader "Common/Outline"
 		_MainTex("Texture", 2D) = "white" {}
         _OutlineColor("Outline Color", Color) = (1,0,0,1)
         _OutlineWidth("Outlines width", Range(0.0, 2.0)) = 0.15
-
         _Angle("Switch shader on angle", Range(0.0, 180.0)) = 89
     }
     SubShader
