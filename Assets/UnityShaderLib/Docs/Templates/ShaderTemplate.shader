@@ -89,17 +89,13 @@ Shader "ShaderTemplate"
             }
 
             [maxvertexcount(3)]
-            void geo(triangle v2g input[3], inout TriangleStream<g2f> triStream)
+            void geo(triangle v2g i[3],
+                inout TriangleStream<g2f> OutputStream) // PointStream, LineStream , TriangleStream
             {
-                float3 offset = float3(0, 0.1, 0); // move triangle up
-
-                for (int i = 0; i < 3; i++)
-                {
-                    g2f o;
-                    o.pos = input[i].pos;
-                    o.pos.xyz += offset;
-                    triStream.Append(o);
-                }
+                // Pass though to frag shader
+                OutputStream.Append(i[0]);
+                OutputStream.Append(i[1]);
+                OutputStream.Append(i[2]);
             }
 
             fixed4 frag (v2f i) : SV_Target
