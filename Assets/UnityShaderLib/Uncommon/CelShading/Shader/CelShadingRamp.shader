@@ -27,7 +27,6 @@ Shader "Common/CelShadingRamp"
             struct appdata
             {
                 float4 pos : POSITION;
-                float4 normal : NORMAL;
             };
 
             // Input to Fragment Shader

@@ -50,7 +50,8 @@ Shader "Basic/FlatShadingFrag"
                 float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
                 float NdotL = max(dot(normal, lightDir), 0.0);
 
-                return _LightColor0 * NdotL;
+                fixed4 col = _LightColor0 * NdotL;
+                return col;
             }
 
             ENDCG
