@@ -61,9 +61,6 @@
             "m_Id": "7f26e47c9a154140a332df3b2d595e08"
         },
         {
-            "m_Id": "224bf2a220fe44b080f663953756b5bd"
-        },
-        {
             "m_Id": "59db46673d4f4fe89f85f8cb179ed218"
         }
     ],
@@ -364,43 +361,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.CubemapAssetNode",
-    "m_ObjectId": "224bf2a220fe44b080f663953756b5bd",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Cubemap Asset",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -893.0,
-            "y": -579.0000610351563,
-            "width": 128.99993896484376,
-            "height": 34.00006103515625
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "64a0b797abe54866b853b86ab0b9fc0a"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Cubemap": {
-        "m_SerializedCubemap": "{\"cubemap\":{\"fileID\":8900000,\"guid\":\"b8b3d5011b9664b4faafbea0af0509df\",\"type\":3}}",
-        "m_Guid": ""
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.NormalMaterialSlot",
     "m_ObjectId": "230b91f03cae4f11b85359b98a49d06c",
     "m_Id": 0,
@@ -682,19 +642,6 @@
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.CubemapMaterialSlot",
-    "m_ObjectId": "64a0b797abe54866b853b86ab0b9fc0a",
-    "m_Id": 0,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_BareResource": false
 }
 
 {
