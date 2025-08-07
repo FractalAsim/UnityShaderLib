@@ -326,7 +326,7 @@ MonoBehaviour:
       type: {class: LookDevVolumeProfileSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Version: 0
-        m_VolumeProfile: {fileID: 11400000, guid: e234d65b7b35b6e4fb45c4511cecd63f, type: 2}
+        m_VolumeProfile: {fileID: 11400000, guid: 0ac4f4d6755de274aa915a91213e116a, type: 2}
     - rid: 280661418710925509
       type: {class: DiffusionProfileDefaultSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
@@ -740,7 +740,7 @@ MonoBehaviour:
       type: {class: HDRPDefaultVolumeProfileSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Version: 0
-        m_VolumeProfile: {fileID: 11400000, guid: 0752354ec29ebbb429550a6b2aec225f, type: 2}
+        m_VolumeProfile: {fileID: 11400000, guid: 80ebfdf6d70503e4b992ced24a52fd12, type: 2}
     - rid: 280661418710925522
       type: {class: HDRenderingLayersLimitSettings, ns: UnityEditor.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Editor}
       data:
