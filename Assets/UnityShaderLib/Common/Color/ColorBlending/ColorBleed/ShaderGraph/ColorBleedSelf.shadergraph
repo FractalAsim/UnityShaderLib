@@ -430,7 +430,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "37673853e3c04fd993c12d81b8ca595a",
-    "m_Title": "ColorBleed",
+    "m_Title": "ColorBleedSelf",
     "m_Content": "mix = col.gbr + col.brg\ncol.rgb += mix*mix*strength",
     "m_TextSize": 0,
     "m_Theme": 0,
