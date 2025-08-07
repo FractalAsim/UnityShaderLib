@@ -2440,6 +2440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 283290281}
   - component: {fileID: 283290280}
+  - component: {fileID: 283290282}
   m_Layer: 0
   m_Name: CustomPass
   m_TagString: Untagged
@@ -2459,13 +2460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
+  m_IsGlobal: 0
   fadeRadius: 0
   priority: 0
   customPasses:
   - rid: 280661491946356928
   - rid: 280661491946356929
-  injectionPoint: 2
+  injectionPoint: 3
   m_TargetCamera: {fileID: 0}
   useTargetCamera: 0
   references:
@@ -2481,7 +2482,7 @@ MonoBehaviour:
         clearFlags: 1
         passFoldout: 0
         m_Version: 0
-        fullscreenPassMaterial: {fileID: 2100000, guid: 0690346ed49fa6a45a21c419c8036701, type: 2}
+        fullscreenPassMaterial: {fileID: 2100000, guid: e7abe935f80d99e47847197c7bf0fde2, type: 2}
         materialPassIndex: 0
         materialPassName: Custom Pass 0
         fetchColorBuffer: 0
@@ -2489,13 +2490,13 @@ MonoBehaviour:
       type: {class: FullScreenCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Name: Custom Pass
-        enabled: 0
+        enabled: 1
         targetColorBuffer: 0
         targetDepthBuffer: 2
         clearFlags: 0
         passFoldout: 0
         m_Version: 0
-        fullscreenPassMaterial: {fileID: 2100000, guid: cba8976842dcc624fb9333a4a3814a15, type: 2}
+        fullscreenPassMaterial: {fileID: 2100000, guid: 4ae3721a12c606144a194a1fe84fcf97, type: 2}
         materialPassIndex: 0
         materialPassName: Custom Pass 0
         fetchColorBuffer: 0
@@ -2508,12 +2509,33 @@ Transform:
   m_GameObject: {fileID: 283290279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.27156, y: 3.2287, z: -3.17928}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &283290282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283290279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.044294, y: 2.39033, z: 3.072703}
+  m_Center: {x: -0.1256926, y: -0.91774595, z: -1.5792797}
 --- !u!1001 &286860035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16365,7 +16387,7 @@ MonoBehaviour:
     invertFade: 0
     distanceFadeStart: 50
     distanceFadeEnd: 60
-    textureOffset: {x: -0, y: -35.09881, z: -0}
+    textureOffset: {x: -0, y: -276.22913, z: -0}
     falloffMode: 0
     maskMode: 0
     materialMask: {fileID: 0}
