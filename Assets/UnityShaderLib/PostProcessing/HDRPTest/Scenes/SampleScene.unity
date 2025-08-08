@@ -2440,7 +2440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 283290281}
   - component: {fileID: 283290280}
-  - component: {fileID: 283290282}
   m_Layer: 0
   m_Name: CustomPass
   m_TagString: Untagged
@@ -2460,7 +2459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 0
+  m_IsGlobal: 1
   fadeRadius: 0
   priority: 0
   customPasses:
@@ -2515,27 +2514,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &283290282
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283290279}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.044294, y: 2.39033, z: 3.072703}
-  m_Center: {x: -0.1256926, y: -0.91774595, z: -1.5792797}
 --- !u!1001 &286860035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16387,7 +16365,7 @@ MonoBehaviour:
     invertFade: 0
     distanceFadeStart: 50
     distanceFadeEnd: 60
-    textureOffset: {x: -0, y: -276.22913, z: -0}
+    textureOffset: {x: -0, y: -1.175401, z: -0}
     falloffMode: 0
     maskMode: 0
     materialMask: {fileID: 0}
