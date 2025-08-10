@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Write
-  m_Shader: {fileID: -6465566751694194690, guid: dfb53c868b4266943bd377ccd8edc56c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: d92c3ff9f41e4a3449e11312f83a955e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -114,6 +114,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_dcb8c295198949babb229cf66e98b309_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 7aa6d30a4f4dd5247831d475fe0f4fc1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -156,7 +160,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
-    - _Blur: 1
+    - _Blur: -2
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2

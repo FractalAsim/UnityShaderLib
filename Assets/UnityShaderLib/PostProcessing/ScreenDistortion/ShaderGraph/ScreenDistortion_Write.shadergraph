@@ -77,7 +77,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "82bc8f8f6cdf4430b318c0314577ab1c"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -1498,6 +1502,26 @@
     "m_ShaderOutputName": "Sampler",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "82bc8f8f6cdf4430b318c0314577ab1c",
+    "m_Title": "ScreenDistortion",
+    "m_Content": "1. Use Noise texture to sample some noise\n2. Animate Noise\n3. Noise is use to add onto the coord used to sample the Screen/Scene/Texture",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -1156.0,
+        "y": 24.0,
+        "width": 316.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
