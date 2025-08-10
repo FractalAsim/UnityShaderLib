@@ -160,7 +160,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
-    - _Blur: -2
+    - _Blur: 6.7
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2
