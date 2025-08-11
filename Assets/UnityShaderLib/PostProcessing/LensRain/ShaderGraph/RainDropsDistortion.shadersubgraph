@@ -1560,8 +1560,8 @@
     "m_ObjectId": "5bd7038fb6ea41778fb9d8eb25849cf6",
     "m_Title": "Get Static Drops",
     "m_Position": {
-        "x": 449.0,
-        "y": 943.0
+        "x": 447.9998779296875,
+        "y": 941.5999755859375
     }
 }
 
@@ -1698,8 +1698,8 @@
     "m_ObjectId": "6001c13d83184dd68d8b321fd3088175",
     "m_Title": "Animate Mask",
     "m_Position": {
-        "x": -641.0001220703125,
-        "y": 530.0
+        "x": -641.6000366210938,
+        "y": 528.7999267578125
     }
 }
 
@@ -2369,10 +2369,10 @@
             "m_Id": "6cbdb710291e4b9ebb2b2f6daaeee12b"
         },
         {
-            "m_Id": "75a88b27737b47ef97353b5544b8771c"
+            "m_Id": "393664eb38464ea89f4ccb033b5f3714"
         },
         {
-            "m_Id": "393664eb38464ea89f4ccb033b5f3714"
+            "m_Id": "75a88b27737b47ef97353b5544b8771c"
         }
     ]
 }
@@ -2457,8 +2457,8 @@
     "m_ObjectId": "a24e3a12ac5341fd9212495a9718918a",
     "m_Title": "Combine Animated Drops with Static Drops",
     "m_Position": {
-        "x": 1058.0,
-        "y": 923.0001831054688
+        "x": 1057.5997314453125,
+        "y": 921.5999755859375
     }
 }
 
@@ -3050,8 +3050,8 @@
     "m_ObjectId": "d3e202a3484b4756a001fbcf616339c5",
     "m_Title": "Apply Animated Mask to Static Mask",
     "m_Position": {
-        "x": 577.0,
-        "y": 507.0000915527344
+        "x": 575.9998779296875,
+        "y": 506.39990234375
     }
 }
 
@@ -3061,8 +3061,8 @@
     "m_ObjectId": "d734ad1b36c44ad8b5361f6d3b8d45ac",
     "m_Title": "Apply Scale",
     "m_Position": {
-        "x": -928.0001220703125,
-        "y": 34.000003814697269
+        "x": -928.7999877929688,
+        "y": 32.80000686645508
     }
 }
 
@@ -3096,8 +3096,8 @@
     "m_ObjectId": "dbf232ded6394a7b9819d6479b0fd87e",
     "m_Title": "Apply Mask to Coords",
     "m_Position": {
-        "x": 1287.0,
-        "y": 58.000057220458987
+        "x": 1286.39990234375,
+        "y": 56.80000686645508
     }
 }
 

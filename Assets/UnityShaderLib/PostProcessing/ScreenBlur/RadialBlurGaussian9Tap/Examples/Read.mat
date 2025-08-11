@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2522397648533552278
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 13
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +23,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Write
-  m_Shader: {fileID: -6465566751694194690, guid: fdcfdd48f71c31c448e6825f58973a84, type: 3}
+  m_Name: Read
+  m_Shader: {fileID: -6465566751694194690, guid: 2c14d6cd5df831641bc232e260ff8760, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -78,56 +94,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Noise:
-        m_Texture: {fileID: 2800000, guid: 7aa6d30a4f4dd5247831d475fe0f4fc1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RainDripsDistortion_a2e61bdf67d848488fd477923cc68cb4_Mask_3341168410_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 0b7310214cc1d7d46974e5b0db49b010, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RainDripsDistortion_a2e61bdf67d848488fd477923cc68cb4_RainTex_4249527806_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6439cc06aa407dd4bb05b8ee2dd6e44b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RainDrips_a2e61bdf67d848488fd477923cc68cb4_Mask_3341168410_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 0b7310214cc1d7d46974e5b0db49b010, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RainDrips_a2e61bdf67d848488fd477923cc68cb4_RainTex_4249527806_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6439cc06aa407dd4bb05b8ee2dd6e44b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RainDropsDistortion_fbc4b6250291403fa3ad58adb64b47fe_RainTex_4249527806_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 546aed6a00b07c54ba92a882559431b4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_3ad7d9c767c84d2d8374b346c1864cd4_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6439cc06aa407dd4bb05b8ee2dd6e44b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_5b11a45c31da432390ccc4e1679cb5ee_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 0b7310214cc1d7d46974e5b0db49b010, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_88c484a94c9e489ab0953776563917a7_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: f4fdb08c68e46554abcd8b169585ae22, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_8ab6b6e7b28d44f9a62bea7c1f6e6706_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 7aa6d30a4f4dd5247831d475fe0f4fc1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_d5d69c0d81534bad8cf7fb718d8576de_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 7aa6d30a4f4dd5247831d475fe0f4fc1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularColorMap:
@@ -304,19 +276,3 @@ Material:
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &643413074762298507
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 13
-  hdPluginSubTargetMaterialVersions:
-    m_Keys: []
-    m_Values: 
