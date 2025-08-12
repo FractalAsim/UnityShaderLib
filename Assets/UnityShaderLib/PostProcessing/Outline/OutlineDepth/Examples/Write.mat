@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Write
-  m_Shader: {fileID: -6465566751694194690, guid: 6cd63f58c30954e4f8393de714fd6a9e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0174a0400a917144a91d3ed115592cb3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -47,6 +47,7 @@ Material:
     - _Bloom: 0
     - _Brightness: 0.05
     - _Cutoff: 0.8
+    - _Float: 1
     - _GlowBrightness: 0.05
     - _GlowCutoff: 0.6
     - _GlowLOD: 5
@@ -54,7 +55,11 @@ Material:
     - _HazeCutoff: 0
     - _HazeLOD: 7
     - _LOD: 2
-    m_Colors: []
+    - _OutlineThickness: 1.35
+    - _S: 0.288
+    - _t: 0.000868
+    m_Colors:
+    - _OutlineColor: {r: 1, g: 0.15225333, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &643413074762298507
