@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PropertyDrawers
+  m_Name: MaterialPropertyDrawers
   m_Shader: {fileID: 4800000, guid: 5bc1c5a3eb253ad4bbc744683a9d17f3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

@@ -1,6 +1,6 @@
 // Info: Property Drawers For Materials/Shaders
 
-Shader "Info/PropertyDrawers"
+Shader "PropertyDrawersTemplate"
 {
     Properties
     {
@@ -20,16 +20,16 @@ Shader "Info/PropertyDrawers"
         [IntRange] _Power ("IntRange", Range (0, 10)) = 00
 
         // Gives a Normal float Slider
-       _Blend ("Blend", Range(0, 1)) = 0
+        _Blend ("Blend", Range(0, 1)) = 0
 
         // Gives a Slider with large increase near end
         [PowerSlider(3.0)] _Shininess ("Shininess", Range (0, 1)) = 0
 
-       // Gives a HDR Color picker
-       [HDR] _HDRColor("_HDRColor", Color) = (1,1,1,1)
+        // Gives a HDR Color picker
+        [HDR] _HDRColor("_HDRColor", Color) = (1,1,1,1)
 
-       // Mark this as gamma color space, and should not be gamma corrected
-       [Gamma] _GammaColor("_GammaColor", Color) = (1,1,1,1)
+        // Mark this as gamma color space, and should not be gamma corrected
+        [Gamma] _GammaColor("_GammaColor", Color) = (1,1,1,1)
 
         // Inspector for this texture will not include tilling and offset (for ST). Use mostly for normal maps
         [NoScaleOffset] _NormalMap ("Normal Map", 2D) = "bump" {}
@@ -41,10 +41,6 @@ Shader "Info/PropertyDrawers"
         //[NonModifiableTextureData]
 
         //[Vector4ChannelDrawer] _UniqueVector2("_UniqueVector", float) = 1
-
-        [ChannelSelect] _ChannelSelect("_ChannelSelect", Vector) = (1,1,1,1)
-
-        
     }
     SubShader
     {
