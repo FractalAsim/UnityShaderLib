@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Flow
+  m_Name: FlowMap
   m_Shader: {fileID: 4800000, guid: 9180085a5d6c6644aa53eda2ddfa9165, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -56,12 +56,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: ecd5936d804ba51468a13d5618820452, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _FlowTex:
-        m_Texture: {fileID: 2800000, guid: 215de1c14ea113b49bd8ff993d47db0d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 12e652cbfe0ff0c4b95501fbff80356c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 583384ba064432b41891bec94e35c8af, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9b686f46572d83e43920b793564764c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -109,6 +113,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlowSpeed: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Speed: {r: 0.1, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
