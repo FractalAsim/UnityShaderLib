@@ -1086,7 +1086,7 @@
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "cd16254b45bf4cb38b491903a07edb59",
     "m_Title": "NTSC 1953 colorimetry",
-    "m_Content": "RGB to YIQ\nY = 0.299 , 0.587 , 0.114\nI = 0.5959 , -0.2746 , -0.3213\nQ = 0.2115 , -0.5227 , 0.3112\n\nYIQ to RGB\nR = 1 , 0.956 , 0.619\nG = 1 , -0.272 , -0.647\nB = 1, -1.106 , 1.703",
+    "m_Content": "Y = Luminace/Brightness\nIQ = Chromiance\n\nRGB to YIQ\nY = 0.299 , 0.587 , 0.114\nI = 0.5959 , -0.2746 , -0.3213\nQ = 0.2115 , -0.5227 , 0.3112\n\nYIQ to RGB\nR = 1 , 0.956 , 0.619\nG = 1 , -0.272 , -0.647\nB = 1, -1.106 , 1.703",
     "m_TextSize": 0,
     "m_Theme": 0,
     "m_Position": {

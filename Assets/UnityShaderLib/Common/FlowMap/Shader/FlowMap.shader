@@ -32,7 +32,7 @@ Shader "Common/FlowMap"
             struct v2f
             {
                 float4 pos : SV_POSITION;
-                float4 uv : TEXCOORD0;
+                float2 uv : TEXCOORD0;
             };
 
             sampler2D _MainTex;
@@ -44,10 +44,7 @@ Shader "Common/FlowMap"
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.pos);
-
-                o.uv.xy = v.uv;
-                o.uv.zw = v.uv;
-
+                o.uv = v.uv;
                 return o;
             }
 
