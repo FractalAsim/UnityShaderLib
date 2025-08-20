@@ -22,6 +22,7 @@ Shader "Common/HSVShift"
 
             #include "UnityCG.cginc"
             #include "Assets/UnityShaderLib/Subgraphs/Color/Color.cginc"
+            #include "Assets/UnityShaderLib/Subgraphs/Easing/Easing.cginc"
 
             // Input to Vertex Shader
             struct appdata
@@ -64,6 +65,7 @@ Shader "Common/HSVShift"
 
                 // 3. Convert back to RGB
                 float3 rgb = HSVToRGB(hsv);
+                Linear(1);
 
                 col.rgb = rgb;
 
