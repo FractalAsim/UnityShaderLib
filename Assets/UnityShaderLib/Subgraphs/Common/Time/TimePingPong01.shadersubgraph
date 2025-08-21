@@ -380,10 +380,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 132.0,
+            "x": 109.0,
             "y": -108.0,
             "width": 208.0,
-            "height": 301.60003662109377
+            "height": 302.0
         }
     },
     "m_Slots": [
@@ -414,21 +414,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "9117ce44b7d546f3af1112b7ce1d2392",
-    "m_Id": 1,
-    "m_DisplayName": "Time01",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Time01",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "b960e74153a8412b940ab8634d8d26cc",
     "m_Id": 3,
     "m_DisplayName": "Delta Time",
@@ -453,10 +438,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -168.0,
+            "x": -179.0,
             "y": -108.0,
             "width": 208.0,
-            "height": 301.5999755859375
+            "height": 302.0
         }
     },
     "m_Slots": [
@@ -482,6 +467,21 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "e2e14192a9364fe18b0f21e85ad447cd",
+    "m_Id": 1,
+    "m_DisplayName": "Float01",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Float01",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -543,15 +543,15 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 378.4000244140625,
+            "x": 340.0,
             "y": -108.0,
-            "width": 92.0,
-            "height": 76.79998779296875
+            "width": 91.0,
+            "height": 77.0
         }
     },
     "m_Slots": [
         {
-            "m_Id": "9117ce44b7d546f3af1112b7ce1d2392"
+            "m_Id": "e2e14192a9364fe18b0f21e85ad447cd"
         }
     ],
     "synonyms": [],
