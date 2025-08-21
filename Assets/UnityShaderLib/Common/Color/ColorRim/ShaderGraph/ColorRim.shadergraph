@@ -737,7 +737,7 @@
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "96e64ffad7d4409eb8c36ada5dbaa425",
     "m_Title": "ColorRim",
-    "m_Content": "Just Apply Fresnel Effect and add to emmisive\n",
+    "m_Content": "Just Apply Fresnel Effect and add to emmisive\n\nGood for Rounded Objects\n",
     "m_TextSize": 0,
     "m_Theme": 0,
     "m_Position": {
