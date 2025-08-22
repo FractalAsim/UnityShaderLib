@@ -66,7 +66,11 @@
             "m_Id": "87864e34c93b494a91f87f70a4e56ca9"
         }
     ],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "3543047f6b094e5ebc2aef2f2a47ecbf"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -202,7 +206,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Sub Graphs",
+    "m_Path": "UV",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 1,
     "m_OutputNode": {
@@ -466,6 +470,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "3543047f6b094e5ebc2aef2f2a47ecbf",
+    "m_Title": "UVTransform",
+    "m_Content": "Apply Translate,Rotate,Scale to UV",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": 208.0,
+        "y": 19.0,
+        "width": 200.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SubGraphOutputNode",
     "m_ObjectId": "3912dedb55cf46d8800d43ccf71c1e39",
     "m_Group": {
@@ -646,8 +670,8 @@
     "m_ObjectId": "87864e34c93b494a91f87f70a4e56ca9",
     "m_Title": "Scale at 0,0",
     "m_Position": {
-        "x": 93.60003662109375,
-        "y": 167.19996643066407
+        "x": 94.0,
+        "y": 168.0
     }
 }
 
@@ -856,8 +880,8 @@
     "m_ObjectId": "ba0299f3fb9641f29240159b6dabd2c2",
     "m_Title": "Translate",
     "m_Position": {
-        "x": 486.400146484375,
-        "y": 165.60000610351563
+        "x": 487.0,
+        "y": 167.0
     }
 }
 
@@ -936,8 +960,8 @@
     "m_ObjectId": "c28a356954a14c45860aa7161098f4ee",
     "m_Title": "Rotate at Pivot",
     "m_Position": {
-        "x": -421.6000061035156,
-        "y": 164.0
+        "x": -421.0,
+        "y": 165.0
     }
 }
 

@@ -77,7 +77,11 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "632fc82eff3049058760791076e2b326"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -395,7 +399,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Sub Graphs",
+    "m_Path": "UV",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -678,7 +682,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "TransformUV",
+    "m_Name": "UVTransform",
     "m_DrawState": {
         "m_Expanded": false,
         "m_Position": {
@@ -1409,6 +1413,26 @@
         "y": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "632fc82eff3049058760791076e2b326",
+    "m_Title": "UVRandomTransform",
+    "m_Content": "Randomly Translate,Scale,Rotate UV\n",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -700.0,
+        "y": -133.0,
+        "width": 266.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
