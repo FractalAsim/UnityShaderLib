@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test
+  m_Name: Test0
   m_Shader: {fileID: 4800000, guid: e2bddd2a25bf15546a674644e86832e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -104,8 +104,8 @@ Material:
     - _ZWrite: 1
     - _a: 0
     - _f: 0
-    - _f1: 0.56
-    - _f2: 5
+    - _f1: 1.07
+    - _f2: 7.49
     - _f3: 2.67
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

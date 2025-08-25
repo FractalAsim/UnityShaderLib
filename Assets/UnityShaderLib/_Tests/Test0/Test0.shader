@@ -1,4 +1,4 @@
-Shader "Debug/Test"
+Shader "Test0"
 {
     Properties
     {
@@ -26,7 +26,6 @@ Shader "Debug/Test"
             #include "UnityCG.cginc"
             #include "Assets/UnityShaderLib/Subgraphs/SDF/SDF_IQ.cginc"
             //#include "Assets/UnityShaderLib/Subgraphs/SDF/SDF.cginc"
-
 
             // Input to Vertex Shader
             struct appdata
@@ -57,25 +56,6 @@ Shader "Debug/Test"
                 o.uv = v.uv;
                 return o;
             }
-
-            // float ChamferRectangle( in vec2 p, in vec2 b, in float chamfer )
-            // {
-            //     p = abs(p)-b;
-
-            //     p = (p.y>p.x) ? p.yx : p.xy;
-            //     p.y += chamfer;
-    
-            //     const float k = 1.0-sqrt(2.0);
-            //     if( p.y<0.0 && p.y+p.x*k<0.0 )
-            //         return p.x;
-    
-            //     if( p.x<p.y )
-            //         return (p.x+p.y)*sqrt(0.5);    
-    
-            //     return length(p);
-            // }
-
-
 
             fixed4 frag (v2f i) : SV_Target
             {
