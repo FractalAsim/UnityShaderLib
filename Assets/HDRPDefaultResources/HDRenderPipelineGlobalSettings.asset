@@ -192,6 +192,7 @@ MonoBehaviour:
       - rid: 280661418710925532
       - rid: 280661418710925533
       - rid: 280661418710925534
+      - rid: 280661897923526656
     m_RuntimeSettings:
       m_List: []
   renderingLayerNames:
@@ -856,3 +857,16 @@ MonoBehaviour:
         m_ExportShaderVariants: 1
         m_ShaderVariantLogLevel: 0
         m_StripRuntimeDebugShaders: 1
+    - rid: 280661897923526656
+      type: {class: RayTracingRenderPipelineResources, ns: UnityEngine.Rendering.UnifiedRayTracing, asm: Unity.Rendering.LightTransport.Runtime}
+      data:
+        m_Version: 1
+        m_GeometryPoolKernels: {fileID: 7200000, guid: e477e231a2d044e6bc38544c4b746446, type: 3}
+        m_CopyBuffer: {fileID: 7200000, guid: 033e2ad50853a92498e5ca004bf0a68c, type: 3}
+        m_CopyPositions: {fileID: 7200000, guid: fb6acdefef36af24eab075e3f9e99247, type: 3}
+        m_BitHistogram: {fileID: 7200000, guid: f2122e5e16c5caa42ba34450bc5ab14b, type: 3}
+        m_BlockReducePart: {fileID: 7200000, guid: ae6c1838a70d96043b73ec2993509e8c, type: 3}
+        m_BlockScan: {fileID: 7200000, guid: c453356d08264cd419c13dd2ae8d1147, type: 3}
+        m_BuildHlbvh: {fileID: 7200000, guid: 599a7ad58d01b8142b554e0a0625b451, type: 3}
+        m_RestructureBvh: {fileID: 7200000, guid: f68e907366e14894aa16f412af90f520, type: 3}
+        m_Scatter: {fileID: 7200000, guid: 28dba68663251c347b548c8ea7405650, type: 3}
