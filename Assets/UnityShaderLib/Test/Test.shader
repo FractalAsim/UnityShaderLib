@@ -167,11 +167,26 @@ Shader "Debug/Test"
                 //sdf = CoolS(i.uv);
                 //sdf = CircleWave(i.uv, _f1,_f2);
 
-                i.uv *= 6;
+                i.uv *= 2;
+                //i.uv.g *= -1;
+
+                //sdf = sdStar(i.uv, _f1,_f2);
 
 
+                //sdf = RegularPolygon(i.uv, _f1,_f2);
+
+                // float2 v1 = 0.8*cos( float2(0.0,2.00) + 0.0 );
+	            // float2 v2 = 0.8*cos( float2(0.0,1.50) + 1.5 );
+	            // float2 v3 = 0.8*cos( float2(0.0,3.00) + 4.0 );
+	            // float2 v4 = 0.8*cos( float2(1.0,3.00) + 5.0 );
+
+                //sdf = Quad(i.uv, v1, v2, v3, v4 );
+                //sdf = Arrow(i.uv, _v1,_v2,_f1,_f2);
+
+                //sdf = SquareStairs(i.uv,_f1,_f2);
+                //sdf = RoundSquare(i.uv, _f1,_f2);
+                //sdf = sdHyperbolicCross(i.uv, _f1);
                 
-
                 col = sdf;
                 return sdf;
             }

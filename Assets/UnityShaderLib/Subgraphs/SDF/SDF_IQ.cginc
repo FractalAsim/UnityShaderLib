@@ -1,4 +1,4 @@
-﻿// sdf functions from https://iquilezles.org/articles/distfunctions2d/
+﻿// sdf functions from https://iquilezles.org/articles/distfunctions2d/ and https://www.shadertoy.com/playlist/MXdSRf
 // sdf here are optimized for their specific shape
 // functions & params are Renamed for more verbose
 // functions are categorized
@@ -383,7 +383,23 @@ inline float Star(float2 pos, float radius, int sides, float m)
     pos += ecs * clamp(-dot(pos, ecs), 0.0, radius * acs.y / ecs.y);
     return length(pos) * sign(pos.x);
 }
+inline float Star5(float2 pos, float radius, float angle)
+{
+    const float2 k1 = float2(0.809016994375, -0.587785252292);
+    const float2 k2 = float2(-k1.x, k1.y);
 
+    // repeat domain 5x
+    pos.x = abs(pos.x);
+    pos -= 2.0 * max(dot(k1, pos), 0.0) * k1;
+    pos -= 2.0 * max(dot(k2, pos), 0.0) * k2;
+    pos.x = abs(pos.x);
+    
+    // draw triangle
+    pos.y -= radius;
+    float2 ba = angle * float2(-k1.y, k1.x) - float2(0, 1);
+    float h = clamp(dot(pos, ba) / dot(ba, ba), 0.0, radius);
+    return length(pos - ba * h) * sign(pos.y * ba.x - pos.x * ba.y);
+}
 
 
 // -----------------------------------------------------------------------------
@@ -400,6 +416,11 @@ inline float RoundedRectangle(float2 pos, float2 size, float4 radius)
     radius.x = (pos.y > 0.0) ? radius.x : radius.y;
     float2 q = abs(pos) - size + radius.x;
     return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - radius.x;
+}
+inline float RoundSquare(float2 pos, float s, float radius)
+{
+    float2 q = abs(pos) - s + radius;
+    return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - radius;
 }
 inline float ChamferBox(float2 pos, float2 size, float chamfer)
 {
@@ -681,6 +702,49 @@ inline float RoundedX(float2 pos, float size, float thickness)
     pos -= thickness;
     return max(pos.y, 0.) - length(min(pos, 0.));
 }
+inline float Quad(float2 pos, in float2 p0, float2 p1, float2 p2, float2 p3)
+{
+    float2 e0 = p1 - p0;
+    float2 v0 = pos - p0;
+    float2 e1 = p2 - p1;
+    float2 v1 = pos - p1;
+    float2 e2 = p3 - p2;
+    float2 v2 = pos - p2;
+    float2 e3 = p0 - p3;
+    float2 v3 = pos - p3;
+
+    float2 pq0 = v0 - e0 * clamp(dot(v0, e0) / dot(e0, e0), 0.0, 1.0);
+    float2 pq1 = v1 - e1 * clamp(dot(v1, e1) / dot(e1, e1), 0.0, 1.0);
+    float2 pq2 = v2 - e2 * clamp(dot(v2, e2) / dot(e2, e2), 0.0, 1.0);
+    float2 pq3 = v3 - e3 * clamp(dot(v3, e3) / dot(e3, e3), 0.0, 1.0);
+    
+    float2 ds = min(min(float2(dot(pq0, pq0), v0.x * e0.y - v0.y * e0.x),
+                        float2(dot(pq1, pq1), v1.x * e1.y - v1.y * e1.x)),
+                   min(float2(dot(pq2, pq2), v2.x * e2.y - v2.y * e2.x),
+                        float2(dot(pq3, pq3), v3.x * e3.y - v3.y * e3.x)));
+
+    float d = sqrt(ds.x);
+
+    return (ds.y > 0.0) ? -d : d;
+}
+inline float RegularPolygon(float2 pos, float radius, int sides)
+{
+    // signed distance to a n-star polygon with external angle en
+    
+    // these 4 lines can be precomputed for a given shape
+    float an = 3.141593 / float(sides);
+    float2 acs = float2(cos(an), sin(an));
+
+    // reduce to first sector
+    //float bn = fmod(atan2(pos.x, pos.y), 2.0 * an) - an;
+    float bn = fmod(atan2(abs(pos.x), pos.y), 2.0 * an) - an; // fix
+    pos = length(pos) * float2(cos(bn), abs(sin(bn)));
+
+    // line sdf
+    pos -= radius * acs;
+    //pos.y += clamp(-pos.y, 0.0, radius * acs.y);
+    return length(pos) * sign(pos.x);
+}
 inline float Polygon(float2 pos, float2 v[5])
 {
     // Change Num and array len to your use
@@ -748,6 +812,25 @@ inline float Stairs(float2 pos, float width, float height, float steps)
 
     return sqrt(d) * s;
 }
+inline float SquareStairs(float2 pos, float size, int steps)
+{
+    // constant for a given shape
+    const float kS2 = sqrt(2.0);
+    float w = 2.0 * steps + 1.0;
+    
+    // pixel dependent computations
+    pos = float2(abs(pos.y + pos.x), pos.y - pos.x) * (0.5 / size);
+
+    float x1 = pos.x - w;
+    float x2 = abs(pos.x - 2.0 * min(round(pos.x / 2.0), steps)) - 1.0;
+    
+    float d1 = dot2(float2(x1, pos.y) + clamp(0.5 * (-x1 - pos.y), 0.0, w));
+    float d2 = dot2(float2(x2, -pos.y) + clamp(0.5 * (-x2 + pos.y), 0.0, 1.0));
+
+    return sqrt(min(d1, d2)) *
+           sign(max(x1 - pos.y, (x2 + pos.y) * kS2)) *
+           size * kS2;
+}
 inline float CoolS(float2 pos)
 {
     float six = (pos.y < 0.0) ? -pos.x : pos.x;
@@ -797,6 +880,109 @@ inline float CircleWave(float2 pos, float tb, float ra)
         return sign(s) * min(abs(l1), l2);
     }
 }
+inline float HyperbolicCross(float2 pos, float k)
+{
+    // k in (0,1) range
+    
+    // Distance to the a cross made of four y(x) = 1/x curves. Minimizing the
+    // distance squared d²(x,y) = (x-t)²+(y-1/t)² produces a 4th degree
+    // polyonomial in t, which I'm solving with Ferrari's Method as described
+    // here: https://en.wikipedia.org/wiki/Quartic_equation
+    
+    // scale
+    float s = 1.0 / k - k;
+    pos = pos * s;
+    // symmetry
+    pos = abs(pos);
+    pos = (pos.x > pos.y) ? pos.yx : pos.xy;
+    // offset
+    pos += k;
+    
+    // the block above converts 1/x into (1-x)/(1+wx), with w=1/k²-1
+    
+    // solve quartic (for details see https://www.shadertoy.com/view/ftcyW8)
+    float x2 = pos.x * pos.x / 16.0;
+    float y2 = pos.y * pos.y / 16.0;
+    float r = (pos.x * pos.y - 4.0) / 12.0;
+    float q = y2 - x2;
+    float h = q * q - r * r * r;
+    float u;
+    if (h < 0.0)
+    {
+        float m = sqrt(r);
+        u = m * cos(acos(q / (r * m)) / 3.0);
+    }
+    else
+    {
+        float m = pow(sqrt(h) + q, 1.0 / 3.0);
+        u = (m + r / m) / 2.0;
+    }
+    float w = sqrt(u + x2);
+    float x = pos.x / 4.0 - w + sqrt(2.0 * x2 - u + (pos.y - x2 * pos.x * 2.0) / w / 4.0);
+    
+    // clamp arm
+    x = max(x, k);
+    
+    // compute distance to closest point
+    float d = length(pos - float2(x, 1.0 / x)) / s;
+
+    // sign
+    return pos.x * pos.y < 1.0 ? -d : d;
+}
+inline float Arrow(float2 pos, float2 startOffset, float2 endOffset, float thickness, float tipHeight)
+{
+    // The arrow goes from a to b. It's thickness is w1. The arrow
+    // head's thickness is w2.
+    
+    // constant setup
+    const float k = 3.0; // arrow head ratio
+    float2 ba = endOffset - startOffset;
+    float l2 = dot(ba, ba);
+    float l = sqrt(l2);
+
+    // pixel setup
+    pos = pos - startOffset;
+    pos = mul(float2x2(ba.x, -ba.y, ba.y, ba.x), pos) / l;
+    pos.y = abs(pos.y);
+    float2 pz = pos - float2(l - tipHeight * k, tipHeight);
+
+    // === distance (four segments) === 
+
+    float2 q = pos;
+    q.x -= clamp(q.x, 0.0, l - tipHeight * k);
+    q.y -= thickness;
+    float di = dot(q, q);
+    //----
+    q = pz;
+    q.y -= clamp(q.y, thickness - tipHeight, 0.0);
+    di = min(di, dot(q, q));
+    //----
+    if (pos.x < thickness) // conditional is optional
+    {
+        q = pos;
+        q.y -= clamp(q.y, 0.0, thickness);
+        di = min(di, dot(q, q));
+    }
+    //----
+    if (pz.x > 0.0) // conditional is optional
+    {
+        q = pz;
+        q -= float2(k, -1.0) * clamp((q.x * k - q.y) / (k * k + 1.0), 0.0, tipHeight);
+        di = min(di, dot(q, q));
+    }
+    
+    // === sign === 
+    
+    float si = 1.0;
+    float z = l - pos.x;
+    if (min(pos.x, z) > 0.0) //if( p.x>0.0 && z>0.0 )
+    {
+        float h = (pz.x < 0.0) ? thickness : z / k;
+        if (pos.y < h)
+            si = -1.0;
+    }
+    return si * sqrt(di);
+}
 
 
 
@@ -805,91 +991,5 @@ inline float CircleWave(float2 pos, float tb, float ra)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//float sdUnevenCapsule22(in vec2 p, in vec2 a, in vec2 b, in float r1, in float r2)
-//{
-//    vec2 pa = p - a, ba = b - a;
-//    float h = clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);
-//    return length(pa - ba * h) - mix(r1, r2, h);
-//}
 
 #endif
