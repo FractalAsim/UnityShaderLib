@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test0
-  m_Shader: {fileID: 4800000, guid: c65253b7ee928834ca0b69239865d3a6, type: 3}
+  m_Name: FlatShading
+  m_Shader: {fileID: 4800000, guid: 60c562388fd788d42ae130b3fc2f1c99, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -56,8 +56,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: ecd5936d804ba51468a13d5618820452, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMapTime_48b0480298954c3b80edafe7be17c354_PhaseOffsetMask_835282005_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 2fe31a8312ab8524ebd8601be367f0c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowTex:
+        m_Texture: {fileID: 2800000, guid: 12e652cbfe0ff0c4b95501fbff80356c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main:
+        m_Texture: {fileID: 2800000, guid: 8c8762ca2ffaef2489e47eec3813490d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 09437cecd9a46394992f9df69208564c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9b686f46572d83e43920b793564764c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,44 +92,44 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: e0cecb219b42e0f49b62c99565bbefe2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _UVTex:
+        m_Texture: {fileID: 2800000, guid: ecd5936d804ba51468a13d5618820452, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BandCount: 5
-    - _Brightness: 1
-    - _BrightnessShift: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Float: 1.16
+    - _FlowStrength: 0.11
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HueShift: 100
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Saturation: 1
-    - _SaturationShift: 1.86
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 5
     - _SrcBlend: 1
+    - _Strength: 0.76
     - _UVSec: 0
     - _ZWrite: 1
-    - _a: 0
-    - _f: 0
-    - _f1: 1.07
-    - _f2: 7.49
-    - _f3: 2.67
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlowSpeed: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _v: {r: 0, g: 0, b: 0, a: 0}
-    - _v1: {r: -12.09, g: 0, b: 0, a: 0}
-    - _v2: {r: 3.57, g: 0, b: 0, a: 0}
-    - _v3: {r: 0, g: 0, b: 0, a: 0}
+    - _Speed: {r: 1.13, g: 0.59, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

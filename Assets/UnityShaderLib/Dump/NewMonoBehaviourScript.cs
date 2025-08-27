@@ -1,11 +1,6 @@
 //// World Normal
 //using Unity.Mathematics;
 
-//o.normal.xyz = normalize(UnityObjectToWorldNormal(v.normal)); // vert
-
-//// World Position
-//float3 wpos : TEXCOORD3;
-//o.wpos = mul(unity_ObjectToWorld, v.vertex).xyz;
 
 //// ------- To Modify In World Space:
 //v.vertex += mul(unity_WorldToObject, offx, offy, offz, 0);

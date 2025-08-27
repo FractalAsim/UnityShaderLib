@@ -1,11 +1,7 @@
-// Put 2D Texture On a Model
+// Basic "NdotL" lighting
 
-Shader "Basic/Texturing"
+Shader "Basic/NdotL"
 {
-    Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-    }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
@@ -25,7 +21,7 @@ Shader "Basic/Texturing"
             {
                 float4 pos : POSITION;
 
-                float2 uv : TEXCOORD0;
+                float3 normal : NORMAL;
             };
 
             // Input to Fragment Shader
@@ -33,30 +29,30 @@ Shader "Basic/Texturing"
             {
                 float4 pos : SV_POSITION;
 
-                float2 uv : TEXCOORD0;
+                float3 worldNormal : NORMAL;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+            uniform float4 _LightColor0;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.pos);
 
-                // Apply Tilling and Offset to uvs using variable "[Name]_ST". Must declare. E.g float4 _MainTex_ST
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // Use UV to sample texture
-                fixed4 col = tex2D(_MainTex, i.uv);
+                // Basic light using NdotL
+                float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
+                float NdotL = max(dot(i.worldNormal, lightDir), 0.0);
 
+                fixed4 col = _LightColor0 * NdotL;
                 return col;
             }
+
             ENDCG
         }
     }

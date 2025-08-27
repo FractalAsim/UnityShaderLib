@@ -88,22 +88,25 @@ Shader "ShaderTemplate"
             {
                 return i;
             }
-            v2f vertTess (vertexdata i)
+            v2f vertTess (vertexdata v)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(i.pos); // Convert for Frag Usage
-                o.normal = i.normal;
+                o.pos = UnityObjectToClipPos(v.pos); // Convert for Frag Usage
+                o.normal = v.normal;
 
-                o.uv = TRANSFORM_TEX(i.uv, _MainTex); // apply _MainTex_ST
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex); // apply _MainTex_ST
                 
-                o.worldPos = mul(unity_ObjectToWorld, i.pos).xyz;
-                o.worldTangent = float4(UnityObjectToWorldDir(i.tangent.xyz),i.tangent.w);
-                o.worldNormal = UnityObjectToWorldNormal(i.normal);
+                o.worldPos = mul(unity_ObjectToWorld, v.pos).xyz;
 
-                half tangentSign = i.tangent.w * unity_WorldTransformParams.w;
-                o.worldBinormal = cross(o.worldNormal, o.worldTangent) * tangentSign;
-
-                o.tangentToWorld = float3x3(o.worldTangent, o.worldBinormal, o.worldNormal);
+                // World Tangent
+                o.worldTangent = float4(UnityObjectToWorldDir(v.tangent.xyz),v.tangent.w);
+                // World Normal
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);
+                // World Binormal
+                half tangentSign = v.tangent.w * unity_WorldTransformParams.w;
+                o.worldBinormal = cross(o.worldNormal, o.worldTangent.xyz) * tangentSign;
+                // TangentToworld (TBN) Matrix
+                o.tangentToWorld = float3x3(o.worldTangent.xyz, o.worldBinormal, o.worldNormal);
 
                 return o;
             }

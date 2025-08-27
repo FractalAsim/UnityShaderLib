@@ -1,6 +1,6 @@
-// Flatshading or Faccet Shadding on the Fragment using ddx, ddy function
+// Flatshading or Faccet Shadding using Geometry shader to calculate normals
 
-Shader "Basic/FlatShadingFrag"
+Shader "Common/FlatShadingGeom"
 {
     SubShader
     {
@@ -12,6 +12,7 @@ Shader "Basic/FlatShadingFrag"
             CGPROGRAM
 
             #pragma vertex vert // Use "vert" function for Vertex Shader
+            #pragma geometry geom
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
@@ -27,6 +28,7 @@ Shader "Basic/FlatShadingFrag"
             {
                 float4 pos : SV_POSITION;
                 float3 worldPos : TEXCOORD0;
+                float3 normal : NORMAL;
             };
 
             uniform float4 _LightColor0;
@@ -39,16 +41,29 @@ Shader "Basic/FlatShadingFrag"
                 return o;
             }
 
+            [maxvertexcount(3)]
+            void geom (triangle v2f i[3],inout TriangleStream<v2f> stream) 
+            {
+                float3 p0 = i[0].worldPos.xyz;
+	            float3 p1 = i[1].worldPos.xyz;
+	            float3 p2 = i[2].worldPos.xyz;
+
+                float3 triangleNormal = normalize(cross(p1 - p0, p2 - p0));
+
+                i[0].normal = triangleNormal;
+	            i[1].normal = triangleNormal;
+	            i[2].normal = triangleNormal;
+
+                stream.Append(i[0]);
+	            stream.Append(i[1]);
+	            stream.Append(i[2]);
+            }
+
             fixed4 frag (v2f i) : SV_Target
             {
-                // Calculate normals using ddx ddy
-                float3 fddx = ddx(i.worldPos);
-	            float3 fddy = ddy(i.worldPos);
-	            float3 normal = normalize(cross(fddy,fddx));
-
                 // Basic light using NdotL
                 float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
-                float NdotL = max(dot(normal, lightDir), 0.0);
+                float NdotL = max(dot(i.normal, lightDir), 0.0);
 
                 fixed4 col = _LightColor0 * NdotL;
                 return col;

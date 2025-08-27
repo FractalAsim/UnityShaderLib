@@ -1,11 +1,7 @@
-// Put 2D Texture On a Model
+// Construct a TangentToWorld matrix
 
-Shader "Basic/Texturing"
+Shader "Basic/WorldPos"
 {
-    Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-    }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
@@ -24,8 +20,6 @@ Shader "Basic/Texturing"
             struct appdata
             {
                 float4 pos : POSITION;
-
-                float2 uv : TEXCOORD0;
             };
 
             // Input to Fragment Shader
@@ -33,30 +27,27 @@ Shader "Basic/Texturing"
             {
                 float4 pos : SV_POSITION;
 
-                float2 uv : TEXCOORD0;
+                float3 worldPos : TEXCOORD0;
             };
-
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.pos);
 
-                // Apply Tilling and Offset to uvs using variable "[Name]_ST". Must declare. E.g float4 _MainTex_ST
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                // World Pos
+                o.worldPos = mul(unity_ObjectToWorld, v.pos).xyz;
 
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // Use UV to sample texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-
+                fixed4 col;
+                col.rgb = i.worldPos;
                 return col;
             }
+
             ENDCG
         }
     }
