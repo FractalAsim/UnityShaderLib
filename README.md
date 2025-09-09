@@ -3,6 +3,9 @@
 List of common shader methods
 
 # Basic
+lerp
+plaincolor
+tangenttoworld
 # Uncommon
 # Advanced
 # PostProcessing
