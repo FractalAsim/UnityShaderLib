@@ -1,5 +1,3 @@
-// Put 2D Texture On a Model
-
 Shader "Basic/Texturing"
 {
     Properties

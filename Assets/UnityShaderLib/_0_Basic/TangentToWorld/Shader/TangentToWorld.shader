@@ -1,5 +1,3 @@
-// Construct a TangentToWorld matrix
-
 Shader "Basic/TangentToWorld"
 {
     SubShader

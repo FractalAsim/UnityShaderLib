@@ -18,6 +18,7 @@ Shader "Basic/TextureLerp"
             #pragma vertex vert // Use "vert" function for Vertex Shader
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
+            // Required for TRANSFORM_TEX
             #include "UnityCG.cginc"
 
             // Input to Vertex Shader

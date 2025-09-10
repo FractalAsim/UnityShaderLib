@@ -1,5 +1,3 @@
-// Basic "NdotL" lighting
-
 Shader "Basic/NdotL"
 {
     SubShader
