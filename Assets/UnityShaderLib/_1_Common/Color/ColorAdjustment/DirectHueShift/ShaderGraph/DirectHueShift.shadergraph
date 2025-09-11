@@ -446,7 +446,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -899,6 +899,9 @@
     "m_Guid": {
         "m_GuidSerialized": "e3277142-4dcf-4a91-aea5-219ef5001bd4"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "MainTex",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "MainTex",
@@ -912,6 +915,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"09437cecd9a46394992f9df69208564c\",\"type\":3}}",
         "m_Guid": ""
@@ -1241,8 +1246,8 @@
     "m_ObjectId": "482b8c50be824ac18600082343fc2461",
     "m_Title": "V",
     "m_Position": {
-        "x": -948.7999877929688,
-        "y": 397.5999755859375
+        "x": -948.0,
+        "y": 399.0
     }
 }
 
@@ -1310,8 +1315,8 @@
     "m_ObjectId": "5bcfa075d97c461eb23fedf3fb29d3ae",
     "m_Title": "normalized luminance",
     "m_Position": {
-        "x": -1591.2001953125,
-        "y": -247.9999237060547
+        "x": -1591.0001220703125,
+        "y": -247.00001525878907
     }
 }
 
@@ -1885,6 +1890,9 @@
     "m_Guid": {
         "m_GuidSerialized": "c1f72237-4e81-4309-acfc-36378fc288a2"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "HueShift",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "HueShift",
@@ -1898,12 +1906,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.0,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -1927,8 +1947,8 @@
     "m_ObjectId": "abcc2d67cf0f48c998cc3b8927dd6392",
     "m_Title": "Shift",
     "m_Position": {
-        "x": -525.6001586914063,
-        "y": -70.40007019042969
+        "x": -525.0000610351563,
+        "y": -69.0
     }
 }
 
@@ -2223,8 +2243,8 @@
     "m_ObjectId": "c2b1bc5ee75f4bd7a029c62285823fa2",
     "m_Title": "U",
     "m_Position": {
-        "x": -948.7999877929688,
-        "y": 7.999996185302734
+        "x": -948.0,
+        "y": 8.999969482421875
     }
 }
 
@@ -2393,8 +2413,8 @@
     "m_ObjectId": "de5d561fc3fc4b38bf63029c7b1a2280",
     "m_Title": "Projection",
     "m_Position": {
-        "x": -1104.8001708984375,
-        "y": -242.3999481201172
+        "x": -1104.0001220703125,
+        "y": -241.0
     }
 }
 

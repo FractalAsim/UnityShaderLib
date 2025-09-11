@@ -1,4 +1,4 @@
-Shader "Common/DirectShift"
+Shader "Common/DirectHueShift"
 {
     Properties
     {
