@@ -61,15 +61,14 @@ List of Shader Techniques in ShaderLab & ShaderGraph
     - Used in Toon shading
 
 -  ColorBlending
-
     -  <ins>ColorBleed</ins>
 
         > Mix in colors depending on a threshold
         
--  ColorBorder
+-  <ins>ColorBorder</ins>
     > Set Color on the Border edge of an object uvs.
 
--  ColorRim
+-  <ins>ColorRim</ins>
     > Adds Color based on the surface normals to the camera
     - Uses the "Fresnel" or "NdotV"
 
@@ -83,16 +82,16 @@ List of Shader Techniques in ShaderLab & ShaderGraph
 
 > Selectively Use of Clip/Discard/AlphaClipping to not draw certain parts of the
 
-- CutoffAxis
+-  <ins>CutoffAxis</ins>
     > Draw parts of the object within a selected axis and range in the world
 
-- CutoffBox
+-  <ins>CutoffBox</ins>
     > Draw parts of the object within a Box Bounds(AABB) in the world
 
--  CutoffPlane
+-  <ins>CutoffPlane</ins>
     > Draw parts of the object that are on either side of a Plane in the world
 
--  HorizontalSlice
+-  <ins>HorizontalSlice</ins>
     > Draw object with equal horizontal gaps as like being sliced in parts 
 
 </details>
@@ -105,13 +104,13 @@ List of Shader Techniques in ShaderLab & ShaderGraph
 
 > Hide/Reveal objects by making parts of the object transparent or gone and using a DissolveMap for detail.
 
-- DissolveByDistance
+-  <ins>DissolveByDistance</ins>
     > Dissolve objects based on distance from a point
 
-- HardDissolve
+-  <ins>HardDissolve</ins>
     > Dissolve object using a dissolve texture for opaque objects
 
--  SoftDissolve
+-  <ins>SoftDissolve</ins>
     > Dissolve object using a dissolve texture for transparent objects
 
 </details>
@@ -124,12 +123,11 @@ List of Shader Techniques in ShaderLab & ShaderGraph
 
 > Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
 
-- Using DDXY
+- Using <ins>DDXY</ins>
     > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
 
-- Using Geometry shader
+- Using <ins>Geometry shader</ins> 
     > Use geometry shader to manually calculate and store the normals of a face instead of using interpolated normals for fragment shader
-
 
 </details>
 
