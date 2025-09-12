@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ColorBorderSG
-  m_Shader: {fileID: -6465566751694194690, guid: 0ac03c3c2827eaa44a6e51d96cc9a0c4, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 03aab2a22721af647a9537890734d1db, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

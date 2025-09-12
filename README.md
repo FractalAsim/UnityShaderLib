@@ -23,9 +23,15 @@ List of Shader Techniques in ShaderLab & ShaderGraph
 <br>
 
 > Blur on a texture by taking samples of the surounding/neighbouring pixels and calculating the weighted average.
-*  <ins>BoxBlur</ins> - 3x3 Samples with equal weights
-*  <ins>GaussianBlur</ins> - 3x3 Samples with Gaussian weights
-*  <ins>HorizontalBlur/VerticalBlur</ins> - 1x9,9x1 Samples with equal weights
+
+*  <ins>BoxBlur</ins> 
+    > 3x3 Samples with equal weights
+
+*  <ins>GaussianBlur</ins> 
+    > 3x3 Samples with Gaussian weights
+
+*  <ins>HorizontalBlur/VerticalBlur</ins>
+    > 1x9/9x1 Samples with equal weights
 
 </details>
 
@@ -50,9 +56,22 @@ List of Shader Techniques in ShaderLab & ShaderGraph
         > Modify Color's Hue,Saturation,Brightness by converting RGB to YIQ color space
 
 -  ColorBanding
+    >Round/Clamp colors to the nearest N interval which results in a banding effect
+    - Optionaly to include a Ramp Texture to determine the color for each interval
+    - Used in Toon shading
+
 -  ColorBlending
+
+    -  <ins>ColorBleed</ins>
+
+        > Mix in colors depending on a threshold
+        
 -  ColorBorder
+    > Set Color on the Border edge of an object uvs.
+
 -  ColorRim
+    > Adds Color based on the normals to the camera
+    - Uses Common "fresnel effect" or "NdotV"
 
 </details>
 
