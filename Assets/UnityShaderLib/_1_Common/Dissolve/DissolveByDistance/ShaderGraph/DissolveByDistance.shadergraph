@@ -726,7 +726,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -1105,6 +1105,9 @@
     "m_Guid": {
         "m_GuidSerialized": "2811f4bf-6aa8-4443-8f83-5fbb68bfd89e"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "BaseColor",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "BaseColor",
@@ -1118,6 +1121,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "r": 1.0,
         "g": 1.0,
@@ -1667,8 +1672,8 @@
     "m_ObjectId": "418f7094ade64fd0b2d7571f96596457",
     "m_Title": "Ring Difference",
     "m_Position": {
-        "x": 998.4000854492188,
-        "y": 1428.8001708984375
+        "x": 999.0,
+        "y": 1430.0
     }
 }
 
@@ -2150,8 +2155,8 @@
     "m_ObjectId": "51daeecf92684ecca4996b931cbdf0fd",
     "m_Title": "Inner Circle 1 : Outer Circle : 0",
     "m_Position": {
-        "x": 442.40008544921877,
-        "y": 1066.4000244140625
+        "x": 443.0,
+        "y": 1067.0
     }
 }
 
@@ -2606,6 +2611,9 @@
     "m_Guid": {
         "m_GuidSerialized": "8c7b6576-5a0c-4d57-abc1-50a5cc092cd2"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "EdgeWidth",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "EdgeWidth",
@@ -2619,12 +2627,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.019999999552965165,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -2633,8 +2653,8 @@
     "m_ObjectId": "6fff3434862944af812d8433693dbe2c",
     "m_Title": "Color Outside of Inner circle",
     "m_Position": {
-        "x": 1118.400146484375,
-        "y": 429.5999450683594
+        "x": 1119.0,
+        "y": 431.0
     }
 }
 
@@ -2729,6 +2749,9 @@
     "m_Guid": {
         "m_GuidSerialized": "8a46d1b1-7170-48b7-84de-437f451853fa"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Dissolve",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Dissolve",
@@ -2742,12 +2765,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.0,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -3269,8 +3304,8 @@
     "m_ObjectId": "947d8a66099d44c4955f6f4c09415d79",
     "m_Title": "Add Dissolve Map to Ring",
     "m_Position": {
-        "x": 1152.0,
-        "y": 1206.4000244140625
+        "x": 1153.0,
+        "y": 1207.0
     }
 }
 
@@ -3280,8 +3315,8 @@
     "m_ObjectId": "94d5c992d08640e18e53c69b916f2835",
     "m_Title": "Combine Ring with Inner Circle",
     "m_Position": {
-        "x": 2163.199951171875,
-        "y": 1079.2001953125
+        "x": 2164.0,
+        "y": 1080.0
     }
 }
 
@@ -3681,6 +3716,9 @@
     "m_Guid": {
         "m_GuidSerialized": "c23c82a1-820a-4248-bc90-5fa61bd954c4"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Distance",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Distance",
@@ -3694,12 +3732,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 100.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -3984,6 +4034,9 @@
     "m_Guid": {
         "m_GuidSerialized": "2eb7291a-3e92-4c50-8970-49597d39fcbe"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "EdgeColor",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "EdgeColor",
@@ -3997,6 +4050,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "r": 0.9851458072662354,
         "g": 1.0,
@@ -4038,6 +4093,9 @@
     "m_Guid": {
         "m_GuidSerialized": "a9be1094-bde8-42e6-b1fd-542422e78d23"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Center",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Center",
@@ -4051,6 +4109,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.0,
         "y": 0.0,
@@ -4090,6 +4150,9 @@
     "m_Guid": {
         "m_GuidSerialized": "20d7cfc1-757c-4bb4-b714-c1adbb84e3ac"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "DissolveMap",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "DissolveMap",
@@ -4103,6 +4166,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"ad236f98670c43e43a62330f3af694ac\",\"type\":3}}",
         "m_Guid": ""

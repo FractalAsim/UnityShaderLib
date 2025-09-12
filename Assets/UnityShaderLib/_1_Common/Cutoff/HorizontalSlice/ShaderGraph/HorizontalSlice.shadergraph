@@ -246,7 +246,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -341,8 +341,8 @@
     "m_ObjectId": "0e263c8cdb3e47ad81cba695335833f1",
     "m_Title": "Add SliceAmt",
     "m_Position": {
-        "x": -1298.9998779296875,
-        "y": 76.0
+        "x": -1299.0001220703125,
+        "y": 75.99998474121094
     }
 }
 
@@ -670,6 +670,9 @@
     "m_Guid": {
         "m_GuidSerialized": "cf01a921-3369-435a-a1c9-f7e2e79ee1a0"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Slice",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Slice",
@@ -683,12 +686,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.23999999463558198,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -826,7 +841,7 @@
     "m_Title": "Shift Starting Point (0)",
     "m_Position": {
         "x": -1585.0,
-        "y": -78.00001525878906
+        "y": -78.00003051757813
     }
 }
 
@@ -1091,8 +1106,8 @@
     "m_ObjectId": "b7f0b3bcfb2a4690a400e10b8d611542",
     "m_Title": "Perform Cut",
     "m_Position": {
-        "x": -884.0,
-        "y": 76.0
+        "x": -884.0000610351563,
+        "y": 75.99998474121094
     }
 }
 
@@ -1515,6 +1530,9 @@
     "m_Guid": {
         "m_GuidSerialized": "7972ce41-c0c2-480b-846e-25598fc08617"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "SliceAmt",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "SliceAmt",
@@ -1528,11 +1546,23 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 2.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 

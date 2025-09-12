@@ -181,7 +181,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -228,10 +228,10 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "0ad828be24694575a872f3bcce509be7",
     "m_Id": 1,
-    "m_DisplayName": "Time01",
+    "m_DisplayName": "Float01",
     "m_SlotType": 1,
     "m_Hidden": false,
-    "m_ShaderOutputName": "Time01",
+    "m_ShaderOutputName": "Float01",
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
@@ -1036,7 +1036,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "TimeLoop01",
+    "m_Name": "TimePingPong01",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -1149,6 +1149,9 @@
     "m_Guid": {
         "m_GuidSerialized": "20d7cfc1-757c-4bb4-b714-c1adbb84e3ac"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "DissolveMap",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "DissolveMap",
@@ -1162,6 +1165,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"2ded38ae13992944cad259cf63c59197\",\"type\":3}}",
         "m_Guid": ""
