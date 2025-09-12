@@ -109,7 +109,7 @@ List of Shader Techniques in ShaderLab & ShaderGraph
     > Dissolve objects based on distance from a point
 
 - HardDissolve
-    > Dissolve object using a dissolve texture for opqaue objects
+    > Dissolve object using a dissolve texture for opaque objects
 
 -  SoftDissolve
     > Dissolve object using a dissolve texture for transparent objects
@@ -122,31 +122,365 @@ List of Shader Techniques in ShaderLab & ShaderGraph
   <summary>FlatShading</summary>
 <br>
 
-> Flatshading or Faccet Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
 
 - Using DDXY
-    > Dissolve objects based on distance from a point
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
 
 - Using Geometry shader
-    > Dissolve object using a dissolve texture for opqaue objects
-    
--  SoftDissolve
-    > Dissolve object using a dissolve texture for transparent objects
+    > Use geometry shader to manually calculate and store the normals of a face instead of using interpolated normals for fragment shader
+
 
 </details>
 
+<!-- --> <br>
+
+<details>
+  <summary>FlowMap</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>GerstnerWaterShader</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+
+<!-- --> <br>
+
+<details>
+  <summary>NormalBlending</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+
+<!-- --> <br>
+
+<details>
+  <summary>OutlineSilhouette</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+
+<!-- --> <br>
+
+<details>
+  <summary>ReflectionRefraction</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+
+<!-- --> <br>
+
+<details>
+  <summary>TextureChannelSelect</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+
+<!-- --> <br>
+
+<details>
+  <summary>TextureSplatting</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+
+<!-- --> <br>
+
+<details>
+  <summary>UVScrolling</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>VertexDisplacement</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Wireframe</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
 
 </h3>
 
 ## Uncommon
 
+<h3>
+
+<details>
+  <summary>CelShading</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Foil</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>InteriorMapping</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+</h3>
 
 ## Advanced
+
+<h3>
+
+<details>
+  <summary>StochasticTexturing</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Tessellation</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+</h3>
+
 ## PostProcessing
 
+<h3>
+
+Includes old & new ways of postprocessing in unity
+-   [MonoBehaviour.OnRenderImage](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnRenderImage.html) [Old]
+-  [HDRP Custom Pass Volume](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.3/manual/Custom-Post-Process.html) [New] 
+
+<details>
+  <summary>Bloom</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Bloom</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>LensRain</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Outline</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Pixelate</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>ScreenBlur</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>ScreenDistortion</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>ScreenTransition</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>UnderwaterScreen</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>VHSFilter</summary>
+<br>
+
+> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+
+- Using DDXY
+    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+</h3>
 
 
 
-Includes old  & new ways of postprocessing
--  [MonoBehaviour.OnRenderImage](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnRenderImage.html)
--  [HDRP Custom Pass Volume](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.3/manual/Custom-Post-Process.html)
