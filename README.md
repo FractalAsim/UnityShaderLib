@@ -1,12 +1,17 @@
 # UnityShaderLib
 
-List of common shader methods
+List of Shader Techniques done in unity
 
-# Basic
-lerp
-plaincolor
-tangenttoworld
+## Basic (Foundational or Commonly used)
+* Lerp - Basic Blends between two colors
+* NdotL - Basic Lighting of Lambertian diffuse model
+* PlainColor - Basic Color output
+* TangentToWorld - Matrix construction for calculating ### WorldNormals
+* Texturing - Basic Texturing
+* WorldPos - World Position Calculation
+
 # Uncommon
+
 # Advanced
 # PostProcessing
 Includes old  & new ways of postprocessing
