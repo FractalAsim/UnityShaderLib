@@ -1,6 +1,11 @@
 # UnityShaderLib
+<h3>
 
-List of Shader Techniques in ShaderLab & ShaderGraph
+ This project is to showcase a list of Shader Techniques done in Unity.
+
+ - Contains Shader/ShaderGraph Examples that are meant to show off the technique only and not production ready.
+
+</h3>
 
 # Basic (Foundational)
 <h3>
