@@ -151,7 +151,7 @@
 <!-- --> <br>
 
 <details>
-  <summary>GerstnerWaterShader</summary>
+  <summary>GerstnerWater</summary>
 <br>
 
 > Well known shader to do vertex displacement using the Gerstner wave equations for ocean/water wave movement
