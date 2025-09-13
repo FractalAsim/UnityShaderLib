@@ -27,7 +27,7 @@
   <summary>Blur</summary>
 <br>
 
-> Blur on a texture by taking samples of the surounding/neighbouring pixels and calculating the weighted average.
+> Blur on a texture by taking samples of the surounding/neighbouring pixels and calculating the weighted average
 
 -  <ins>BoxBlur</ins> 
     > 3x3 Samples with equal weights
@@ -85,7 +85,7 @@
   <summary>Cutoff</summary>
 <br>
 
-> Selectively Use of Clip/Discard/AlphaClipping to not draw certain parts of the
+> Selectively Use of Clip/Discard/AlphaClipping to not draw certain parts of the object
 
 -  <ins>CutoffAxis</ins>
     > Draw parts of the object within a selected axis and range in the world
@@ -107,7 +107,7 @@
   <summary>Dissolve</summary>
 <br>
 
-> Hide/Reveal objects by making parts of the object transparent or gone and using a DissolveMap for detail.
+> Hide/Reveal objects by making parts of the object transparent or gone and using a DissolveMap for detail
 
 -  <ins>DissolveByDistance</ins>
     > Dissolve objects based on distance from a point
@@ -129,7 +129,7 @@
 > Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
 
 - Using <ins>DDXY</ins>
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+    > Use partial derivative ddx, ddy to use as normals instead of using interpolated normals for fragment shader
 
 - Using <ins>Geometry shader</ins> 
     > Use geometry shader to manually calculate and store the normals of a face instead of using interpolated normals for fragment shader
@@ -139,13 +139,12 @@
 <!-- --> <br>
 
 <details>
-  <summary>FlowMap</summary>
+  <summary><ins>FlowMap</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Use of a special Texture "FlowMap" to shift UVs to give a appearance of water flowing
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- A Special Lerp Technique is used to loop the FlowMap and blend seemlessly over time
 
 </details>
 
@@ -155,10 +154,7 @@
   <summary>GerstnerWaterShader</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Well known shader to do vertex displacement using the Gerstner wave equations for ocean/water wave movement
 
 </details>
 

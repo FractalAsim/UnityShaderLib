@@ -23,8 +23,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GerstnerWaveSG
-  m_Shader: {fileID: -6465566751694194690, guid: 12abe9ad6b20c534c854f3098a18ce23, type: 3}
+  m_Name: GerstnerWave
+  m_Shader: {fileID: 4800000, guid: 0d015696cfdbe624295fa8f01d62e611, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -33,7 +33,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
@@ -139,6 +139,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Steepness: 0.5
     - _StencilRef: 0
     - _StencilRefDepth: 8
     - _StencilRefDistortionVec: 4
@@ -161,14 +162,20 @@ Material:
     - _TransparentZWrite: 0
     - _UVSec: 0
     - _UseShadowThreshold: 0
+    - _WaveAmp: 0.5
     - _WaveHeight: 0
+    - _WaveLen: 4
     - _WaveLength: 0
+    - _WaveSpeed: 1
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Direction1: {r: 1, g: 0, b: 0, a: 0}
+    - _Direction2: {r: -0.67, g: 0, b: 0.5, a: 0}
+    - _Direction3: {r: -0.7, g: 0, b: 0.3, a: 0}
     - _Displacement: {r: 0, g: 1, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

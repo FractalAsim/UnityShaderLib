@@ -69,7 +69,7 @@ Shader "Common/FlowMap"
 
                 o.UV_1st_Phase = fracTime * flowremap + UV;
                 o.UV_2nd_Phase = frac(FlowTime + 0.5) * flowremap + UV;
-                o._Lerp = abs(fracTime * 2 - 1); // ping pong
+                o._Lerp = abs(fracTime * 2 - 1); // ping pong from 0 <-> 1
                 o.Mask = 1 - step(flow.b,0);
 
                 return o;
