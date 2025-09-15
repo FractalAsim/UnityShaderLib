@@ -151,7 +151,7 @@
 <!-- --> <br>
 
 <details>
-  <summary>GerstnerWater</summary>
+  <summary><ins>GerstnerWater</ins></summary>
 <br>
 
 > Well known shader to do vertex displacement using the Gerstner wave equations for ocean/water wave movement
@@ -162,13 +162,26 @@
 <!-- --> <br>
 
 <details>
-  <summary>NormalBlending</summary>
+  <summary>NormalBlending (Detail Normal Map)</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Technique to combine/blend two normals together. Usually for one detailed normal map and a base normal map
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- <ins>Reoriented (RNM)</ins>
+    > Technique described by  Colin Barré-Brisebois and Stephen Hill in [blog](https://blog.selfshadow.com/publications/blending-in-detail/)
+
+    > Reorient one detail normal so it follows a base normal map
+    
+    > Unity has a build-in Reoreinted Normal Blend Node in Shader Graph that uses a tweaked version of this
+    
+- <ins>Simple</ins>
+    
+    > Technique documented In Unreal Engine [UDK/UDK](https://docs.unrealengine.com/udk/Three/MaterialBasics.html#Detail%20Normal%20Map)
+
+    > Unity has a build-in Reoreinted Normal Blend Node in Shader Graph that uses this
+
+- <ins>WhiteOut</ins>
+    > Technique described by Christopher Oat in "SIGGRAPH 2007 chapter 4 - Animated Wrinkle Maps" Ruby "Whiteout"
 
 </details>
 
