@@ -6,7 +6,7 @@ Shader "Common/Outline"
 		_MainTex("Texture", 2D) = "white" {}
         _OutlineColor("Outline Color", Color) = (1,0,0,1)
         _OutlineWidth("Outlines width", Range(0.0, 2.0)) = 0.15
-        _Angle("Switch shader on angle", Range(0.0, 180.0)) = 89
+        //_Angle("Switch shader on angle", Range(0.0, 180.0)) = 89
     }
     SubShader
     {
@@ -36,19 +36,19 @@ Shader "Common/Outline"
 
             float4 _OutlineColor;
             float _OutlineWidth;
-            float _Angle;
+            //float _Angle;
 
             v2f vert (appdata v)
             {
-    //             float3 scaleDir = normalize(v.pos.xyz);
-				// if (degrees(acos(dot(scaleDir.xyz, v.normal.xyz))) > _Angle) 
-    //             {
-				// 	v.pos.xyz += normalize(v.normal.xyz) * _OutlineWidth;
-				// }
-    //             else 
-    //             {
-				// 	v.pos.xyz += scaleDir * _OutlineWidth;
-				// }
+                // float3 scaleDir = normalize(v.pos.xyz);
+                // if (degrees(acos(dot(scaleDir.xyz, v.normal.xyz))) > _Angle) 
+                // {
+                //     v.pos.xyz += normalize(v.normal.xyz) * _OutlineWidth;
+                // }
+                // else 
+                // {
+                //     v.pos.xyz += scaleDir * _OutlineWidth;
+                // }
 
                 v.pos.xyz += normalize(v.pos.xyz) * _OutlineWidth;
 

@@ -189,13 +189,20 @@
 <!-- --> <br>
 
 <details>
-  <summary>OutlineSilhouette</summary>
+  <summary><ins>Outline</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Easy Technique to create an outline around the visible parts of the model.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Two pass shader which first draws a slightly larger model and then draw normally on top.
+
+> Have some issue when another object with the same shader or transparent object overlap due to being on the transparent renderqueue and draw order.
+
+<details>
+  <summary><ins>Silhouette</ins></summary>
+<br>
+
+> TODO
 
 </details>
 
