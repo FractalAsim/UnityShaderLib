@@ -213,10 +213,7 @@
   <summary>ReflectionRefraction</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> TODO
 
 </details>
 
