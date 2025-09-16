@@ -1,7 +1,7 @@
 // Using Geometry shader to calculate distance to opposite edge. and using distance to 
 // create outlines on thouse edges. effectively a wireframe shader
 
-Shader "Basic/WireframeDist"
+Shader "Common/WireframeDist"
 {
     Properties
     {

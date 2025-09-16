@@ -1,7 +1,7 @@
 // Using Geometry shader to add in barycentricCoordinates for interpolation and using the coordinates to find nearest edge. 
 // and create outlines on those edges. effectively a wireframe shader
 
-Shader "Basic/WireframeBary"
+Shader "Common/WireframeBary"
 {
     Properties
     {

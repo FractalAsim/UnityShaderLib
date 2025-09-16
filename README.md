@@ -3,7 +3,15 @@
 
  This project is to showcase a list of Shader Techniques done in Unity.
 
- - Contains Shader/ShaderGraph Examples that are meant to show off the technique only and not production ready.
+Contains Shader/ShaderGraph Examples that are meant to show off the technique only and not production ready.
+
+
+Shaders are Categorized into 5 categories depending on their use and complexity
+  1. <ins>Basic</ins> - Fundamental Shaders (Must know)
+  2. <ins>Common</ins> - Popular Shaders that you can find everywhere
+  3. <ins>Uncommon</ins> - Specialized or Optimized Shaders
+  4. <ins>Advanced</ins> - Complex, difficult to understand or Uber Shaders
+  5. <ins>PostProcessing</ins> - Shaders targeting 2D, Screen or 2D Sprites
 
 </h3>
 
@@ -199,17 +207,6 @@
 > Have some issue when another object with the same shader or transparent object overlap due to being on the transparent renderqueue and draw order.
 
 <details>
-  <summary><ins>Silhouette</ins></summary>
-<br>
-
-> TODO
-
-</details>
-
-
-<!-- --> <br>
-
-<details>
   <summary>ReflectionRefraction</summary>
 <br>
 
@@ -221,16 +218,23 @@
 <!-- --> <br>
 
 <details>
-  <summary>TextureChannelSelect</summary>
+  <summary><ins>Silhouette</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> TODO
 
 </details>
 
+
+<!-- --> <br>
+
+<details>
+  <summary>><ins>TextureChannelSelect</ins></summary>
+<br>
+
+> Select Red, Green or Blue channel of the texture using dot product. Normally use for rgb masks
+
+</details>
 
 <!-- --> <br>
 
@@ -238,37 +242,36 @@
   <summary>TextureSplatting</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Use of a special "Splat" Texture to have different parts of the model to use different texture in one material. Common used for terrain.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- <ins>Gray</ins>
+    > Use of a gray scale "Splat Texture"
 
-</details>
+- <ins>RGBA</ins>
+    > Use of a RGBA "Splat Texture" to support max 4 different texture.
 
-
-<!-- --> <br>
-
-<details>
-  <summary>UVScrolling</summary>
-<br>
-
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- <ins>RGBABlend</ins>
+    > RGBA but blends properly when "Splat Texture" channels overlaps
 
 </details>
 
 <!-- --> <br>
 
 <details>
-  <summary>VertexDisplacement</summary>
+  <summary><ins>UVScrolling</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Common technique to animate the appearance of the object by updating uvs.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary><ins>VertexDisplacement</ins></summary>
+<br>
+
+> Common technique to make object move by updating the position in vertex shader. 
 
 </details>
 
@@ -278,10 +281,14 @@
   <summary>Wireframe</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Common Debug/Test shader to show the triangle edges of the object. 
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- <ins>WireframeBary</ins>
+    > Use of Geometry shader to add in barycentric coordinates and using the coordinates to find nearest edge to create outlines.
+    
+- <ins>WireframeDist</ins>
+    > Use of Geometry shader to calculate distance to nearest edge and using the distance to create outlines at the smallest distance.
+
 
 </details>
 
@@ -299,6 +306,16 @@
 
 - Using DDXY
     > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+
+</details>
+
+<!-- --> <br>
+
+<details>
+  <summary>Explode</summary>
+<br>
+
+> 
 
 </details>
 

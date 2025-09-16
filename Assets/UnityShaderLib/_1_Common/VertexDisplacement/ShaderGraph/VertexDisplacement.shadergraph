@@ -186,7 +186,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -606,7 +606,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "TimeLoop01",
+    "m_Name": "TimePingPong01",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -1105,6 +1105,9 @@
     "m_Guid": {
         "m_GuidSerialized": "80a12160-e23f-42f0-b211-a826bb638c21"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Displacement",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Displacement",
@@ -1118,6 +1121,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.0,
         "y": 1.0,
@@ -1257,10 +1262,10 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "f5ecbbab3f9e4d1e89e8adf2e8c44ac9",
     "m_Id": 1,
-    "m_DisplayName": "Time01",
+    "m_DisplayName": "Float01",
     "m_SlotType": 1,
     "m_Hidden": false,
-    "m_ShaderOutputName": "Time01",
+    "m_ShaderOutputName": "Float01",
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,

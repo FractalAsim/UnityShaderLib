@@ -219,7 +219,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -300,6 +300,9 @@
     "m_Guid": {
         "m_GuidSerialized": "7a4c449d-29ae-4b46-86f0-9474c6070cad"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "GraySplat",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "GraySplat",
@@ -313,6 +316,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"0373a54512ac36f4d9d2bb5b0723f746\",\"type\":3}}",
         "m_Guid": ""
@@ -525,6 +530,9 @@
     "m_Guid": {
         "m_GuidSerialized": "0012e744-2271-4780-86d1-88ade10f9f87"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "AlbedoTex2D",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "AlbedoTex2D",
@@ -538,6 +546,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"textureArray\":{\"instanceID\":0}}",
         "m_Guid": ""

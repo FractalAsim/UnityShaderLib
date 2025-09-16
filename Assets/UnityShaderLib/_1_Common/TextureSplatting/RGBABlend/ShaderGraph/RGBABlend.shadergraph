@@ -422,7 +422,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Common",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -1027,6 +1027,9 @@
     "m_Guid": {
         "m_GuidSerialized": "0012e744-2271-4780-86d1-88ade10f9f87"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "AlbedoTex2D",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "AlbedoTex2D",
@@ -1040,6 +1043,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"textureArray\":{\"fileID\":18700000,\"guid\":\"2e3737df8cf0c9642a95d5163f65f15c\",\"type\":3}}",
         "m_Guid": ""
@@ -3082,6 +3087,9 @@
     "m_Guid": {
         "m_GuidSerialized": "b43204a4-ccc4-4432-a917-a5e1f6648cb3"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "RGBASplat",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "RGBASplat",
@@ -3095,6 +3103,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"5c9c5e445c0a2ab49b72ccb5e69299a1\",\"type\":3}}",
         "m_Guid": ""

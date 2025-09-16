@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2298543635427894183
+--- !u!114 &-4855057282561649168
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TextureChannelSelectSG
-  m_Shader: {fileID: -6465566751694194690, guid: 05c75d9e625e6ab44afdb846b9c63e57, type: 3}
+  m_Name: GraySG 1
+  m_Shader: {fileID: -6465566751694194690, guid: b1ca21f9a6ec60946980a2e2b66e380a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -36,6 +36,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlbedoTex2D:
+        m_Texture: {fileID: 18700000, guid: 8e27b9ba51f85684ea9b57ddd721eeb0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,8 +60,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _GraySplat:
+        m_Texture: {fileID: 2800000, guid: 0373a54512ac36f4d9d2bb5b0723f746, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6c75db1464c60424fb82bb5859934fb2, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,8 +80,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_b09e48539b00423da1bf593bc549cf7a_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 9524543e32e7c994eb6b4a2cf4bb1373, type: 3}
+    - _RGBASplat:
+        m_Texture: {fileID: 2800000, guid: 0373a54512ac36f4d9d2bb5b0723f746, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -97,7 +105,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _ChannelSelect: {r: 1, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
