@@ -299,13 +299,12 @@ Shaders are Categorized into 5 categories depending on their use and complexity
 <h3>
 
 <details>
-  <summary>CelShading</summary>
+  <summary><ins>CelShading</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Very popular cartoon/anime non-photorealistic rendering.  
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- Usually done by combination of Outline + ColorBanding Shader
 
 </details>
 
@@ -315,33 +314,31 @@ Shaders are Categorized into 5 categories depending on their use and complexity
   <summary>Explode</summary>
 <br>
 
-> 
+> TODO
 
 </details>
 
 <!-- --> <br>
 
 <details>
-  <summary>Foil</summary>
+  <summary><ins>Foil</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Foil effect similar to the holofoil in Trading Card Games
 
 </details>
 
 <!-- --> <br>
 
 <details>
-  <summary>InteriorMapping</summary>
+  <summary><ins>InteriorMapping</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Popular technique for faking rooms in buildings instead of modeling actual rooms
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- Use of a specially prepared exterior texture and interior cube map.
+
+- Additional work is done to have Rooms are randomized in look
 
 </details>
 
@@ -355,10 +352,10 @@ Shaders are Categorized into 5 categories depending on their use and complexity
   <summary>StochasticTexturing</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Techniques to fix repeated patterns/artifacts when using texture tilling, mimaps on large surfaces
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- <ins>HexTilling</ins>
+    > Segment the uvs into 3 Hexagonal groups and rotate each group to produce non-repeating patterns
 
 </details>
 
@@ -368,10 +365,15 @@ Shaders are Categorized into 5 categories depending on their use and complexity
   <summary>Tessellation</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Special use inserting more vertices into the mesh. Usually as a pre-step to add more details when viewing the object very close.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+- <ins>TessellationBasic</ins>
+    > Standard tessalation by use of Hull and Domain Shader
+
+- <ins>TessellationDisplacement</ins>
+    > Use of tessllation and do vertex displacement using a height/displacement map to add more details to a low poly plane/object
+
+    > Usually use for terrains.
 
 </details>
 

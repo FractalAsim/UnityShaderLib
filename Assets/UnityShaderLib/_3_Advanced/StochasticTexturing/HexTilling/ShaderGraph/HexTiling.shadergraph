@@ -486,7 +486,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Advanced",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -1907,7 +1907,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "RandomTransformUV",
+    "m_Name": "UVRandomTransform",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -2374,6 +2374,9 @@
     "m_Guid": {
         "m_GuidSerialized": "4edf4c4a-abad-4953-814b-80896e19dfba"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Normal",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Normal",
@@ -2387,6 +2390,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"d7aa8e05f3b6118478e7caf71b9232c2\",\"type\":3}}",
         "m_Guid": ""
@@ -2420,6 +2425,9 @@
     "m_Guid": {
         "m_GuidSerialized": "c0657b30-d789-4a89-9aa3-2865d8fda307"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "MainTex",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "MainTex",
@@ -2433,6 +2441,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"583384ba064432b41891bec94e35c8af\",\"type\":3}}",
         "m_Guid": ""
@@ -2539,7 +2549,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "RandomTransformUV",
+    "m_Name": "UVRandomTransform",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -2747,7 +2757,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "RandomTransformUV",
+    "m_Name": "UVRandomTransform",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {

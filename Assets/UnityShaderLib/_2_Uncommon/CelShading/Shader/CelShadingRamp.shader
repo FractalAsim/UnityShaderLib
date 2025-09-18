@@ -1,7 +1,7 @@
 // Celshading is simply the combination of ColorBanding/Ramp Shader and Outline shader
 // Using RampTexture version
 
-Shader "Common/CelShadingRamp"
+Shader "Uncommon/CelShadingRamp"
 {
     Properties
     {

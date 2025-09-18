@@ -1,6 +1,6 @@
 // Celshading is simply the combination of ColorBanding/Ramp Shader and Outline shader
 
-Shader "Common/CelShading"
+Shader "Uncommon/CelShading"
 {
     Properties
     {

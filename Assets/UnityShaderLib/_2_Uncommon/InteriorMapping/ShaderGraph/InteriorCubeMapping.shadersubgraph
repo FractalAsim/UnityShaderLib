@@ -939,7 +939,7 @@
         },
         "preventRotation": false
     },
-    "m_Path": "Sub Graphs",
+    "m_Path": "Uncommon",
     "m_GraphPrecision": 1,
     "m_PreviewMode": 2,
     "m_OutputNode": {
@@ -1830,6 +1830,9 @@
     "m_Guid": {
         "m_GuidSerialized": "7e730b5f-a189-45c8-a8ff-0e437bb14735"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "Rooms",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Rooms",
@@ -1843,6 +1846,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.0,
         "y": 0.0,
@@ -1960,6 +1965,9 @@
     "m_Guid": {
         "m_GuidSerialized": "c16501cd-603a-4a73-a929-66f5fa7fe375"
     },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
     "m_Name": "UV",
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "UV",
@@ -1973,6 +1981,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.0,
         "y": 0.0,
@@ -2615,8 +2625,8 @@
     "m_ObjectId": "430a071ad35540af96283c5394a8bf31",
     "m_Title": "Use UVs to give 3 Random Numbers",
     "m_Position": {
-        "x": -1912.7999267578125,
-        "y": 431.9999694824219
+        "x": -1911.9998779296875,
+        "y": 433.00006103515627
     }
 }
 
@@ -5471,8 +5481,8 @@
     "m_ObjectId": "d28a9d1624654ed883de660eab1dc955",
     "m_Title": "Make UV Center to be 0,0",
     "m_Position": {
-        "x": -1743.19970703125,
-        "y": -153.60000610351563
+        "x": -1742.999755859375,
+        "y": -153.00006103515626
     }
 }
 
@@ -5558,8 +5568,8 @@
     "m_ObjectId": "d6a997840ea94db4941b643d86ea401c",
     "m_Title": "Randomly Choose to flip x,y and or z",
     "m_Position": {
-        "x": -1096.7996826171875,
-        "y": 283.2000427246094
+        "x": -1095.9998779296875,
+        "y": 284.99993896484377
     }
 }
 
