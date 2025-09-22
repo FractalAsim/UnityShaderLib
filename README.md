@@ -383,44 +383,33 @@ Shaders are Categorized into 5 categories depending on their use and complexity
 
 <h3>
 
+PostProcessing Shaders are a group of shaders that is normally done on top of the final rendered scene.
+
 Includes old & new ways of postprocessing in unity
 -   [MonoBehaviour.OnRenderImage](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnRenderImage.html) [Old]
 -  [HDRP Custom Pass Volume](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.3/manual/Custom-Post-Process.html) [New] 
 
 <details>
-  <summary>Bloom</summary>
+  <summary><ins>Bloom</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Simulation the Camera Effect of having bright lights glow/bleed with nearby colors due to short exposure time.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Technique is done by bluring bright regions and layering it on the original image
 
 </details>
 
 <!-- --> <br>
 
 <details>
-  <summary>Bloom</summary>
+  <summary><ins>LensRain</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Simulation the Camera Effect of having rain streaking down on the lens.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
-
-</details>
-
-<!-- --> <br>
-
-<details>
-  <summary>LensRain</summary>
-<br>
-
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Technique Usually Includes the folowing effect combined
+- Static Droplets
+- Water Streaks
 
 </details>
 
@@ -430,23 +419,27 @@ Includes old & new ways of postprocessing in unity
   <summary>Outline</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Technique to create an outline around the visible parts of the model.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Post-Processing version of Outline is done using different techniques
+
+- <ins>OutlineDepth</ins>
+    > Use Depth Buffer to detect edges and create outline
+
+- <ins>OutlineNormal</ins>
+    > Use World Normals to detect edges and create outline
 
 </details>
 
 <!-- --> <br>
 
 <details>
-  <summary>Pixelate</summary>
+  <summary><ins>Pixelate</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Styleized effect to have parts or the whole image appear at low-resolution
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Technique us usually done by downsampling and then upscale.
 
 </details>
 
@@ -456,23 +449,34 @@ Includes old & new ways of postprocessing in unity
   <summary>ScreenBlur</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
+> Simulation the Camera Effect of having parts of the image streatched out due to fast motion of camera.
 
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Technique is usually done by combining the neighbouring pixel (samples/tap) and average them up (based on weights)
+
+- <ins>BoxBlur9Tap</ins>
+    > Sample 9 nearest neighbour pixel and apply Avergae weights
+
+- <ins>BoxBlurGaussian9Tap</ins>
+    > Sample 9 nearest neighbour pixel and apply Gaussian weights
+
+- <ins>ConeBlur4Tap</ins>
+    > Sample 4 nearest diagonal neighbour pixel and apply Average weights
+
+- <ins>DownResBlur</ins>
+    > Simple blur effect as a result of downsampling the image/Screen.
+
+- <ins>RadialBlurGaussian9Tap</ins>
+    > Sample 9 neighbour pixel around a circle and apply Gaussian weights
 
 </details>
 
 <!-- --> <br>
 
 <details>
-  <summary>ScreenDistortion</summary>
+  <summary><ins>ScreenDistortion</ins></summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Popular Effect to bend or warp the screen by use of distortion maps to shift and move UVs of the screen
 
 </details>
 
@@ -482,10 +486,7 @@ Includes old & new ways of postprocessing in unity
   <summary>ScreenTransition</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Simple Effect to mask the screen using a special transition texture, normally used before transitioning to a new scene or area.
 
 </details>
 
@@ -495,10 +496,7 @@ Includes old & new ways of postprocessing in unity
   <summary>UnderwaterScreen</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Special effect to transform the screen to appear as a camera being submerge underwater.
 
 </details>
 
@@ -508,14 +506,8 @@ Includes old & new ways of postprocessing in unity
   <summary>VHSFilter</summary>
 <br>
 
-> Flatshading or Faceted Shadding is a Stylized effect to having each face of the mesh to be of the same color.
-
-- Using DDXY
-    > Use partial derivative ddx, ddy to normals instead of using interpolated normals for fragment shader
+> Stylied effect to give the screen/image the look as seen from an old CRT displays.
 
 </details>
 
 </h3>
-
-
-
