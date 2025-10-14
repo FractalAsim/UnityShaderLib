@@ -7,39 +7,46 @@ Shader "Debug/DepthVisualizer"
     SubShader
     {
         Tags { "RenderType" = "Opaque" }
+
         Pass
         {
-            ZTest Always Cull Off ZWrite Off
 
             CGPROGRAM
 
             #pragma vertex vert
             #pragma fragment frag
 
+            #pragma shader_feature_local _DEPTHSELECT_RAW _DEPTHSELECT_LINEAR // Compile shader variant only for this file for the shaders being used in material
+            
+            ZTest Always Cull Off ZWrite Off
+            
             #include "UnityCG.cginc"
 
-            #pragma shader_feature_local _DEPTHSELECT_RAW _DEPTHSELECT_LINEAR // Compile shader variant only for this file for the shaders being used in material
-
-            struct appdata
+            struct appdata // Input To Vertex
             {
-                float4 vertex : POSITION;
+                float4 pos : POSITION;
+
                 float2 uv : TEXCOORD0;
             };
 
-            struct v2f
+            struct v2f // Input To Fragment
             {
+                float4 pos : SV_POSITION;
+
                 float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
             };
 
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
+
                 o.uv = v.uv;
+
                 return o;
             }
 
+            // Unity Injects this texture rendered from camera or gbuffer
             sampler2D _CameraDepthTexture;
             float4 _CameraDepthTexture_TexelSize;
 
