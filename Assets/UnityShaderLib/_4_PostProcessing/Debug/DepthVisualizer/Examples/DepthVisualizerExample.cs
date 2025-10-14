@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
-public class DepthVisualizer : MonoBehaviour
+public class DepthVisualizerExample : MonoBehaviour
 {
     [SerializeField] Shader shader;
 

@@ -24,6 +24,11 @@ Shader "ShaderTemplate"
 
         Pass
         {
+            // Render Mode Options for the current pass
+            // Cull Back | Front | Off
+            // ZTest (Less | Greater | LEqual | GEqual | Equal | NotEqual | Always)
+            // ZWrite On | Off
+
             CGPROGRAM
 
             #pragma vertex vert  // Use "vert" function for Vertex Shader 
@@ -32,11 +37,7 @@ Shader "ShaderTemplate"
             #pragma geometry geo // compile function name as DX10 geometry shader. Having this option automatically turns on #pragma target 4.0, described below.
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
-            // Render Mode Options for the current pass
-            // Cull Back | Front | Off
-            // ZTest (Less | Greater | LEqual | GEqual | Equal | NotEqual | Always)
-            // ZWrite On | Off
-            //
+
             // Set Blending for the current pass
             // https://docs.unity3d.com/Manual/SL-Blend.html
             // Blend Off
