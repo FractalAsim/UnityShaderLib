@@ -63,6 +63,13 @@ public class OpenFolders
         string path = Directory.GetParent(EditorApplication.applicationPath) + "/Data/Resources/ScriptTemplates/";
         Process.Start(path);
     }
+
+    [MenuItem("EditorTools/Open Folder/Editor CGInc")]
+    static void OpenShaderCGInc()
+    {
+        string path = Directory.GetParent(EditorApplication.applicationPath) + "/Data/Resources/CGIncludes/";
+        Process.Start(path);
+    }
 }
 
 #endif
