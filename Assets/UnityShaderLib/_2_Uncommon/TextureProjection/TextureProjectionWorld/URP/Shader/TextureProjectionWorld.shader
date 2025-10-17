@@ -1,4 +1,6 @@
-Shader "Custom/NewUnlitUniversalRenderPipelineShader"
+// Source : https://docs.unity3d.com/6000.1/Documentation/Manual/urp/writing-shaders-urp-reconstruct-world-position.html
+
+Shader "Uncommon/TextureProjectionWorld"
 {
     Properties
     {
