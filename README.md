@@ -1,19 +1,31 @@
 # UnityShaderLib
-<h3>
 
- This project is to showcase a list of Shader Techniques done in Unity.
+This project is to showcase a list of Shader Techniques done in Unity.
 
-Contains Shader/ShaderGraph Examples that are meant to show off the technique only and not production ready.
+Contains Examples that are meant to show off the technique only and not production ready.
 
+---
 
-Shaders are Categorized into 5 categories depending on their use and complexity
-  1. <ins>Basic</ins> - Fundamental Shaders (Must know)
+Shaders Technique are Categorized into 5 category folders depending on their use and complexity
+  1. <ins>Basic</ins> - Fundamental Shaders
   2. <ins>Common</ins> - Popular Shaders that you can find everywhere
   3. <ins>Uncommon</ins> - Specialized or Optimized Shaders
   4. <ins>Advanced</ins> - Complex, difficult to understand or Uber Shaders
   5. <ins>PostProcessing</ins> - Shaders targeting 2D, Screen or 2D Sprites
 
-</h3>
+Each Shader Technique are presented in Unity either as the following
+  1. <ins>Built-In (BI)</ins>
+     1. Shader - Legacy format using Cg
+     2. ShaderGraph - Added support for BI for compatibility reasons
+  2. <ins>Universal Render Pipeline (URP)</ins>
+     1. Shader - Current format using HLSL
+     2. ShaderGraph - Recommanded Shader workflow
+  4. <ins>High Definition Render Pipeline (HDRP)</ins>
+     1. ShaderGraph - Advanced Shader workflow
+
+---
+<br>
+<br>
 
 # Basic (Foundational)
 <h3>
