@@ -4,6 +4,7 @@ Shader "Uncommon/TextureProjectionWorld"
 {
     Properties
     {
+        [MainTexture] _BaseMap("Base Map", 2D) = "white"
     }
 
     SubShader
@@ -25,18 +26,30 @@ Shader "Uncommon/TextureProjectionWorld"
             struct Attributes
             {
                 float4 positionOS : POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION;
+                float2 uv : TEXCOORD0;
             };
+
+            TEXTURE2D(_BaseMap);
+            SAMPLER(sampler_BaseMap);
+
+            CBUFFER_START(UnityPerMaterial)
+                half4 _BaseColor;
+                float4 _BaseMap_ST;
+            CBUFFER_END
 
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
 
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+
+                OUT.uv = TRANSFORM_TEX(IN.uv, _BaseMap);
 
                 return OUT;
             }
@@ -54,12 +67,11 @@ Shader "Uncommon/TextureProjectionWorld"
 
                 float3 worldPos = ComputeWorldSpacePosition(UV, depth, UNITY_MATRIX_I_VP);
 
-                uint scale = 10;
+                uint scale = 2;
                 uint3 worldIntPos = uint3(abs(worldPos.xyz * scale));
                 bool white = (worldIntPos.x & 1) ^ (worldIntPos.y & 1) ^ (worldIntPos.z & 1);
                 half4 color = white ? half4(1,1,1,1) : half4(0,0,0,1);
 
-                //half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _BaseColor;
                 #if UNITY_REVERSED_Z
                     if(depth < 0.0001)
                         return half4(0,0,0,1);
@@ -67,6 +79,15 @@ Shader "Uncommon/TextureProjectionWorld"
                     if(depth > 0.9999)
                         return half4(0,0,0,1);
                 #endif
+
+                //worldPos.z = max(worldPos.z,worldPos.y);
+
+                color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xz);
+
+                //color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xz);
+
+                //float3 dirMask =
+
 
                 return color;
             }
