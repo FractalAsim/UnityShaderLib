@@ -21,6 +21,20 @@ MonoBehaviour:
       surfaceData: 2
     screenSpaceSettings:
       normalBlend: 0
+--- !u!114 &-8435134344702373807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d5c20e48682a749a5b0e86625fa206, type: 3}
+  m_Name: NewPostProcessEffectRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::NewPostProcessEffectRendererFeature
+  m_Active: 1
+  mat: {fileID: 2100000, guid: a4b896bef03241540aa3a003dca10bb0, type: 2}
 --- !u!114 &-6979021129397342586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +76,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -6979021129397342586}
   - {fileID: -8549409351429852184}
-  m_RendererFeatureMap: 866e535e4289259fe8f39ed87d655a89
+  - {fileID: -8435134344702373807}
+  m_RendererFeatureMap: 866e535e4289259fe8f39ed87d655a89515051370162f08a
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
