@@ -44,6 +44,11 @@ Shader "SurfaceShaderTemplate"
             float2 uv_MainTex; // uv_[name]
             float4 color : COLOR;
             float3 customColor; // no uv_ infront
+
+            float3 worldPos;
+            float3 worldNormal;
+            float3 viewDir;
+            float4 screenPos;
         };
 
         //#pragma tessellate:tess tessphong:_Phong
