@@ -1,7 +1,11 @@
 // Calculate world Position of pixels
 
-Shader "Basic/WorldPos"
+Shader "Basic/WorldPosTexturing"
 {
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+    }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
@@ -30,6 +34,9 @@ Shader "Basic/WorldPos"
                 float3 worldPos : TEXCOORD0;
             };
 
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -43,8 +50,9 @@ Shader "Basic/WorldPos"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col;
-                col.rgb = i.worldPos;
+                // Use World Pos to sample texture
+                fixed4 col = tex2D(_MainTex, i.worldPos);
+
                 return col;
             }
 
