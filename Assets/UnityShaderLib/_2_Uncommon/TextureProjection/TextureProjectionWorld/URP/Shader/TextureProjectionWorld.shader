@@ -80,14 +80,7 @@ Shader "Uncommon/TextureProjectionWorld"
                         return half4(0,0,0,1);
                 #endif
 
-                //worldPos.z = max(worldPos.z,worldPos.y);
-
                 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xz);
-
-                //color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xz);
-
-                //float3 dirMask =
-
 
                 return color;
             }
