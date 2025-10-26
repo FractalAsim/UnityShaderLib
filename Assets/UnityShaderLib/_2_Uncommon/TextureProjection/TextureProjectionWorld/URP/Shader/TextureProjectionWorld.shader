@@ -5,6 +5,8 @@ Shader "Uncommon/TextureProjectionWorld"
     Properties
     {
         [MainTexture] _BaseMap("Base Map", 2D) = "white"
+
+        [KeywordEnum(XY, YZ, XZ)] _ProjectAxis("ProjectAxis", Float) = 0
     }
 
     SubShader
@@ -22,6 +24,8 @@ Shader "Uncommon/TextureProjectionWorld"
 
             // The DeclareDepthTexture.hlsl file contains utilities for sampling the Camera depth texture.
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+
+            #pragma shader_feature_local _PROJECTAXIS_XY _PROJECTAXIS_YZ _PROJECTAXIS_XZ
 
             struct Attributes
             {
@@ -80,7 +84,12 @@ Shader "Uncommon/TextureProjectionWorld"
                         return half4(0,0,0,1);
                 #endif
 
-                color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xz);
+                if (_PROJECTAXIS_XY)
+                    color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xy);
+                else if (_PROJECTAXIS_YZ)
+                    color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.yz);
+                else if (_PROJECTAXIS_XZ)
+                    color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, worldPos.xz);
 
                 return color;
             }
