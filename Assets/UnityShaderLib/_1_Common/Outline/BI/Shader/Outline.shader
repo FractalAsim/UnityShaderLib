@@ -66,7 +66,7 @@ Shader "Common/Outline"
         }
 
         //Surface shader
-		Tags{ "Queue" = "Transparent" }
+		Tags{ "RenderType" = "Opaque" }
 
 		CGPROGRAM
 		#pragma surface surf Lambert noshadow
