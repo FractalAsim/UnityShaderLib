@@ -233,7 +233,11 @@ Each Shader Technique are presented in Unity either as the following
   <summary><ins>Silhouette</ins></summary>
 <br>
 
-> TODO
+> Easy Technique to create Silhouette of parts of object when is occluded by another
+
+> Two pass shader, one draws the blocked part, one draws normally
+
+> Have Some issues when objects overlapped
 
 </details>
 
