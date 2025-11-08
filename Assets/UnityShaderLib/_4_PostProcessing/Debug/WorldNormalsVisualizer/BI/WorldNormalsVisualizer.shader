@@ -2,46 +2,19 @@ Shader "Debug/WorldNormalsVisualizer"
 {
     SubShader
     {
-        Tags { "RenderType" = "Opaque" }
-
         Pass
         {
             CGPROGRAM
 
-            #pragma vertex vert
+            #pragma vertex vert_img // Macro for minimal vertex shader
             #pragma fragment frag
 
-            
             #include "UnityCG.cginc"
-
-            struct appdata // Input To Vertex
-            {
-                float4 pos : POSITION;
-
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f // Input To Fragment
-            {
-                float4 pos : SV_POSITION;
-
-                float2 uv : TEXCOORD0;
-            };
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.pos = UnityObjectToClipPos(v.pos);
-
-                o.uv = v.uv;
-
-                return o;
-            }
 
             // Unity Injects this texture rendered from camera or gbuffer
             sampler2D _CameraDepthNormalsTexture;
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag(v2f_img i) : SV_Target
             {
                 float4 enc = tex2D(_CameraDepthNormalsTexture, i.uv);
                 float3 normal = DecodeViewNormalStereo(enc);
