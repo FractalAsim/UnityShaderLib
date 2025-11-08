@@ -2,7 +2,7 @@ Shader "Basic/PlainColor"
 {
     Properties
     {
-       _Color ("Main Color", Color) = (1,1,1,1)
+        _Color ("Main Color", Color) = (1,1,1,1)
     }
     SubShader
     {
