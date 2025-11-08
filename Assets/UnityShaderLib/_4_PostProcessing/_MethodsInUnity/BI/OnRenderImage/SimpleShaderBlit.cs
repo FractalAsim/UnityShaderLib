@@ -8,7 +8,7 @@
  * 
  * How To Use:
  * 1. Attach this script to a gameobject with camera component
- * 2. Assign a material or a shader
+ * 2. Assign a shader
  * 
  * Note:
  * Works only in Game Window
@@ -22,7 +22,7 @@ namespace MethodsInUnity
 
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
-    public class SimpleBlit : MonoBehaviour
+    public class SimpleShaderBlit : MonoBehaviour
     {
         [SerializeField] Shader shader;
 

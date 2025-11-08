@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 1836806873}
   - component: {fileID: 1836806872}
   - component: {fileID: 1836806875}
+  - component: {fileID: 1836806876}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -434,6 +435,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MethodsInUnity.SimpleBlit
   shader: {fileID: 4800000, guid: d413a580e446238468acb1fa2d5004e8, type: 3}
+--- !u!114 &1836806876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836806871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba384f65bce09a640a03b81512f9d3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MethodsInUnity.SimpleMaterialBlit
+  mat: {fileID: 2100000, guid: 90ce269303113d248ba8c265e23ea637, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
