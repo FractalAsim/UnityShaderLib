@@ -12,42 +12,17 @@ Shader "Debug/DepthVisualizer"
         {
             CGPROGRAM
 
-            #pragma vertex vert
+            #pragma vertex vert_img // Macro for minimal vertex shader
             #pragma fragment frag
 
             #pragma shader_feature_local _DEPTHSELECT_RAW _DEPTHSELECT_LINEAR // Compile shader variant only for this file for the shaders being used in material
             
-            
             #include "UnityCG.cginc"
-
-            struct appdata // Input To Vertex
-            {
-                float4 pos : POSITION;
-
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f // Input To Fragment
-            {
-                float4 pos : SV_POSITION;
-
-                float2 uv : TEXCOORD0;
-            };
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.pos = UnityObjectToClipPos(v.pos);
-
-                o.uv = v.uv;
-
-                return o;
-            }
 
             // Unity Injects this texture rendered from camera or gbuffer
             sampler2D _CameraDepthTexture;
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag(v2f_img i) : SV_Target
             {
                 float depth_raw = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv);
 

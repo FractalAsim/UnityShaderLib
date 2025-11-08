@@ -2,7 +2,7 @@
 {
 	Properties
 	{
-		_MainTex("Texture", 2D) = "white" {}
+		[HideInInspector] _MainTex ("Texture", 2D) = "white" {} // Input is actually ScreenBuffer
 
 		_TransitionTex("Transition Texture", 2D) = "white" {}
 		_Transition("Transition", Range(0, 1)) = 0
@@ -11,27 +11,17 @@
 
 	SubShader
 	{
+		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
 
 		Pass
 		{
 			CGPROGRAM
-			#pragma vertex vert
+
+			#pragma vertex vert_img // Macro for minimal vertex shader
 			#pragma fragment frag
 
 			#include "UnityCG.cginc"
-
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-			};
-
-			struct v2f
-			{
-				float4 vertex : SV_POSITION;
-				float2 uv : TEXCOORD0;
-			};
 
 			sampler2D _MainTex;
 
@@ -39,17 +29,7 @@
 			float _Transition;
 			fixed4 _TransitionColor;
 
-			v2f vert(appdata v)
-			{
-				v2f o;
-				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.uv = v.uv;
-				return o;
-			}
-
-
-
-			fixed4 frag(v2f i) : SV_Target
+			fixed4 frag(v2f_img i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
 

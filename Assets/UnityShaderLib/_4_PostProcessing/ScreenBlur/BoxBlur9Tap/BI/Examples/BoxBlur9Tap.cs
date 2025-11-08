@@ -3,7 +3,7 @@
 [ExecuteInEditMode]
 public class BoxBlur9Tap : MonoBehaviour
 {
-    public Material BlurMaterial;
+    [SerializeField] Material BlurMaterial;
 
     [Range(0, 10)] public int Iterations = 3;
 
