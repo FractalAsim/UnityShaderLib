@@ -21,8 +21,8 @@ Shader "Common/HSVShift"
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
-            #include "Assets/UnityShaderLib/Subgraphs/Color/Color.cginc"
-            #include "Assets/UnityShaderLib/Subgraphs/Easing/Easing.cginc"
+            #include "Assets/UnityShaderLib/Subgraphs_Inc/Color/Color.cginc"
+            #include "Assets/UnityShaderLib/Subgraphs_Inc/Easing/Easing.cginc"
 
             // Input to Vertex Shader
             struct appdata

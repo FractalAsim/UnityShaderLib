@@ -19,7 +19,7 @@ Shader "Common/DirectHueShift"
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
-            #include "Assets/UnityShaderLib/Subgraphs/Color/Color.cginc"
+            #include "Assets/UnityShaderLib/Subgraphs_Inc/Color/Color.cginc"
 
             // Input to Vertex Shader
             struct appdata

@@ -15,7 +15,7 @@ Shader "Common/ColorRim"
 
         #pragma surface surf Standard vertex:vert // Use Unity's surface shader as a base
 
-        #include "Assets/UnityShaderLib/Subgraphs/Common/Common.cginc"
+        #include "Assets/UnityShaderLib/Subgraphs_Inc/Common/Common.cginc"
 
         struct Input
         {

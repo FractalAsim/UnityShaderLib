@@ -24,8 +24,8 @@ Shader "Test0"
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
-            #include "Assets/UnityShaderLib/Subgraphs/SDF/SDF_IQ.cginc"
-            //#include "Assets/UnityShaderLib/Subgraphs/SDF/SDF.cginc"
+            //#include "Assets/UnityShaderLib/Subgraphs_Inc/SDF/SDF_IQ.cginc"
+            #include "Assets/UnityShaderLib/Subgraphs_Inc/Random/Hash.cginc"
 
             // Input to Vertex Shader
             struct appdata

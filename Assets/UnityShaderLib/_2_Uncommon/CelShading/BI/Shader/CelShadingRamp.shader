@@ -66,7 +66,7 @@ Shader "Uncommon/CelShadingRamp"
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
-            #include "Assets/UnityShaderLib/Subgraphs/Common/Common.cginc"
+            #include "Assets/UnityShaderLib/Subgraphs_Inc/Common/Common.cginc"
 
             // Input to Vertex Shader
             struct appdata
