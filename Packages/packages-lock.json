@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "asim.unity.unitystandardsetup": {
-      "version": "file:D:/Github/GDAsim/UnityQuickSetupCode_package_UnityStandardSetup/build/asim.unity.unitystandardsetup-1.0.0.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {}
-    },
     "com.unity.2d.common": {
       "version": "12.0.1",
       "depth": 1,
@@ -106,9 +100,9 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.androidjni": "1.0.0",
         "com.unity.modules.uielements": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.screencapture": "1.0.0"
       },
       "url": "https://packages.unity.com"
