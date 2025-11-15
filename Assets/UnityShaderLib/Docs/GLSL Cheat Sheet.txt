@@ -1,0 +1,92 @@
+﻿attribute vec4 gl_Vertex; // position (in object coordinates,  i.e. local or model coordinates)
+attribute vec4 gl_Color; // color (usually constant)
+attribute vec3 gl_Normal; // surface normal vector (in object coordinates; usually normalized to unit length)
+attribute vec4 gl_MultiTexCoord0; //0th set of texture coordinates (a.k.a. “UV”; between 0 and 1) 
+attribute vec4 gl_MultiTexCoord1; //1st set of texture coordinates 
+
+attribute vec4 Tangent; // this attribute is specific to Unity 
+
+attribute gl_FragCoord -- //Screen Coordinates of fragment
+attribute gl_FrontFacing -- //BackFacing or Front facing is rendering
+
+
+//predefined uniform variables --include "UnityCG.glslinc"
+
+uniform vec4 _Time, _SinTime, _CosTime; // time values from Unity
+uniform vec4 _ProjectionParams;
+// x = 1 or -1 (-1 if projection is flipped)
+// y = near plane; z = far plane; w = 1/far plane
+uniform vec4 _ScreenParams; 
+// x = width; y = height; z = 1 + 1/width; w = 1 + 1/height
+uniform vec4 unity_Scale; // w = 1/scale; see _World2Object
+uniform vec3 _WorldSpaceCameraPos;
+uniform mat4 _Object2World; // model matrix
+uniform mat4 _World2Object; // inverse model matrix 
+// (all but the bottom-right element have to be scaled 
+// with unity_Scale.w if scaling is important) 
+uniform vec4 _LightPositionRange; // xyz = pos, w = 1/range
+uniform vec4 _WorldSpaceLightPos0; // position or direction of light source
+
+
+uniform vec4 _LightColor0; // color of light source define them separately: 
+uniform mat4 _LightMatrix0; // matrix to light space define them separately:
+
+//More uniform varible
+
+uniform mat4 gl_ModelViewMatrix;
+uniform mat4 gl_ProjectionMatrix;
+uniform mat4 gl_ModelViewProjectionMatrix;
+uniform mat4 gl_TextureMatrix[gl_MaxTextureCoords];
+uniform mat3 gl_NormalMatrix; // transpose of the inverse of gl_ModelViewMatrix
+uniform mat4 gl_ModelViewMatrixInverse;
+uniform mat4 gl_ProjectionMatrixInverse;
+uniform mat4 gl_ModelViewProjectionMatrixInverse;
+uniform mat4 gl_TextureMatrixInverse[gl_MaxTextureCoords];
+uniform mat4 gl_ModelViewMatrixTranspose;
+uniform mat4 gl_ProjectionMatrixTranspose;
+uniform mat4 gl_ModelViewProjectionMatrixTranspose;
+uniform mat4 gl_TextureMatrixTranspose[gl_MaxTextureCoords];
+uniform mat4 gl_ModelViewMatrixInverseTranspose;
+uniform mat4 gl_ProjectionMatrixInverseTranspose;
+uniform mat4 gl_ModelViewProjectionMatrixInverseTranspose;
+uniform mat4 gl_TextureMatrixInverseTranspose[gl_MaxTextureCoords];
+
+struct gl_LightModelParameters { vec4 ambient; };
+uniform gl_LightModelParameters gl_LightModel;
+
+
+
+
+//uniform properties of shaders can be modified by script
+sharedmaterial  = ALL material  = one;
+renderer.sharedMaterial.SetVector();
+renderer.sharedMaterial.SetFloat();
+renderer.Material.SetColor();
+
+
+
+
+//Blending
+One					vec4(1.0)
+Zero				vec4(0.0)
+SrcColor			gl_FragColor
+SrcAlpha			vec4(gl_FragColor.a)
+DstColor			pixel_color
+DstAlpha			vec4(pixel_color.a)
+OneMinusSrcColor	vec4(1.0) - gl_FragColor
+OneMinusSrcAlpha	vec4(1.0 - gl_FragColor.a)
+OneMinusDstColor	vec4(1.0) - pixel_color
+OneMinusDstAlpha	vec4(1.0 - pixel_color.a)
+
+//Alpha Blend "source over destination"
+Blend SrcAlpha OneMinusSrcAlpha [vec4 result = vec4(gl_FragColor.a) * gl_FragColor + vec4(1.0 - gl_FragColor.a) * pixel_color;]
+
+//Premultiplied Alpha Blend
+Blend One OneMinusSrcAlpha [vec4 result = vec4(1.0) * gl_FragColor + vec4(1.0 - gl_FragColor.a) * pixel_color;
+
+//Additive Blend
+Blend One One [vec4 result = vec4(1.0) * gl_FragColor + vec4(1.0) * pixel_color;]
+
+
+
+//min() return the lesser of two values

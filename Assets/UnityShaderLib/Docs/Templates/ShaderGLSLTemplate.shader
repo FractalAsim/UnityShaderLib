@@ -8,11 +8,14 @@ Shader "ShaderGLSLTemplate"
 	{	
 		Pass
 		{
+			// Cull Off
+			// Cull Front
+			// Cull Back
 
 			GLSLPROGRAM // Begin GLSL
 			
 			#include "UnityCG.glslinc"
-
+			
 			// Time values from Unity
 			// uniform vec4 _Time;
 			// uniform vec4 _SinTime;
@@ -43,14 +46,22 @@ Shader "ShaderGLSLTemplate"
 			#ifdef VERTEX // Begin vertex program/shader
 
 			out vec4 texcoord; // Store a value to send to Frag
+			out vec4 worldPos;
 
 			void main()
 			{
-				vec3 worldLightDir = WorldSpaceLightDir(gl_Vertex);
+				// Clip Space
+				gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+
+				// World Pos
+				worldPos = unity_ObjectToWorld * gl_Vertex;
 
 				//TRANSFORM_TEX_ST(tex, name##_ST)
 
-				gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex; // Draws the Vertex at the correct position in world
+				//unity_ObjectToWorld , unity_WorldToObject , gl_NormalMatrix
+
+
+				vec3 worldLightDir = WorldSpaceLightDir(gl_Vertex);
 			}
 
 			#endif // Ends vertex program/shader
@@ -63,7 +74,13 @@ Shader "ShaderGLSLTemplate"
 			{
 				float lum = Luminance(vec3(1.0,0.0,0.0));
 
-				gl_FragColor = vec4(1.0,0.0,0.0,1.0);
+				// do when front facing draw
+				if (gl_FrontFacing)
+				{
+
+				}
+				
+				gl_FragColor = vec4(1.0,0.0,0.0,1.0); // output Color
 			}
 
 			#endif // Ends fragment program/shader
