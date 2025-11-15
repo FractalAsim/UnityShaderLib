@@ -1,5 +1,5 @@
-#ifndef Easing
-#define Easing
+#ifndef EASING
+#define EASING
 
 /// <summary>
 /// Uses Alternate/Expanded Form to reduce number multiplication
