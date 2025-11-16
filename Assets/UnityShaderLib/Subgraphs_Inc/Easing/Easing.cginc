@@ -187,4 +187,21 @@ inline float BounceInOut(float t)
     (1.0 + BounceOut(2.0 * t - 1.0)) / 2.0;
 }
 
+inline float Spring(float start, float end, float t)
+{
+    float damping = (1 - t);
+    float oscillation = sin(t * 20.0);
+
+    return lerp(start, end, t) + (oscillation * damping * 0.05) * (end - start);
+}
+inline float Spring2(float start, float end, float t)
+{
+    float damping = pow(2.0, -10.0 * t); // exponential decay
+    float oscillation = sin((t - 0.075) * 20.0); // spring frequency
+    
+    float overshoot = oscillation * damping;
+
+    return start + (end - start) * (t + overshoot);
+}
+
 #endif
