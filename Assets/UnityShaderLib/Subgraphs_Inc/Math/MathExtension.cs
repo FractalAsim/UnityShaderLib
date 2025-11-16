@@ -1,6 +1,6 @@
 using System;
 
-public static class Math
+public static class MathExtension
 {
     public static float Clerp(float start, float end, float t)
     {
