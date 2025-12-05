@@ -1,6 +1,4 @@
-// Calculate world Position of pixels
-
-Shader "Basic/WorldPosTexturing"
+Shader "Basic/ScreenPosTexturing"
 {
     Properties
     {
@@ -9,7 +7,6 @@ Shader "Basic/WorldPosTexturing"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {
@@ -30,8 +27,6 @@ Shader "Basic/WorldPosTexturing"
             struct v2f
             {
                 float4 pos : SV_POSITION;
-
-                float3 worldPos : TEXCOORD0;
             };
 
             sampler2D _MainTex;
@@ -41,16 +36,12 @@ Shader "Basic/WorldPosTexturing"
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.pos);
 
-                // World Pos
-                o.worldPos = mul(unity_ObjectToWorld, v.pos).xyz;
-
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // Use World Pos to sample texture
-                fixed4 col = tex2D(_MainTex, i.worldPos);
+                fixed4 col = tex2D(_MainTex, i.pos.xy / _ScreenParams.x);
 
                 return col;
             }

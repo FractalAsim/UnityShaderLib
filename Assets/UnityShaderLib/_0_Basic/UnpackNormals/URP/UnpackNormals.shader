@@ -67,7 +67,7 @@ Shader "Basic/UnpackNormals"
             {
                 float3 unpackedNormal = UnpackNormal(tex2D(_NormalMap, i.uv));
                 
-                unpackedNormal = UnpackNormalRGB(tex2D(_NormalMap, i.uv));
+                //unpackedNormal = UnpackNormalRGB(tex2D(_NormalMap, i.uv));
 
                 // transform normal from tangent to world space
                 float3 normal = mul(i.tangentToWorld, unpackedNormal);
