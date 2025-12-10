@@ -45,7 +45,7 @@ Shader "Basic/NdotL"
             {
                 // Basic light using NdotL
                 float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
-                float NdotL = max(dot(i.worldNormal, lightDir), 0.0);
+                float NdotL = max(dot(normalize(i.worldNormal), lightDir), 0.0);
 
                 fixed4 col = _LightColor0 * NdotL;
                 return col;
