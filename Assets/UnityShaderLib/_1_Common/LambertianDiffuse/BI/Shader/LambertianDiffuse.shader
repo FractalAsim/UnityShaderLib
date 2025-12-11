@@ -65,7 +65,7 @@ Shader "Common/LambertianDiffuse"
                 fixed3 Ka = fixed3(0,0,0);
 
                 // Equation
-                fixed3 Intensity = Kd.rgb * _LightColor0.rgb * NdotL + Ka;
+                fixed3 Intensity = Kd * _LightColor0.rgb * NdotL + Ka;
 
                 return fixed4(Intensity, 1);
             }
