@@ -1,11 +1,10 @@
 // Classic Lambert Model
 
-Shader "Common/Lambert"
+Shader "Common/LambertianDiffuse"
 {
     Properties 
     {
         _MainTex ("Albedo", 2D) = "white" {}
-        _Color ("Color", Color) = (1,1,1,1)
     }
     SubShader 
     {
@@ -37,8 +36,8 @@ Shader "Common/Lambert"
                 float3 worldNormal : TEXCOORD1;
             };
 
-            float4 _Color;
             float4 _LightColor0;
+
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
@@ -55,14 +54,20 @@ Shader "Common/Lambert"
 
             fixed4 frag (v2f i) : SV_Target 
             {
-                fixed4 albedo = tex2D(_MainTex, i.uv) * _Color;
+                // Material diffuse coefficient - aka albedo
+                fixed3 Kd = tex2D(_MainTex, i.uv).rgb;
 
+                // NdotL
                 float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
                 float NdotL = max(0.0, dot(normalize(i.worldNormal), lightDir));
 
-                fixed3 diffuse = albedo.rgb * (_LightColor0.rgb * NdotL);
+                // Ambient coefficient
+                fixed3 Ka = fixed3(0,0,0);
 
-                return fixed4(diffuse, albedo.a);
+                // Equation
+                fixed3 Intensity = Kd.rgb * _LightColor0.rgb * NdotL + Ka;
+
+                return fixed4(Intensity, 1);
             }
             ENDCG
         }
