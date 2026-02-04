@@ -1,4 +1,4 @@
-Shader "Common/Outline"
+Shader "Common/OutlineInvertedHull"
 {
     Properties
     {
@@ -51,6 +51,9 @@ Shader "Common/Outline"
                 // }
 
                 v.pos.xyz += normalize(v.pos.xyz) * _OutlineWidth;
+
+                // another method
+                // Normal = averaged-cross-product at each vertex
 
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.pos);
