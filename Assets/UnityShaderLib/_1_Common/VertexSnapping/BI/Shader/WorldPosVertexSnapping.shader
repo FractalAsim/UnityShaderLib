@@ -1,15 +1,12 @@
-// Technique to animate the appearance (shape) of a object by updating vertex position
-
-Shader "Common/Displacement"
+Shader "Basic/WorldPosVertexSnapping"
 {
     Properties
     {
-       _Displacement ("Displacement", Vector) = (0,0,0,0)
+        _SnapValue ("Snap Grid Size", Range(0.0001, 0.2)) = 0.05
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {
@@ -33,21 +30,26 @@ Shader "Common/Displacement"
                 float4 pos : SV_POSITION;
             };
 
-            float4 _Displacement;
+            float _SnapValue;
 
             v2f vert (appdata v)
             {
                 v2f o;
+                
+                v.pos.y += TimeLoop01();
 
-                v.pos = TimeLoop01() * _Displacement + v.pos;
+                float4 worldPos = mul(unity_ObjectToWorld, v.pos);
 
-                o.pos = UnityObjectToClipPos(v.pos);
+                worldPos.xyz = round(worldPos.xyz / _SnapValue) * _SnapValue;
+
+                o.pos = UnityWorldToClipPos(worldPos);
+
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                return float4(1,1,1,1);
+                return fixed4(1,1,1,1);
             }
 
             ENDCG
