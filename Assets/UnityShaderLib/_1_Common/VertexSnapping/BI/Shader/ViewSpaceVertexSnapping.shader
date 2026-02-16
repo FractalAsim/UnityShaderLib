@@ -33,13 +33,13 @@ Shader "Basic/ViewSpaceVertexSnapping"
             {
                 v2f o;
 
-                // Object -> View Space
+                // Object Space -> View Space
                 float4 viewPos = mul(UNITY_MATRIX_MV, v.pos);
 
-                // Round/Snap
-                viewPos.xyz = round(viewPos.xyz / _SnapValue) * _SnapValue;
+                // Round/Snap in View Space
+                viewPos.xy = round(viewPos.xy / _SnapValue) * _SnapValue;
 
-                // View -> Clip Space
+                // View Space -> Clip Space
                 o.pos = mul(UNITY_MATRIX_P, viewPos);
 
                 return o;

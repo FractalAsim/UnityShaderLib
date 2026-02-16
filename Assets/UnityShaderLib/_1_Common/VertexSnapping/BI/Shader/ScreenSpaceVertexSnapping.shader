@@ -1,8 +1,8 @@
-Shader "Basic/WorldPosVertexSnapping"
+Shader "Basic/ScreenSpaceVertexSnapping"
 {
     Properties
     {
-        _SnapValue ("Snap Grid Size", Range(0.0001, 0.2)) = 0.05
+        _SnapValue ("Snap Grid Size", Range(1, 8)) = 0.05
     }
     SubShader
     {
@@ -16,7 +16,6 @@ Shader "Basic/WorldPosVertexSnapping"
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
-            #include "Assets/UnityShaderLib/Subgraphs_Inc/Common/Common.cginc"
 
             // Input to Vertex Shader
             struct appdata
@@ -36,17 +35,29 @@ Shader "Basic/WorldPosVertexSnapping"
             {
                 v2f o;
                 
-                v.pos.y += TimeLoop01();
+                // Object Space -> Clip Space
+                float4 clipPos = UnityObjectToClipPos(v.pos);
 
-                // Object Space -> World Space
-                float4 worldPos = mul(unity_ObjectToWorld, v.pos);
+                // Clip Space -> NDC
+                float2 ndc = clipPos.xy / clipPos.w;
 
-                // Snap in World Space
-                worldPos.xy = round(worldPos.xy / _SnapValue) * _SnapValue;
+                // -1 1 to 0 1
+                ndc = ndc * 0.5 + 0.5;
 
-                // World Space -> Clip Space
-                o.pos = UnityWorldToClipPos(worldPos);
+                // Scale by ScreenParams/Screen Resolution
+                float2 screenPos = ndc * _ScreenParams.xy;
 
+                // Round/Snap in Screen Space
+                screenPos = floor(screenPos / _SnapValue) * _SnapValue;
+
+                // screenPos ->  NDC
+                ndc = screenPos / _ScreenParams.xy;
+                ndc = ndc * 2 - 1;
+
+                // NDC -> Clip Space
+                clipPos.xy = ndc * clipPos.w;
+
+                o.pos = clipPos;
                 return o;
             }
 
