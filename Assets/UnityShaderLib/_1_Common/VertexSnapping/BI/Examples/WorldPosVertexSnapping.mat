@@ -74,7 +74,7 @@ Material:
     - _Parallax: 0.02
     - _RimIntensity: 1
     - _SmoothnessTextureChannel: 0
-    - _SnapValue: 0.15
+    - _SnapValue: 0.2
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0

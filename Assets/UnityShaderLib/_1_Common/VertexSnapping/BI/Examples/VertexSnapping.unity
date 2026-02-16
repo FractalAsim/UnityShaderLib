@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 1023747260}
   - component: {fileID: 1023747259}
   m_Layer: 0
-  m_Name: WorldPosVertexSnapping (1)
+  m_Name: ScreenSpaceVertexSnapping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
