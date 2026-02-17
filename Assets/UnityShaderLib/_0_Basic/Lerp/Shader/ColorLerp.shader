@@ -8,45 +8,56 @@ Shader "Basic/ColorLerp"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
 
         Pass
         {
-            CGPROGRAM
+            HLSLPROGRAM
 
-            #pragma vertex vert // Use "vert" function for Vertex Shader
-            #pragma fragment frag // Use "frag" function for Fragment Shader
+            #pragma vertex vert
+            #pragma fragment frag
+
+            // Required for CBUFFER_START
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             // Input to Vertex Shader
-            struct appdata
+            struct Attributes
             {
-                float4 pos : POSITION;
+                float4 positionOS : POSITION; // Object Space Position
             };
 
             // Input to Fragment Shader
-            struct v2f
+            struct Varyings
             {
-                float4 pos : SV_POSITION;
+                float4 positionHCS : SV_POSITION; // Homogeneous Clip Space Position
+                float2 uv : TEXCOORD0;
             };
 
-            float4 _Color1;
-            float4 _Color2;
-            float _Blend;
+            // Put properties here for SRP Batcher, all pass must use same CBUFFER
+            CBUFFER_START(UnityPerMaterial)
+                float4 _Color1;
+                float4 _Color2;
+                float _Blend;
+            CBUFFER_END
 
-            v2f vert (appdata v)
+            // Vertex Shader
+            Varyings vert(Attributes IN)
             {
-                v2f o;
-                o.pos = UnityObjectToClipPos(v.pos);
-                return o;
+                Varyings OUT;
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+
+                return OUT;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            // Fragment Shader
+            half4 frag(Varyings IN) : SV_Target
             {
-                return lerp(_Color1,_Color2,_Blend);
+                half4 color = lerp(_Color1, _Color2, _Blend);
+
+                return color;
             }
 
-            ENDCG
+            ENDHLSL
         }
     }
 }
