@@ -30,7 +30,6 @@ Shader "Basic/ColorLerp"
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION; // Homogeneous Clip Space Position
-                float2 uv : TEXCOORD0;
             };
 
             // Put properties here for SRP Batcher, all pass must use same CBUFFER
