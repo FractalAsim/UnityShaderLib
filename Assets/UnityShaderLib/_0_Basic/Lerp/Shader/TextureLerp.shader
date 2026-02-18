@@ -2,60 +2,76 @@ Shader "Basic/TextureLerp"
 {
     Properties
     {
-        _Texture1 ("Texture1", 2D) = "white" {}
-        _Texture2 ("Texture2", 2D) = "white" {}
+        _Texture1 ("Texture 1", 2D) = "white" {}
+        _Texture2 ("Texture 2", 2D) = "white" {}
         _Blend ("Blend", Range(0, 1)) = 0
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
 
         Pass
         {
-            CGPROGRAM
+            HLSLPROGRAM
 
-            #pragma vertex vert // Use "vert" function for Vertex Shader
-            #pragma fragment frag // Use "frag" function for Fragment Shader
+            #pragma vertex vert
+            #pragma fragment frag
 
-            // Required for TRANSFORM_TEX
-            #include "UnityCG.cginc"
+            // Required for CBUFFER_START
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             // Input to Vertex Shader
-            struct appdata
+            struct Attributes
             {
-                float4 pos : POSITION;
+                float4 positionOS : POSITION; // Object Space Position
+
                 float2 uv : TEXCOORD0;
             };
 
             // Input to Fragment Shader
-            struct v2f
+            struct Varyings
             {
-                float4 pos : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float2 uv2 : TEXCOORD0;
+                float4 positionHCS : SV_POSITION; // Homogeneous Clip Space Position
+                
+                float2 uv  : TEXCOORD0;
+                float2 uv2 : TEXCOORD1;
             };
 
-            sampler2D _Texture1;
-            float4 _Texture1_ST;
-            sampler2D _Texture2;
-            float4 _Texture2_ST;
-            float _Blend;
+            TEXTURE2D(_Texture1);
+            SAMPLER(sampler_Texture1);
 
-            v2f vert (appdata v)
+            TEXTURE2D(_Texture2);
+            SAMPLER(sampler_Texture2);
+
+            // Put properties here for SRP Batcher, all pass must use same CBUFFER
+            CBUFFER_START(UnityPerMaterial)
+                float4 _Texture1_ST;
+                float4 _Texture2_ST;
+                float _Blend;
+            CBUFFER_END
+
+            // Vertex Shader
+            Varyings vert(Attributes IN)
             {
-                v2f o;
-                o.pos = UnityObjectToClipPos(v.pos);
-                o.uv = TRANSFORM_TEX(v.uv, _Texture1);
-                o.uv2 = TRANSFORM_TEX(v.uv, _Texture2);
-                return o;
+                Varyings OUT;
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                OUT.uv  = TRANSFORM_TEX(IN.uv, _Texture1);
+                OUT.uv2 = TRANSFORM_TEX(IN.uv, _Texture2);
+
+                return OUT;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            // Fragment Shader
+            half4 frag(Varyings IN) : SV_Target
             {
-                return lerp(tex2D(_Texture1, i.uv),tex2D(_Texture2, i.uv2),_Blend);
+                half4 col1 = SAMPLE_TEXTURE2D(_Texture1, sampler_Texture1, IN.uv);
+                half4 col2 = SAMPLE_TEXTURE2D(_Texture2, sampler_Texture2, IN.uv2);
+                half4 color = lerp(col1, col2, _Blend);
+
+                return color;
             }
-            ENDCG
+
+            ENDHLSL
         }
     }
 }
