@@ -17,7 +17,7 @@ Shader "Basic/TextureLerp"
             #pragma vertex vert
             #pragma fragment frag
 
-            // Required for CBUFFER_START
+            // Required for CBUFFER_START, TEXTURE2D
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             // Input to Vertex Shader

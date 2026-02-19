@@ -2,56 +2,71 @@ Shader "Basic/NdotL"
 {
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
 
         Pass
         {
-            CGPROGRAM
+            HLSLPROGRAM
 
-            #pragma vertex vert // Use "vert" function for Vertex Shader
-            #pragma fragment frag // Use "frag" function for Fragment Shader
+            #pragma vertex vert
+            #pragma fragment frag
 
-            #include "UnityCG.cginc"
+            // Required for CBUFFER_START
+
+            // Required for GetMainLight() in RealtimeLights.hlsl
+            // Required for _MainLightPosition, _MainLightColor in Input.hlsl
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 
             // Input to Vertex Shader
-            struct appdata
+            struct Attributes
             {
-                float4 pos : POSITION;
+                float4 positionOS : POSITION; // Object Space Position
 
                 float3 normal : NORMAL;
             };
 
             // Input to Fragment Shader
-            struct v2f
+            struct Varyings
             {
-                float4 pos : SV_POSITION;
+                float4 positionHCS : SV_POSITION; // Homogeneous Clip Space Position
 
                 float3 worldNormal : NORMAL;
             };
 
-            uniform float4 _LightColor0;
-
-            v2f vert (appdata v)
+            // Vertex Shader
+            Varyings vert(Attributes IN)
             {
-                v2f o;
-                o.pos = UnityObjectToClipPos(v.pos);
+                Varyings OUT;
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
 
-                o.worldNormal = UnityObjectToWorldNormal(v.normal);
-                return o;
+                OUT.worldNormal = TransformObjectToWorldNormal(IN.normal);
+
+                return OUT;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            // Fragment Shader
+            half4 frag(Varyings IN) : SV_Target
             {
-                // Basic light using NdotL
-                float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
-                float NdotL = max(dot(normalize(i.worldNormal), lightDir), 0.0);
+                // 1. Basic light using NdotL
+                float3 lightDir = normalize(_MainLightPosition.xyz);
+                float NdotL = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
 
-                fixed4 col = _LightColor0 * NdotL;
-                return col;
+                half4 color = _MainLightColor * NdotL;
+
+                return color;
+
+                
+                // 2. Basic light using NdotL using GetMainLight()
+                // Light mainLight = GetMainLight();
+                // float3 lightDir = normalize(mainLight.direction);
+                // float NdotL = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
+
+                // half4 color = half4(mainLight.color * NdotL, 1.0);
+
+                // return color;
             }
 
-            ENDCG
+            ENDHLSL
         }
     }
 }
