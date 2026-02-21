@@ -1,10 +1,8 @@
-Shader "Basic/ColorLerp"
+Shader "Basic/PlainColor"
 {
     Properties
     {
         _Color1 ("Color1", Color) = (1,0,0,1)
-        _Color2 ("Color2", Color) = (0,1,0,1)
-        _Blend ("Blend", Range(0, 1)) = 0
     }
     SubShader
     {

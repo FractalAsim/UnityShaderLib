@@ -42,6 +42,7 @@ Shader "Basic/TextureLerp"
             float4 _Texture2_ST;
             float _Blend;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -51,6 +52,7 @@ Shader "Basic/TextureLerp"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 return lerp(tex2D(_Texture1, i.uv),tex2D(_Texture2, i.uv2),_Blend);

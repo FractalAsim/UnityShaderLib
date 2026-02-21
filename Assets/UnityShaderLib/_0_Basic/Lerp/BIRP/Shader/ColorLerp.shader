@@ -9,7 +9,6 @@ Shader "Basic/ColorLerp"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {
@@ -34,6 +33,7 @@ Shader "Basic/ColorLerp"
             float4 _Color2;
             float _Blend;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -41,6 +41,7 @@ Shader "Basic/ColorLerp"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 return lerp(_Color1,_Color2,_Blend);

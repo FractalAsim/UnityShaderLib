@@ -7,7 +7,6 @@ Shader "Basic/PlainColor"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {
@@ -30,6 +29,7 @@ Shader "Basic/PlainColor"
 
             float4 _Color;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -37,6 +37,7 @@ Shader "Basic/PlainColor"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 return _Color;
