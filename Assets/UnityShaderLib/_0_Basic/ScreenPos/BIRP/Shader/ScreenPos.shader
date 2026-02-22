@@ -25,6 +25,7 @@ Shader "Basic/ScreenPos"
                 float4 pos : SV_POSITION;
             };
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -33,6 +34,7 @@ Shader "Basic/ScreenPos"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col;
