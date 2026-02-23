@@ -31,6 +31,7 @@ Shader "Basic/ScreenPosTexturing"
 
             sampler2D _MainTex;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -39,6 +40,7 @@ Shader "Basic/ScreenPosTexturing"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.pos.xy / _ScreenParams.x);
