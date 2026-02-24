@@ -22,7 +22,7 @@ Shader "Basic/NdotL"
             {
                 float4 positionOS : POSITION; // Object Space Position
 
-                float3 normal : NORMAL;
+                float3 normalOS : NORMAL;
             };
 
             // Input to Fragment Shader
@@ -39,7 +39,7 @@ Shader "Basic/NdotL"
                 Varyings OUT;
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
 
-                OUT.worldNormal = TransformObjectToWorldNormal(IN.normal);
+                OUT.worldNormal = TransformObjectToWorldNormal(IN.normalOS);
 
                 return OUT;
             }

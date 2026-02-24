@@ -24,14 +24,14 @@ Shader "Basic/ScreenPosTexturing"
                 float4 positionOS : POSITION; // Object Space Position
             };
 
-            TEXTURE2D(_MainTex);
-            SAMPLER(sampler_MainTex);
-
             // Input to Fragment Shader
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION; // Homogeneous Clip Space Position
             };
+
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
 
             // Vertex Shader
             Varyings vert(Attributes IN)

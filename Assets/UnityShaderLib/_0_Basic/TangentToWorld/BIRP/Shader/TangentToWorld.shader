@@ -34,6 +34,7 @@ Shader "Basic/TangentToWorld"
                 float3x3 tangentToWorld : TEXCOORD3;
             };
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -52,6 +53,7 @@ Shader "Basic/TangentToWorld"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = float4(1,1,1,1);
