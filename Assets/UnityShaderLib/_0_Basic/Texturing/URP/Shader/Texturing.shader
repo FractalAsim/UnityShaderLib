@@ -1,11 +1,8 @@
-// Technique Texture Channel Select Technique : Allow user to Select Channel of a texture using Dot Product
-
-Shader "Basic/TextureChannelSelect"
+Shader "Basic/Texturing"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        [ChannelSelect] _ChannelSelect ("ChannelSelect", Vector) = (1,0,0,0)
     }
     SubShader
     {
@@ -42,7 +39,6 @@ Shader "Basic/TextureChannelSelect"
 
             CBUFFER_START(UnityPerMaterial)
                 float4 _MainTex_ST;
-                float4 _ChannelSelect;
             CBUFFER_END
 
             // Vertex Shader
@@ -59,7 +55,7 @@ Shader "Basic/TextureChannelSelect"
             // Fragment Shader
             half4 frag(Varyings IN) : SV_Target
             {
-                half4 color = dot(_ChannelSelect, SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv));
+                half4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
 
                 return color;
             }
