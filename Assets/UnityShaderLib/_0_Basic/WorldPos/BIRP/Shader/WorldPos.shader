@@ -1,5 +1,3 @@
-// Calculate world Position of pixels
-
 Shader "Basic/WorldPos"
 {
     SubShader
@@ -30,6 +28,7 @@ Shader "Basic/WorldPos"
                 float3 worldPos : TEXCOORD0;
             };
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -41,6 +40,7 @@ Shader "Basic/WorldPos"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col;
