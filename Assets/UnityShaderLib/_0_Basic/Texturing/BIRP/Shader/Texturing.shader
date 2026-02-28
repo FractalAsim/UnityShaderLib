@@ -37,6 +37,7 @@ Shader "Basic/Texturing"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -48,6 +49,7 @@ Shader "Basic/Texturing"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 // Use UV to sample texture

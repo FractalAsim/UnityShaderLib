@@ -40,6 +40,7 @@ Shader "Basic/TextureChannelSelect"
 
             float4 _ChannelSelect;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -49,6 +50,7 @@ Shader "Basic/TextureChannelSelect"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = dot(_ChannelSelect,tex2D(_MainTex, i.uv));

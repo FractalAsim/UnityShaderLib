@@ -35,6 +35,7 @@ Shader "Basic/Time"
             // float4 _CosTime; (t/8, t/4, t/2, t)
             // float4 unity_DeltaTime; (dt, 1/dt, smoothDt, 1/smoothDt)
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -45,6 +46,7 @@ Shader "Basic/Time"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 return float4(1,1,1,1);

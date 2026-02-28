@@ -45,7 +45,7 @@
                 OUT.tangentWS = real3(TransformObjectToWorldDir(IN.tangentOS.xyz));
 
                 // World Normal
-                OUT.normalWS   = TransformObjectToWorldNormal(IN.normalOS);
+                OUT.normalWS = TransformObjectToWorldNormal(IN.normalOS);
 
                 // World Binormal
                 real tangentSign = real(IN.tangentOS.w) * GetOddNegativeScale();
@@ -55,7 +55,7 @@
                 OUT.binormalWS = real3(cross(OUT.normalWS, float3(OUT.tangentWS.xyz))) * tangentSign;
 
                 // TangentToworld (TBN) Matrix
-                OUT.tangentToWorld = float3x3(OUT.tangentWS.xyz, OUT.binormalWS, OUT.normalWS);
+                OUT.tangentToWorld = real3x3(OUT.tangentWS.xyz, OUT.binormalWS, OUT.normalWS);
                 // or
                 //OUT.tangentToWorld = CreateTangentToWorld(OUT.tangentWS,OUT.normalWS,tangentSign);
 
