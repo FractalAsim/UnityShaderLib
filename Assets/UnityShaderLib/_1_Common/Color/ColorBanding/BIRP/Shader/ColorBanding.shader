@@ -23,14 +23,14 @@ Shader "Common/ColorBanding"
             struct appdata
             {
                 float4 pos : POSITION;
-                float4 normal : NORMAL;
+                float3 normal : NORMAL;
             };
 
             // Input to Fragment Shader
             struct v2f
             {
                 float4 pos : SV_POSITION;
-                float4 normal : NORMAL;
+                float3 normal : NORMAL;
             };
 
             float4 _Color;
@@ -47,6 +47,8 @@ Shader "Common/ColorBanding"
             fixed4 frag (v2f i) : SV_Target
             {
                 float NdotL = MainLightOnSurface(i.normal);
+
+                // Using brightness value on surface, flatten the color every each band segment
                 float band = max(_BandCount,1);
                 float color = ceil(Remap1101(NdotL) * band) / band;
                 
