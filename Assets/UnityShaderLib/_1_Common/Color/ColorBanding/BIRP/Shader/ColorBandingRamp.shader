@@ -3,7 +3,7 @@ Shader "Common/ColorBandingRamp"
     Properties
     {
         _Ramp ("Ramp Texture", 2D) = "white" {}
-       _RampSelect ("Ramp Select (Row)", Float) = 0
+        _RampSelect ("Ramp Select (Row)", Float) = 0
     }
     SubShader
     {
@@ -48,6 +48,8 @@ Shader "Common/ColorBandingRamp"
             fixed4 frag (v2f i) : SV_Target
             {
                 float NdotL = MainLightOnSurface(i.normal);
+
+                // Using brightness value on surface, as x coord, and _rampSelect as y coord, to sample a ramp texture for color
                 float2 uvSample = float2(Remap1101(NdotL),_RampSelect);
                 fixed4 col = tex2D(_Ramp, uvSample);
                 
