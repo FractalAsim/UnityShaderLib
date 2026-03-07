@@ -1,12 +1,10 @@
-// Box Blur 3x3 kernel
-// Blur by adding neighbours and getting the average
-Shader "Common/BoxBlur"
+Shader "Common/ColorBleedHard"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-        _Blur ("Blur", Range(-2,1)) = 0
-        _BlurSize ("BlurSize", Range(0,0.1)) = 0.1
+        _MainTex ("Main Texture", 2D) = "white" {}
+        _Color ("Color", Color) = (1,0,0,1)
+        _DifferenceThreshold ("Difference Threshold", Range(0,10)) = 0
     }
     SubShader
     {
@@ -21,7 +19,7 @@ Shader "Common/BoxBlur"
 
             // Required for TEXTURE2D
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-
+            
             // Input to Vertex Shader
             struct Attributes
             {
@@ -42,10 +40,9 @@ Shader "Common/BoxBlur"
             SAMPLER(sampler_MainTex);
 
             CBUFFER_START(UnityPerMaterial)
-                float4 _MainTex_ST;
-                float4 _MainTex_TexelSize;
-                float _Blur;
-                float _BlurSize;
+                float4  _MainTex_ST;
+                float4  _Color;
+                float   _DifferenceThreshold;
             CBUFFER_END
 
             // Vertex Shader
@@ -62,25 +59,18 @@ Shader "Common/BoxBlur"
             // Fragment Shader
             half4 frag(Varyings IN) : SV_Target
             {
-                float4 mainColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
+                half4 mainColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
+                float dist = distance(_Color.rgb, mainColor.rgb);
 
-                float4 blurColor = float4(0, 0, 0, 0);
-
-                // Sample neighbours in 3x3 grid, add all, and get average. 
-                [unroll]
-                for (int y = -1; y <= 1; y++)
+                half4 color;
+                if(dist < _DifferenceThreshold)
                 {
-                    [unroll]
-                    for (int x = -1; x <= 1; x++)
-                    {
-                        float2 offset = float2(x, y) * _BlurSize;
-                        blurColor += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv + offset);
-                    }
+                    color = _Color;
                 }
-                blurColor /= 9;
-
-
-                half4 color = lerp(mainColor,blurColor,_Blur);
+                else
+                {
+                    color = mainColor;
+                }
 
                 return color;
             }
