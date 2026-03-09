@@ -359,7 +359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 08d8c2ae6ab5b2e4dba1ee99fbd9b8af, type: 2}
+  - {fileID: 2100000, guid: 387db07c37288504989cf350bdfce82b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -538,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462473802}
   m_Layer: 0
-  m_Name: ShaderGraph
+  m_Name: Shader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

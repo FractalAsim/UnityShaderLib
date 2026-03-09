@@ -1,12 +1,10 @@
-// HorizontalBlur 1x9 kernel
-// Blur by adding Horizontal neighbours  and getting the average
-Shader "Common/HorizontalBlur"
+Shader "Common/Desaturate"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-        _Blur ("Blur", Range(-2,1)) = 0
-        _BlurSize ("BlurSize", Range(0,0.1)) = 0.1
+        _MainTex ("Main Texture", 2D) = "white" {}
+        [KeywordEnum(REC_601, REC_708, REC_2020, CIE_1931, AVG)] _Type ("Type", Float) = 2
+        _Desaturate ("Desaturate ", Range(0,1)) = 0
     }
     SubShader
     {
@@ -19,8 +17,13 @@ Shader "Common/HorizontalBlur"
             #pragma vertex vert // Use "vert" function for Vertex Shader
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
+            #pragma shader_feature_local _TYPE_REC_601 _TYPE_REC_708 _TYPE_REC_2020 _TYPE_CIE_1931 _TYPE_AVG
+
             // Required for TEXTURE2D
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            
+            // Required for custom function: MainLightOnSurface, Remap1101
+            #include "Assets/UnityShaderLib/Subgraphs_Inc/Common/Common.hlsl"
 
             // Input to Vertex Shader
             struct Attributes
@@ -28,7 +31,6 @@ Shader "Common/HorizontalBlur"
                 float4 positionOS : POSITION; // Object Space Position
 
                 float2 uv : TEXCOORD0;
-
             };
 
             // Input to Fragment Shader
@@ -44,8 +46,8 @@ Shader "Common/HorizontalBlur"
 
             CBUFFER_START(UnityPerMaterial)
                 float4 _MainTex_ST;
-                float _Blur;
-                float _BlurSize;
+                float  _Type;
+                float  _Desaturate;
             CBUFFER_END
 
             // Vertex Shader
@@ -55,28 +57,32 @@ Shader "Common/HorizontalBlur"
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
 
                 OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex);
-
+                
                 return OUT;
             }
 
             // Fragment Shader
             half4 frag(Varyings IN) : SV_Target
             {
-                float4 mainColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
+                half4 mainColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
 
-                float4 blurColor = float4(0, 0, 0, 0);
+                half3 weights;
 
-                // Sample Horizontal, add all, and get average. 
-                [unroll]
-                for (int x = -4; x <= 4; x++)
-                {
-                    float2 offset = float2(x, 0) * _BlurSize;
-                    blurColor += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv + offset);
-                }
-                blurColor /= 9;
+                #if _TYPE_REC_601
+                weights = half3(0.299,0.587,0.114);
+                #elif _TYPE_REC_708
+                weights = half3(0.2126,0.7152,0.0722);
+                #elif _TYPE_REC_2020
+                weights = half3(0.2627,0.678,0.0593);
+                #elif _TYPE_CIE_1931
+                weights = half3(0.212671,0.71516,0.072169);
+                #elif _TYPE_AVG
+                weights = mainColor.rgb/3;
+                #endif
 
+                half4 desaturateColor = dot(weights,mainColor.rgb);
 
-                half4 color = lerp(mainColor,blurColor,_Blur);
+                half4 color = half4(lerp(mainColor.rgb, desaturateColor, _Desaturate), mainColor.a);
 
                 return color;
             }

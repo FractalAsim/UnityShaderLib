@@ -43,7 +43,6 @@ Shader "Common/BoxBlur"
 
             CBUFFER_START(UnityPerMaterial)
                 float4 _MainTex_ST;
-                float4 _MainTex_TexelSize;
                 float _Blur;
                 float _BlurSize;
             CBUFFER_END
