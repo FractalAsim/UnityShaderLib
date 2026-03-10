@@ -1,5 +1,5 @@
-#ifndef Color
-#define Color
+#ifndef COLOR_CGINC
+#define COLOR_CGINC
 
 float3 RGBToYIQ(float3 RGB)
 {
@@ -49,7 +49,6 @@ float3 DirectHueShift(float3 col, float hueShift)
     // 1.Project color into normalized luminance vector to keep brightness value
     // 2.Use Rodrigues’rotation formula to rotate(hueshift)
     // 3.Add shiftedvalue on top of original projection
-
     
     // Luminance normalized vector
     float3 norm = float3(0.57735, 0.57735, 0.57735);

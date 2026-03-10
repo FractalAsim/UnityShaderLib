@@ -2,7 +2,7 @@ Shader "Common/DirectHueShift"
 {
     Properties
     {
-        [NoScaleOffset] _MainTex ("Main Tex", 2D) = "white" {}
+        _MainTex ("Main Texture", 2D) = "white" {}
 
         _HueShift ("Hue Shift", range(0,1)) = 0
     }
@@ -38,7 +38,7 @@ Shader "Common/DirectHueShift"
             sampler2D _MainTex;
             float _HueShift;
 
-
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -47,6 +47,7 @@ Shader "Common/DirectHueShift"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);

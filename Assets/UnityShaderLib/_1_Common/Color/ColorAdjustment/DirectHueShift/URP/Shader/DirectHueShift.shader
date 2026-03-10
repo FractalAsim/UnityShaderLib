@@ -1,10 +1,10 @@
-Shader "Common/Desaturate"
+Shader "Common/DirectHueShift"
 {
     Properties
     {
         _MainTex ("Main Texture", 2D) = "white" {}
-        [KeywordEnum(REC_601, REC_708, REC_2020, CIE_1931, AVG)] _Type ("Type", Float) = 2
-        _Desaturate ("Desaturate ", Range(0,1)) = 0
+
+        _HueShift ("Hue Shift", range(0,1)) = 0
     }
     SubShader
     {
@@ -22,6 +22,9 @@ Shader "Common/Desaturate"
             // Required for TEXTURE2D
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             
+            // Required for custom function: DirectHueShift
+             #include "Assets/UnityShaderLib/Subgraphs_Inc/Color/Color.hlsl"
+
             // Input to Vertex Shader
             struct Attributes
             {
@@ -43,8 +46,7 @@ Shader "Common/Desaturate"
 
             CBUFFER_START(UnityPerMaterial)
                 float4 _MainTex_ST;
-                float  _Type;
-                float  _Desaturate;
+                float  _HueShift;
             CBUFFER_END
 
             // Vertex Shader
@@ -61,25 +63,8 @@ Shader "Common/Desaturate"
             // Fragment Shader
             half4 frag(Varyings IN) : SV_Target
             {
-                half4 mainColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
-
-                half3 weights;
-
-                #if _TYPE_REC_601
-                weights = half3(0.299,0.587,0.114);
-                #elif _TYPE_REC_708
-                weights = half3(0.2126,0.7152,0.0722);
-                #elif _TYPE_REC_2020
-                weights = half3(0.2627,0.678,0.0593);
-                #elif _TYPE_CIE_1931
-                weights = half3(0.212671,0.71516,0.072169);
-                #elif _TYPE_AVG
-                weights = mainColor.rgb/3;
-                #endif
-
-                half4 desaturateColor = dot(weights,mainColor.rgb);
-
-                half4 color = half4(lerp(mainColor.rgb, desaturateColor, _Desaturate), mainColor.a);
+                half4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
+                color.rgb = DirectHueShift(color.rgb,_HueShift);
 
                 return color;
             }
