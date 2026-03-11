@@ -1,10 +1,12 @@
-Shader "Common/DirectHueShift"
+Shader "Common/HSVShift"
 {
     Properties
     {
         _MainTex ("Main Texture", 2D) = "white" {}
 
-        _HueShift ("Hue Shift", range(0,1)) = 0
+        _HueShift ("Hue Shift", range(0,360)) = 0
+        _Saturation ("Saturation", range(0,10)) = 1
+        _Brightness ("Brightness", range(0,10)) = 1
     }
     SubShader
     {
@@ -21,7 +23,7 @@ Shader "Common/DirectHueShift"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             
             // Required for custom function: DirectHueShift
-            #include "Assets/UnityShaderLib/Subgraphs_Inc/Color/Color.hlsl"
+             #include "Assets/UnityShaderLib/Subgraphs_Inc/Color/Color.hlsl"
 
             // Input to Vertex Shader
             struct Attributes
@@ -45,6 +47,8 @@ Shader "Common/DirectHueShift"
             CBUFFER_START(UnityPerMaterial)
                 float4  _MainTex_ST;
                 float   _HueShift;
+                float   _Saturation;
+                float   _Brightness;
             CBUFFER_END
 
             // Vertex Shader
@@ -58,11 +62,22 @@ Shader "Common/DirectHueShift"
                 return OUT;
             }
 
-            // Fragment Shader
             half4 frag(Varyings IN) : SV_Target
             {
                 half4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
-                color.rgb = DirectHueShift(color.rgb,_HueShift);
+                
+                // 1. Convert Space to HSV
+                half3 hsv = RGBToHSV(color.rgb);
+
+                // 2. Adjust values
+                hsv.x += _HueShift/360.0;
+                hsv.y = saturate(hsv.y * _Saturation);
+                hsv.z = saturate(hsv.z * _Brightness);
+
+                // 3. Convert back to RGB
+                half3 rgb = HSVToRGB(hsv);
+
+                color.rgb = rgb;
 
                 return color;
             }

@@ -42,9 +42,9 @@ Shader "Common/Desaturate"
             SAMPLER(sampler_MainTex);
 
             CBUFFER_START(UnityPerMaterial)
-                float4 _MainTex_ST;
-                float  _Type;
-                float  _Desaturate;
+                float4  _MainTex_ST;
+                float   _Type;
+                float   _Desaturate;
             CBUFFER_END
 
             // Vertex Shader

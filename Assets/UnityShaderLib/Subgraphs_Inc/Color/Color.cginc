@@ -67,7 +67,6 @@ float3 RGBToHSV(float3 col)
     
     float E = 1e-10;
     
-    
     float4 K = float4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
     float4 P = lerp(float4(col.bg, K.wz), float4(col.gb, K.xy), step(col.b, col.g));
     float4 Q = lerp(float4(P.xyw, col.r), float4(col.r, P.yzx), step(P.x, col.r));
@@ -85,7 +84,6 @@ float3 HSVToRGB(float3 col)
     
     return col.z * lerp(float3(1.0, 1.0, 1.0), rgb, col.y);
 }
-
 float3 RGBToHSL(float3 col)
 {
     // https://www.shadertoy.com/view/lsS3Wc

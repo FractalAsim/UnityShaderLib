@@ -42,9 +42,9 @@ Shader "Common/BoxBlur"
             SAMPLER(sampler_MainTex);
 
             CBUFFER_START(UnityPerMaterial)
-                float4 _MainTex_ST;
-                float _Blur;
-                float _BlurSize;
+                float4  _MainTex_ST;
+                float   _Blur;
+                float   _BlurSize;
             CBUFFER_END
 
             // Vertex Shader
