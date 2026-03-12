@@ -1,12 +1,12 @@
-Shader "Common/HSVShift"
+Shader "Common/YIQShift"
 {
     Properties
     {
-        _MainTex ("Main Texture", 2D) = "white" {}
+        _MainTex ("Main Tex", 2D) = "white" {}
 
-        _HueShift ("Hue Shift", range(0,360)) = 0
-        _Saturation ("Saturation", range(0,10)) = 1
-        _Brightness ("Brightness", range(0,10)) = 1
+        _HueShift ("Hue Shift", range(0,10)) = 0
+        _Saturation ("Saturation Shift", range(0,5)) = 1
+        _BrightnessShift ("Brightness Shift", range(-1,1)) = 0
     }
     SubShader
     {
@@ -22,7 +22,7 @@ Shader "Common/HSVShift"
             // Required for TEXTURE2D
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             
-            // Required for custom function: HSVToRGB
+            // Required for custom function: YIQShift
             #include "Assets/UnityShaderLib/Subgraphs_Inc/Color/Color.hlsl"
 
             // Input to Vertex Shader
@@ -48,10 +48,10 @@ Shader "Common/HSVShift"
                 float4  _MainTex_ST;
                 float   _HueShift;
                 float   _Saturation;
-                float   _Brightness;
+                float   _BrightnessShift;
             CBUFFER_END
 
-            // Vertex Shader
+             // Vertex Shader
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
@@ -66,20 +66,9 @@ Shader "Common/HSVShift"
             half4 frag(Varyings IN) : SV_Target
             {
                 half4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
+
+                color.rgb = YIQShift(color.rgb,_HueShift,_Saturation,_BrightnessShift);
                 
-                // 1. Convert Space to HSV
-                half3 hsv = RGBToHSV(color.rgb);
-
-                // 2. Adjust values
-                hsv.x += _HueShift/360.0;
-                hsv.y = saturate(hsv.y * _Saturation);
-                hsv.z = saturate(hsv.z * _Brightness);
-
-                // 3. Convert back to RGB
-                half3 rgb = HSVToRGB(hsv);
-
-                color.rgb = rgb;
-
                 return color;
             }
 

@@ -43,7 +43,6 @@ float3 YIQShift(float3 rgbCol, float hueShift, float saturation, float brightnes
     
     return RGB;
 }
-
 float3 DirectHueShift(float3 col, float hueShift)
 {
     // 1.Project color into normalized luminance vector to keep brightness value

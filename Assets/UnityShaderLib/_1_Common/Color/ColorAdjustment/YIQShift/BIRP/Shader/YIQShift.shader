@@ -2,7 +2,7 @@ Shader "Common/YIQShift"
 {
     Properties
     {
-        [NoScaleOffset] _MainTex ("Main Tex", 2D) = "white" {}
+        _MainTex ("Main Texture", 2D) = "white" {}
 
         _HueShift ("Hue Shift", range(0,10)) = 0
         _Saturation ("Saturation Shift", range(0,5)) = 1
@@ -42,6 +42,7 @@ Shader "Common/YIQShift"
             float _Saturation;
             float _BrightnessShift;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -50,6 +51,7 @@ Shader "Common/YIQShift"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
