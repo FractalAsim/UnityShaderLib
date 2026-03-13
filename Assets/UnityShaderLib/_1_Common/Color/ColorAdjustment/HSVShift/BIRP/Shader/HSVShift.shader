@@ -4,9 +4,9 @@ Shader "Common/HSVShift"
     {
         _MainTex ("Main Texture", 2D) = "white" {}
 
-        _HueShift ("Hue Shift", range(0,360)) = 0
-        _Saturation ("Saturation", range(0,10)) = 1
-        _Brightness ("Brightness", range(0,10)) = 1
+        _HueShift ("Hue Shift", Range(0,360)) = 0
+        _Saturation ("Saturation", Range(0,10)) = 1
+        _Brightness ("Brightness", Range(0,10)) = 1
     }
     SubShader
     {

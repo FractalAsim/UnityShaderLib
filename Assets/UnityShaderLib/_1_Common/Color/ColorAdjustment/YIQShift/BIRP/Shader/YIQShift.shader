@@ -4,9 +4,9 @@ Shader "Common/YIQShift"
     {
         _MainTex ("Main Texture", 2D) = "white" {}
 
-        _HueShift ("Hue Shift", range(0,10)) = 0
-        _Saturation ("Saturation Shift", range(0,5)) = 1
-        _BrightnessShift ("Brightness Shift", range(-1,1)) = 0
+        _HueShift ("Hue Shift", Range(0,10)) = 0
+        _Saturation ("Saturation Shift", Range(0,5)) = 1
+        _BrightnessShift ("Brightness Shift", Range(-1,1)) = 0
     }
     SubShader
     {

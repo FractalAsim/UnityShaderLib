@@ -7,8 +7,8 @@ Shader "Uncommon/Foil"
         _MainTex ("Main Tex", 2D) = "white" {}
         _FoilTex ("Main Tex", 2D) = "white" {}
 
-        _Scale("Scale",range(0,5)) = 1
-        _Intensity("Intensity",range(0,10)) = 1
+        _Scale("Scale",Range(0,5)) = 1
+        _Intensity("Intensity",Range(0,10)) = 1
     }
     SubShader
     {

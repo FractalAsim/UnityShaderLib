@@ -2,13 +2,13 @@ Shader "Test0"
 {
     Properties
     {
-        _f1 ("float",range(-3,10)) = 0
-        _f2 ("float",range(-3,10)) = 0
-        _f3 ("float",range(-3,10)) = 0
+        _f1 ("float",Range(-3,10)) = 0
+        _f2 ("float",Range(-3,10)) = 0
+        _f3 ("float",Range(-3,10)) = 0
 
-        _v1 ("vector",vector) = (0,0,0,0)
-        _v2 ("vector",vector) = (0,0,0,0)
-        _v3 ("vector",vector) = (0,0,0,0)
+        _v1 ("vector",Vector) = (0,0,0,0)
+        _v2 ("vector",Vector) = (0,0,0,0)
+        _v3 ("vector",Vector) = (0,0,0,0)
 
     }
     SubShader

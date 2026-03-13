@@ -4,7 +4,7 @@ Shader "Common/DirectHueShift"
     {
         _MainTex ("Main Texture", 2D) = "white" {}
 
-        _HueShift ("Hue Shift", range(0,1)) = 0
+        _HueShift ("Hue Shift", Range(0,1)) = 0
     }
     SubShader
     {
