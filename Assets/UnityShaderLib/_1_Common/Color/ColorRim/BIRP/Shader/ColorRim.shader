@@ -17,6 +17,7 @@ Shader "Common/ColorRim"
 
         #include "Assets/UnityShaderLib/Subgraphs_Inc/Common/Common.cginc"
 
+        // Input to Vertex Shader
         struct Input
         {
             float3 worldNormal;
