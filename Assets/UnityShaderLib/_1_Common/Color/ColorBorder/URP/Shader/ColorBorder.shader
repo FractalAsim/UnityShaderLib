@@ -19,10 +19,9 @@ Shader "Common/ColorBorder"
 
             // Required for TEXTURE2D
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-            
+
             // Required for custom function: BorderMask
             #include "Assets/UnityShaderLib/Subgraphs_Inc/Masks/Masks.hlsl"
-
 
             // Input to Vertex Shader
             struct Attributes
@@ -40,7 +39,7 @@ Shader "Common/ColorBorder"
                 float2 uv : TEXCOORD0;
             };
 
-             CBUFFER_START(UnityPerMaterial)
+            CBUFFER_START(UnityPerMaterial)
                 float4 _Color;
                 float  _Width;
                 float  _Sharpness;

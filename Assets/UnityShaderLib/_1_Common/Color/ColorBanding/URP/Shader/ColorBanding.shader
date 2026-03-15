@@ -15,9 +15,6 @@ Shader "Common/ColorBanding"
             #pragma vertex vert // Use "vert" function for Vertex Shader
             #pragma fragment frag // Use "frag" function for Fragment Shader
 
-            // Required for TEXTURE2D
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-            
             // Required for custom function: MainLightOnSurface, Remap1101
             #include "Assets/UnityShaderLib/Subgraphs_Inc/Common/Common.hlsl"
 
