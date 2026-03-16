@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CutoffBoxExample : MonoBehaviour
+public class CutoffBoxExample_BIRP : MonoBehaviour
 {
     readonly int enablePropertyID = Shader.PropertyToID("_Enable");
     readonly int minPropertyID = Shader.PropertyToID("_Min");

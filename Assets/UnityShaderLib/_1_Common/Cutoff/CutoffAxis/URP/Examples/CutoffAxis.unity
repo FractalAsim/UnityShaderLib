@@ -644,15 +644,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 669917429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89cc58f143544b4459863e6306046cb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1018f2772ad13e942bce52619fe03f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CutoffMin: {fileID: 192467412}
   CutoffMax: {fileID: 549995363}
   CutoffObject: {fileID: 494137125}
   CutoffObjectReverse: {fileID: 285275375}
-  CutoffObjectSG: {fileID: 0}
-  CutoffObjectSGReverse: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

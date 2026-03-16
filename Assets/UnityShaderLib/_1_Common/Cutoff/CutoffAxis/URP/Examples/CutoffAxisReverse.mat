@@ -87,7 +87,7 @@ Material:
     - _BandCount: 5
     - _BleedStrength: 0
     - _BumpScale: 1
-    - _Cutoff: 0.9532688
+    - _Cutoff: 0.026988953
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
