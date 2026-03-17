@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class CutoffPlaneExample : MonoBehaviour
+public class CutoffPlaneExample_URP : MonoBehaviour
 {
     readonly int enablePropertyID = Shader.PropertyToID("_Enable");
     readonly int pNormalPropertyID = Shader.PropertyToID("_PNormal");
