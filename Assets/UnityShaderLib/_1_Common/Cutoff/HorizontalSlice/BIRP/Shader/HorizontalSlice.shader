@@ -23,7 +23,6 @@ Shader "Common/HorizontalSlice"
             struct appdata
             {
                 float4 pos : POSITION;
-
             };
 
             // Input to Fragment Shader

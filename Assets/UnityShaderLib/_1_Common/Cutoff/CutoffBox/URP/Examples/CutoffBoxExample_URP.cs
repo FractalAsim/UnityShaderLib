@@ -12,7 +12,6 @@ public class CutoffBoxExample_URP : MonoBehaviour
     [SerializeField] Transform CutoffBox;
 
     Vector3 CutoffBox_startPos = new();
-    Vector3 CutoffBoxSG_startPos = new();
 
     void Start()
     {

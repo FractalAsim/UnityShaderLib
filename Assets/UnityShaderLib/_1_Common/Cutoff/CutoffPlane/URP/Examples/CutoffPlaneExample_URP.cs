@@ -13,19 +13,11 @@ public class CutoffPlaneExample_URP : MonoBehaviour
     [SerializeField] Transform Cube;
     [SerializeField] Transform CutoffPlane;
 
-    [SerializeField] Transform CubeSG;
-    [SerializeField] Transform CutoffPlaneSG;
-
     void Update()
     {
         if (Cube == null || CutoffPlane == null) return;
 
         UpdatePlane(Cube, CutoffPlane);
-
-        if (CubeSG == null || CutoffPlaneSG == null) return;
-
-        UpdatePlane(CubeSG, CutoffPlaneSG);
-
     }
     void UpdatePlane(Transform Cube, Transform plane)
     {
