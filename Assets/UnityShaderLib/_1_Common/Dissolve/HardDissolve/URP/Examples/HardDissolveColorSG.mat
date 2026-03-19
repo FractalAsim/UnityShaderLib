@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HardDissolveSG
-  m_Shader: {fileID: -6465566751694194690, guid: d578f744ceebef14d818f661a37f61e6, type: 3}
-  m_Parent: {fileID: 2100000, guid: 740d6dd99ddac34488811b2af52fd9e5, type: 2}
+  m_Name: HardDissolveColorSG
+  m_Shader: {fileID: -6465566751694194690, guid: 4347c24492dc4044ebbaa27f4958068c, type: 3}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -22,10 +22,19 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _DissolveMap:
+        m_Texture: {fileID: 2800000, guid: ad236f98670c43e43a62330f3af694ac, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
+    - _EdgeWidth: 0.02
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 0.98514575, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4675926553442268325
