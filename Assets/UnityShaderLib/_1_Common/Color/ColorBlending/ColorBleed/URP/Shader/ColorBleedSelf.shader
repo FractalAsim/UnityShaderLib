@@ -39,7 +39,7 @@ Shader "Common/ColorBleedSelf"
                 float2 uv : TEXCOORD0;
             };
 
-           TEXTURE2D(_MainTex);
+            TEXTURE2D(_MainTex);
             SAMPLER(sampler_MainTex);
 
             CBUFFER_START(UnityPerMaterial)
@@ -67,7 +67,7 @@ Shader "Common/ColorBleedSelf"
                 half3 c1 = mainColor.gbr;
                 half3 c2 = mainColor.brg;
                 half3 mix = c1 + c2;
-                half color = mix * mix * _BleedStrength + mainColor;
+                half4 color = half4(mix * mix * _BleedStrength + mainColor,mainColor.a);
 
                 return color;
             }
