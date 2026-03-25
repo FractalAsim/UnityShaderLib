@@ -7,7 +7,6 @@ Shader "Basic/Texturing"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

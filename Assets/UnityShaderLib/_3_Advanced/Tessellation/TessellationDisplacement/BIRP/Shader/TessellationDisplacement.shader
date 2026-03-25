@@ -12,7 +12,6 @@ Shader "Advanced/TessellationDisplacement"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

@@ -10,7 +10,6 @@ Shader "Basic/TextureChannelSelect"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

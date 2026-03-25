@@ -56,7 +56,6 @@ Shader "Uncommon/CelShading"
         Pass // Main Opaque
         {
             Tags { "RenderType"="Opaque" }
-            LOD 100
 
             CGPROGRAM
 

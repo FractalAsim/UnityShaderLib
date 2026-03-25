@@ -9,7 +9,6 @@ Shader "Common/Displacement"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

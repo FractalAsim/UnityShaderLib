@@ -3,7 +3,6 @@ Shader "Basic/TangentToWorld"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

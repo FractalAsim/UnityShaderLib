@@ -8,8 +8,6 @@ Shader "Common/ColorRim"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
-
         
         CGPROGRAM
 

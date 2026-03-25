@@ -9,7 +9,6 @@ Shader "Basic/TextureLerp"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

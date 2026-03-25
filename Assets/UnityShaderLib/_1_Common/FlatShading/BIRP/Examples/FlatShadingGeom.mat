@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FlatShadingGeom
-  m_Shader: {fileID: 4800000, guid: f8b538aab48ad844bb53025407bf586b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5f66a08565a8bd54aa29b7d781cb3bf6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

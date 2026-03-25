@@ -13,7 +13,6 @@ Shader "Uncommon/Foil"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {

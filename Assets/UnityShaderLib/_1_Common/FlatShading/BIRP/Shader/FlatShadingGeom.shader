@@ -5,7 +5,6 @@ Shader "Common/FlatShadingGeom"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {
@@ -33,6 +32,7 @@ Shader "Common/FlatShadingGeom"
 
             uniform float4 _LightColor0;
 
+            // Vertex Shader
             v2f vert (appdata v)
             {
                 v2f o;
@@ -41,6 +41,7 @@ Shader "Common/FlatShadingGeom"
                 return o;
             }
 
+             // Geometry Shader
             [maxvertexcount(3)]
             void geom (triangle v2f i[3],inout TriangleStream<v2f> stream) 
             {
@@ -59,6 +60,7 @@ Shader "Common/FlatShadingGeom"
 	            stream.Append(i[2]);
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target
             {
                 // Basic light using NdotL

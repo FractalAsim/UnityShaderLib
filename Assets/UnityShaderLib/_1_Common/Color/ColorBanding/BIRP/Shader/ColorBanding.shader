@@ -7,7 +7,6 @@ Shader "Common/ColorBanding"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
 
         Pass
         {
