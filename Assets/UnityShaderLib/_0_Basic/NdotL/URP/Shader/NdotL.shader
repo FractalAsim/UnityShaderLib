@@ -11,8 +11,6 @@ Shader "Basic/NdotL"
             #pragma vertex vert
             #pragma fragment frag
 
-            // Required for CBUFFER_START
-
             // Required for GetMainLight() in RealtimeLights.hlsl
             // Required for _MainLightPosition, _MainLightColor in Input.hlsl
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
