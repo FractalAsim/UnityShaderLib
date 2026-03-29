@@ -8,10 +8,10 @@ Shader "Common/LambertianDiffuse"
     }
     SubShader 
     {
-        Pass {
+        Tags { "RenderType"="Opaque" }
 
-            Tags { "RenderType"="Opaque" }
-
+        Pass 
+        {
             CGPROGRAM
 
             #pragma vertex vert // Use "vert" function for Vertex Shader
@@ -24,8 +24,8 @@ Shader "Common/LambertianDiffuse"
             {
                 float4 pos : POSITION;
 
-                float3 normal : NORMAL;
                 float2 uv : TEXCOORD0;
+                float3 normal : NORMAL;
             };
 
             struct v2f 
@@ -69,6 +69,7 @@ Shader "Common/LambertianDiffuse"
 
                 return fixed4(Intensity, 1);
             }
+
             ENDCG
         }
     }

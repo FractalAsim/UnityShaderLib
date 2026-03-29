@@ -25,7 +25,6 @@ Shader "Common/GerstnerWater"
             // Required for UNITY_TWO_PI
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
-            // Required for GetMainLight() in RealtimeLights.hlsl
             // Required for _MainLightPosition, _MainLightColor in Input.hlsl
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 
@@ -40,7 +39,7 @@ Shader "Common/GerstnerWater"
             {
                 float4 positionHCS : SV_POSITION; // Homogeneous Clip Space Position
 
-                float3 worldNormal : NORMAL;
+                float3 normalWS : NORMAL;
             };
 
             CBUFFER_START(UnityPerMaterial)
@@ -95,15 +94,15 @@ Shader "Common/GerstnerWater"
 
                 GerstnerWave(IN.positionOS, d1, 0.07, 2.5, 1, 0.3, _Time.y, disp, normal);
                 totaldisp = disp;
-                OUT.worldNormal = normal;
+                OUT.normalWS = normal;
 
                 GerstnerWave(IN.positionOS, d2, 0.05, 3, 1, 0.3, _Time.y, disp, normal);
                 totaldisp += disp;
-                OUT.worldNormal += normal;
+                OUT.normalWS += normal;
 
                 GerstnerWave(IN.positionOS, d3, 0.04, 1.8, 1, 0.4, _Time.y, disp, normal);
                 totaldisp += disp;
-                OUT.worldNormal += normal;
+                OUT.normalWS += normal;
 
                 // Apply Displacement
                 IN.positionOS.xyz += totaldisp;
@@ -117,7 +116,7 @@ Shader "Common/GerstnerWater"
             {
                 // Basic light using NdotL
                 float3 lightDir = normalize(_MainLightPosition.xyz);
-                float NdotL = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
+                float NdotL = max(dot(normalize(IN.normalWS), lightDir), 0.0);
 
                 half4 color = float4(0,0,0.5660378,1) * _MainLightColor * NdotL;
 

@@ -37,6 +37,7 @@ Shader "Common/FlowMap"
                 float2 uv : TEXCOORD0;
             };
 
+            // Vertex Shader
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;

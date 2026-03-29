@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LambertianDiffuse
-  m_Shader: {fileID: 4800000, guid: 2a322e7dc3c523d488177e3fad408d33, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8a8186e898d59b24bba244e3524efb15, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
