@@ -24,7 +24,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: f7d0c8785965f094399a1c3a04b317ab, type: 3}
   m_Parent: {fileID: 2100000, guid: 387db07c37288504989cf350bdfce82b, type: 2}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _TYPE_CIE_1931
   m_InvalidKeywords:
   - _ENUM_A
   - _TYPE_REC_709

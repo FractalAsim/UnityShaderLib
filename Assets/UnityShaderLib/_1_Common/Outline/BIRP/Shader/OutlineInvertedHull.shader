@@ -1,3 +1,7 @@
+// Very simple technique using two pass.
+// 1. draws a larger "inverted" model fully with a color.
+// 2. draw the model again normally
+
 Shader "Common/OutlineInvertedHull"
 {
     Properties
