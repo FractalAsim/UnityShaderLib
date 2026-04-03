@@ -112,6 +112,6 @@ Material:
     - _Color: {r: 0.98742133, g: 0.98052686, b: 0.13351904, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PCenter: {r: 0, g: 0, b: 0, a: 0}
-    - _PNormal: {r: -0.00006684534, g: 0.64278936, b: -0.76604307, a: 0}
+    - _PNormal: {r: 0.000008363691, g: 0.995396, b: 0.095848024, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
