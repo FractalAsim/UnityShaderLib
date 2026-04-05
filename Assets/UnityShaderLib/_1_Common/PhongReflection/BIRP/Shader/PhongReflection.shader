@@ -6,24 +6,19 @@ Shader "Common/PhongReflection"
         _SpecColor ("Specular Color", Color) = (1,1,1,1)
         _Shininess ("Shininess", Range(1, 128)) = 32
     }
-
     SubShader
     {
         Tags { "RenderType"="Opaque" }
         Pass
         {
             CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
+
+            #pragma vertex vert // Use "vert" function for Vertex Shader
+            #pragma fragment frag // Use "frag" function for Fragment Shader
 
             #include "UnityCG.cginc"
 
-            sampler2D _MainTex;
-            float4 _SpecColor;
-            float _Shininess;
-
-            float4 _LightColor0;
-
+             // Input to Vertex Shader
             struct appdata
             {
                 float4 pos : POSITION;
@@ -31,6 +26,7 @@ Shader "Common/PhongReflection"
                 float2 uv : TEXCOORD0;
             };
 
+            // Input to Fragment Shader
             struct v2f
             {
                 float4 pos : SV_POSITION;
@@ -38,6 +34,12 @@ Shader "Common/PhongReflection"
                 float3 worldNormal : TEXCOORD1;
                 float3 worldPos : TEXCOORD2;
             };
+
+            sampler2D _MainTex;
+            float4 _SpecColor;
+            float _Shininess;
+
+            float4 _LightColor0;
 
             v2f vert (appdata v)
             {

@@ -28,6 +28,7 @@ Shader "Common/LambertianDiffuse"
                 float3 normal : NORMAL;
             };
 
+            // Input to Fragment Shader
             struct v2f 
             {
                 float4 pos : SV_POSITION;
@@ -36,11 +37,12 @@ Shader "Common/LambertianDiffuse"
                 float3 worldNormal : TEXCOORD1;
             };
 
-            float4 _LightColor0;
-
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            float4 _LightColor0;
+
+            // Vertex Shader
             v2f vert (appdata v) 
             {
                 v2f o;
@@ -52,6 +54,7 @@ Shader "Common/LambertianDiffuse"
                 return o;
             }
 
+            // Fragment Shader
             fixed4 frag (v2f i) : SV_Target 
             {
                 // Material diffuse coefficient - aka albedo
