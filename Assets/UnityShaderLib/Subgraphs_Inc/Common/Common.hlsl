@@ -55,4 +55,9 @@ inline float Remap1101(float num)
     return num * 0.5 + 0.5;
 }
 
+inline float invlerp(float from, float to, float value)
+{
+    return (value - from) / (to - from);
+}
+
 #endif // COMMON_HLSL
